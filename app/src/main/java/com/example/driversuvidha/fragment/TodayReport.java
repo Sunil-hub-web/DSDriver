@@ -88,9 +88,10 @@ public class TodayReport extends Fragment {
 
                 try {
                     String status = response.getString("status");
-                    String allbooking = response.getString("allbooking");
 
                     if(status.equals("success")){
+
+                        String allbooking = response.getString("allbooking");
 
                         JSONArray jsonArray_allbooking = new JSONArray(allbooking);
 

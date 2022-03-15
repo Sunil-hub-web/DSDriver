@@ -84,10 +84,12 @@ public class BookingHistory extends Fragment {
                 progressDialog.dismiss();
 
                 try {
+
                     String status = response.getString("status");
-                    String assignBooking = response.getString("assignBooking");
 
                     if(status.equals("success")){
+
+                        String assignBooking = response.getString("assignBooking");
 
                         JSONArray jsonArray_assignBooking = new JSONArray(assignBooking);
 
