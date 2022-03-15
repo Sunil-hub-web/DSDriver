@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.driversuvidha.fragment.HomeFragment"
+        android:name="com.in.dsdriver.fragment.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_Profile"
-        android:name="com.example.driversuvidha.fragment.ProfileFragment"
+        android:name="com.in.dsdriver.fragment.ProfileFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_upcomingbooking"
-        android:name="com.example.driversuvidha.fragment.UpcomingBookingFragment"
+        android:name="com.in.dsdriver.fragment.UpcomingBookingFragment"
         android:label="@string/title_upcomeingBooking"
         tools:layout="@layout/fragment_upcomingbooking" />
 
     <fragment
         android:id="@+id/navigation_wallet"
-        android:name="com.example.driversuvidha.fragment.WalletFragment"
+        android:name="com.in.dsdriver.fragment.WalletFragment"
         android:label="@string/title_Wallet"
         tools:layout="@layout/fragment_wallet" />
 
     <fragment
         android:id="@+id/navigation_bookingHistory"
-        android:name="com.example.driversuvidha.fragment.BookingHistory"
+        android:name="com.in.dsdriver.fragment.BookingHistory"
         android:label="@string/title_bookinghistory"
         tools:layout="@layout/fragment_bookinghistory" />
 
