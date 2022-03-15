@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DriverSuvidha</string>
+
+    <string name="home">Home</string>
+    <string name="upcoming">Upcom Booking</string>
+    <string name="BOOKING">History</string>
+    <string name="WALITI">Wallet</string>
+    <string name="PROFILE">Profile</string>
+    <string name="BookingHistory">Booking History</string>
+    <string name="title_activity_home_deshbord">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_Wallet">WalletFragment</string>
+    <string name="title_upcomeingBooking">UpcomeingBooking</string>
+    <string name="title_bookinghistory">Bookinghistory</string>
+</resources>

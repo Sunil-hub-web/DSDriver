@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="@string/home"
+        android:textSize="1sp"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/navigation_upcomingbooking"
+        android:title="@string/upcoming"
+        android:icon="@drawable/upcoming_bookings"/>
+    <item
+        android:id="@+id/navigation_bookingHistory"
+        android:title="@string/BOOKING"
+        android:icon="@drawable/booking_history"/>
+
+    <item
+        android:id="@+id/navigation_wallet"
+        android:title="@string/WALITI"
+        android:icon="@drawable/wallet"/>
+
+    <item
+        android:id="@+id/navigation_Profile"
+        android:title="@string/PROFILE"
+        android:icon="@drawable/profile"/>
+
+</menu>

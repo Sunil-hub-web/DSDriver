@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/fifteen">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten"
+            android:text="Duty Type"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="@color/appcolor"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/five"
+            android:text="6 Hours"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="#585859"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen"
+            android:text="Customer Name"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="@color/appcolor"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/five"
+            android:text="Devon Conway"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="#585859"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen"
+            android:text="Location"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="@color/appcolor"
+            android:textSize="@dimen/textsize" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/location"
+            android:layout_marginTop="@dimen/ten">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/thirty"
+                android:layout_height="@dimen/thirty"
+                android:layout_margin="@dimen/five"
+                android:src="@drawable/map_pin"></ImageView>
+
+            <TextView
+                android:id="@+id/text_Address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/five"
+                android:layout_toRightOf="@id/image"
+                android:layout_toLeftOf="@id/image1"
+                android:text="Indradhanu Market Road, Block N5, IRC Village, Nayapalli, Bhubaneswar, Odisha, 751015"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="@dimen/thirty_five"
+                android:layout_height="@dimen/thirty_five"
+                android:src="@drawable/navigation"
+                android:layout_alignParentRight="true"
+                android:background="#C2C0D5"></ImageView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twenty"
+            android:text="Time"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="@color/appcolor"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/five"
+            android:text="08:40PM - 06:30AM"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="#585859"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twenty"
+            android:text="Care Model - Transmission"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="@color/appcolor"
+            android:textSize="@dimen/textsize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/five"
+            android:text="MSSWIFT   -   Manual"
+            android:layout_marginLeft="@dimen/ten"
+            android:textColor="#585859"
+            android:textSize="@dimen/textsize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twenty_five"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/fifty"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:layout_marginBottom="@dimen/fifteen"
+                android:drawableLeft="@drawable/customer_care"
+                android:paddingLeft="@dimen/ten"
+                android:background="@drawable/reportbutton_bg"
+                android:gravity="center"
+                android:text="Call Customer"
+                android:textColor="@color/white"
+                android:textSize="@dimen/edittextsize"></TextView>
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/fifty"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:layout_marginBottom="@dimen/fifteen"
+                android:background="@drawable/reject_bg"
+                android:gravity="center"
+                android:text="Reject"
+                android:textColor="@color/white"
+                android:textSize="@dimen/edittextsize">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/twenty"
+            android:background="@drawable/stoprider_bg"
+            android:gravity="center"
+            android:text="Stop Rider"
+            android:textColor="@color/white"
+            android:textSize="@dimen/edittextsize"></TextView>
+
+    </LinearLayout>
+
+</RelativeLayout>

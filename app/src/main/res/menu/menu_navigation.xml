@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/upcoming"
+        android:title="@string/upcoming" />
+    <item
+        android:id="@+id/BOOKING"
+        android:title="@string/BOOKING" />
+
+    <item
+        android:id="@+id/WALITI"
+        android:title="@string/WALITI" />
+
+    <item
+        android:id="@+id/PROFILE"
+        android:title="@string/PROFILE" />
+
+</menu>
