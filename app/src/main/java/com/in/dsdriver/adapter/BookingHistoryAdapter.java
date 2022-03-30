@@ -62,6 +62,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
+
             text_Location = itemView.findViewById(R.id.text_Location);
             text_ReportDate = itemView.findViewById(R.id.text_ReportDate);
             text_ReportTime = itemView.findViewById(R.id.text_ReportTime);
@@ -70,6 +71,8 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
             text_NoofDays = itemView.findViewById(R.id.text_NoofDays);
             text_DutyType = itemView.findViewById(R.id.text_DutyType);
             text_Price = itemView.findViewById(R.id.text_Price);
+
+
         }
     }
 }

@@ -46,10 +46,10 @@
 
 
             <TextView
-                android:id="@+id/text"
+                android:id="@+id/text_TodayDuties"
                 android:layout_width="@dimen/hundred_sixty"
                 android:layout_height="@dimen/forty"
-                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginLeft="@dimen/twenty"
                 android:layout_marginRight="@dimen/ten"
                 android:text="Today Duties"
                 android:textSize="@dimen/edittextsize"
@@ -60,17 +60,17 @@
             </TextView>
 
             <TextView
-                android:id="@+id/text1"
+                android:id="@+id/text_TomorrowDuties"
                 android:layout_width="@dimen/hundred_sixty"
                 android:layout_height="@dimen/forty"
                 android:layout_marginLeft="@dimen/ten"
-                android:layout_marginRight="@dimen/ten"
+                android:layout_marginRight="@dimen/twenty"
                 android:text=" Tomorrow Duties "
                 android:textSize="@dimen/edittextsize"
                 android:gravity="center"
                 android:background="@drawable/upcoming_bg1"
-                android:textColor="#9AB5B5"
-                android:layout_toRightOf="@id/text">
+                android:textColor="@color/colorGrey"
+                android:layout_alignParentRight="true">
 
             </TextView>
         </RelativeLayout>

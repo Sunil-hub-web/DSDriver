@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                TodayReport todayReport = new TodayReport();
+                MyReport todayReport = new MyReport();
                 FragmentTransaction transaction =  getFragmentManager().beginTransaction();
                 transaction.replace(R.id.nav_host_fragment_activity_home_deshbord, todayReport);
                 transaction.addToBackStack(null);

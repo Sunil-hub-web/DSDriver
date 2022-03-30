@@ -19,6 +19,7 @@
             android:textSize="@dimen/textsize" />
 
         <TextView
+            android:id="@+id/text_DutyType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/five"
@@ -37,6 +38,7 @@
             android:textSize="@dimen/textsize" />
 
         <TextView
+            android:id="@+id/text_CustomerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/five"
@@ -98,6 +100,7 @@
             android:textSize="@dimen/textsize" />
 
         <TextView
+            android:id="@+id/text_Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/five"
@@ -110,16 +113,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/twenty"
-            android:text="Care Model - Transmission"
+            android:text="Care Model"
             android:layout_marginLeft="@dimen/ten"
             android:textColor="@color/appcolor"
             android:textSize="@dimen/textsize" />
 
         <TextView
+            android:id="@+id/text_CareModel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/five"
-            android:text="MSSWIFT   -   Manual"
+            android:text="MSSWIFT"
             android:layout_marginLeft="@dimen/ten"
             android:textColor="#585859"
             android:textSize="@dimen/textsize" />
@@ -131,14 +135,14 @@
             android:weightSum="2">
 
             <TextView
-                android:id="@+id/text"
+                android:id="@+id/text_CallCustomer"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="@dimen/fifty"
+                android:layout_weight="1.1"
+                android:layout_height="@dimen/forty_five"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="@dimen/ten"
-                android:layout_marginRight="@dimen/ten"
+                android:layout_marginRight="@dimen/five"
                 android:layout_marginBottom="@dimen/fifteen"
                 android:drawableLeft="@drawable/customer_care"
                 android:paddingLeft="@dimen/ten"
@@ -146,9 +150,25 @@
                 android:gravity="center"
                 android:text="Call Customer"
                 android:textColor="@color/white"
-                android:textSize="@dimen/edittextsize"></TextView>
+                android:textSize="@dimen/textsize"></TextView>
 
             <TextView
+                android:id="@+id/text_StopRider"
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="@dimen/forty_five"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/five"
+                android:layout_marginRight="@dimen/ten"
+                android:layout_marginBottom="@dimen/fifteen"
+                android:background="@drawable/stoprider_bg"
+                android:gravity="center"
+                android:text="Stop Rider"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize"></TextView>
+
+          <!--  <TextView
                 android:id="@+id/text1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -162,24 +182,23 @@
                 android:gravity="center"
                 android:text="Reject"
                 android:textColor="@color/white"
-                android:textSize="@dimen/edittextsize">
+                android:textSize="@dimen/edittextsize">-->
 
-            </TextView>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/text2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/fifty"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/twenty"
-            android:background="@drawable/stoprider_bg"
-            android:gravity="center"
-            android:text="Stop Rider"
-            android:textColor="@color/white"
-            android:textSize="@dimen/edittextsize"></TextView>
+<!--
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fifty"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/twenty"
+        android:background="@drawable/stoprider_bg"
+        android:gravity="center"
+        android:text="Stop Rider"
+        android:textColor="@color/white"
+        android:textSize="@dimen/edittextsize"></TextView>-->
 
     </LinearLayout>
 

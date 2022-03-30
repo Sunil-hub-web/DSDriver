@@ -15,4 +15,10 @@ public class AppUrl {
     public static final String acceptBooking = "http://driversuvidha.xyz/CRM/api/Driver/acceptBooking";
 
     public static final String allAssignedBooking = "http://driversuvidha.xyz/CRM/api/Driver/allAssignedBooking";
+
+    public static final String getDriverProfile = "http://driversuvidha.xyz/CRM/api/Driver/getDriverProfile";
+
+    public static final String updateDriverProfile = "http://driversuvidha.xyz/CRM/api/Driver/updateDriverProfile";
+
+    public static final String allCompletedBooking = "http://driversuvidha.xyz/CRM/api/Driver/allCompletedBooking";
 }

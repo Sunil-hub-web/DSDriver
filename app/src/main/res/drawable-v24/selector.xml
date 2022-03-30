@@ -3,7 +3,7 @@
 
     <item
         android:state_selected="true"
-        android:color="#0A2DEF"/>
+        android:color="#0DEDD8"/>
 
     <item
         android:state_selected="false"

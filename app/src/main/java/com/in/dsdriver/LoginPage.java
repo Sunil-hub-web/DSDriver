@@ -31,7 +31,7 @@ import org.json.JSONObject;
 public class LoginPage extends AppCompatActivity {
 
     Button btn_signin;
-    EditText edit_UserName,edit_Password;
+    EditText edit_MobileNo,edit_Password;
     String str_UserName,str_Password;
     TextView forgotPassword;
 
@@ -43,6 +43,8 @@ public class LoginPage extends AppCompatActivity {
 
         setContentView(R.layout.activity_login_page);
 
+
+
         getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -50,7 +52,7 @@ public class LoginPage extends AppCompatActivity {
         uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
 
         btn_signin = findViewById(R.id.btn_signin);
-        edit_UserName = findViewById(R.id.edit_UserName);
+        edit_MobileNo = findViewById(R.id.edit_MobileNo);
         edit_Password = findViewById(R.id.edit_Password);
         forgotPassword = findViewById(R.id.forgotPassword);
 
@@ -58,17 +60,24 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(edit_UserName.getText().toString().trim().equals("")){
+                if(edit_MobileNo.getText().toString().trim().equals("")){
 
-                    edit_UserName.setError("Fill The Details");
+                    edit_MobileNo.setError("Fill The Details");
+                    edit_MobileNo.requestFocus();
+
+                }else if(edit_MobileNo.getText().toString().trim().length()!=10){
+
+                    edit_MobileNo.setError("Enter 10 Digite Mobile No");
+                    edit_MobileNo.requestFocus();
 
                 }else if(edit_Password.getText().toString().trim().equals("")){
 
                     edit_Password.setError("Fill the details");
+                    edit_Password.requestFocus();
 
                 }else{
 
-                    str_UserName = edit_UserName.getText().toString().trim();
+                    str_UserName = edit_MobileNo.getText().toString().trim();
                     str_Password = edit_Password.getText().toString().trim();
 
                     userLogin(str_UserName,str_Password);

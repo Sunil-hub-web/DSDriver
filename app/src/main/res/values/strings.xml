@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Ds Driver</string>
+    <string name="app_name">DS Driver</string>
 
     <string name="home">Home</string>
     <string name="upcoming">Upcom Booking</string>
     <string name="BOOKING">History</string>
-    <string name="WALITI">Wallet</string>
+    <string name="WALITI">Transaction</string>
     <string name="PROFILE">Profile</string>
     <string name="BookingHistory">Booking History</string>
     <string name="title_activity_home_deshbord">MainActivity</string>

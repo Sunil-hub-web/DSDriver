@@ -1,6 +1,7 @@
 package com.in.dsdriver.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,8 +55,21 @@ public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBooking
 
                 UpcomingBookingFragment upcomingBookingFragment = new UpcomingBookingFragment();
 
-                BookingDetails bookingDetails = new BookingDetails();
+
                 FragmentManager manager = ((AppCompatActivity)context).getSupportFragmentManager();
+
+                BookingDetails bookingDetails = new BookingDetails();
+
+                Bundle args = new Bundle();
+                args.putString("param1", upcoming_Booking.getDuty_type());
+                args.putString("param2", upcoming_Booking.getAddress_id());
+                args.putString("param3", upcoming_Booking.getReportTime());
+                args.putString("param4", upcoming_Booking.getCar_detail());
+                //args.putString("param5", upcoming_Booking.getAddress_id());
+                args.putString("param5", upcoming_Booking.getCustomer_id());
+
+                bookingDetails.setArguments(args);
+
                 manager.beginTransaction().replace(R.id.nav_host_fragment_activity_home_deshbord, bookingDetails).addToBackStack(null).commit();
 
 

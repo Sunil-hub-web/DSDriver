@@ -39,7 +39,7 @@ public class BookingHistory extends Fragment {
     BookingHistoryAdapter upcomingBookingAdapter;
     ArrayList<BookingHistory_ModelClass> bookingHistory = new ArrayList<>();
 
-    String driverId;
+    String str_driverId;
 
     @Nullable
     @Override
@@ -51,9 +51,9 @@ public class BookingHistory extends Fragment {
 
         recyclerBookingHistory = view.findViewById(R.id.recyclerBookingHistory);
 
-        driverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
+        str_driverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
 
-        assignBooking(driverId);
+        assignBooking(str_driverId);
 
         return view;
     }
@@ -61,7 +61,8 @@ public class BookingHistory extends Fragment {
     public void assignBooking(String driverId){
 
         ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Show Booking Details Please Wait....");
+        progressDialog.setMessage("Please Wait....");
+        progressDialog.setTitle("Show Booking Details");
         progressDialog.show();
 
         JSONObject jsonObject = new JSONObject();
@@ -75,7 +76,7 @@ public class BookingHistory extends Fragment {
             e.printStackTrace();
         }
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppUrl.allAssignedBooking, jsonObject, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppUrl.allCompletedBooking, jsonObject, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 

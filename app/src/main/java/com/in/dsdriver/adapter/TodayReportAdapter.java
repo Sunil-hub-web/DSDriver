@@ -62,14 +62,28 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
             holder.text_NoofDays.setVisibility(View.GONE);
             holder.text4.setVisibility(View.GONE);
-            holder.text_DutyType.setText(today_Report.getDutyHour());
+            //holder.text_DutyType.setText(today_Report.getDutyHour());
+            holder.text_DutyType.setText(today_Report.getDuty_type());
 
         }else if(today_Report.getDuty_type().equals("Out Station")){
 
             holder.text_NoofDays.setVisibility(View.VISIBLE);
             holder.text4.setVisibility(View.VISIBLE);
-            holder.text_DutyType.setText(today_Report.getDutyHour()+" "+"hours");
 
+            //holder.text_DutyType.setText(today_Report.getDutyHour()+" "+"hours");
+            holder.text_NoofDays.setText(today_Report.getNoofDays()+" "+"Days");
+
+            holder.text_DutyType.setText(today_Report.getDuty_type());
+            holder.text_NoofDays.setText(today_Report.getNoofDays()+" "+"Days");
+
+        }else if(today_Report.getDuty_type().equals("0")){
+
+            holder.text_DutyType.setText(today_Report.getDuty_type());
+            holder.text_NoofDays.setText(today_Report.getNoofDays()+" "+"Days");
+
+        }else{
+
+            holder.text_DutyType.setText(today_Report.getDuty_type());
             holder.text_NoofDays.setText(today_Report.getNoofDays()+" "+"Days");
         }
 
@@ -78,8 +92,11 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             public void onClick(View v) {
 
                 String bookingId = today_Report.getId();
+
                 acceptBooking(driverId,bookingId);
 
+                reporttoday.remove(position);
+                notifyDataSetChanged();
             }
         });
 
@@ -129,6 +146,8 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             @Override
             public void onResponse(JSONObject response) {
 
+                progressDialog.dismiss();
+
                 try {
                     String status = response.getString("status");
 
@@ -136,6 +155,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
                         
                         String message = response.getString("message");
                         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

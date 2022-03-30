@@ -34,6 +34,7 @@ public class HomeDeshbord extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navView = findViewById(R.id.nav_view);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
        /* AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -114,11 +115,11 @@ public class HomeDeshbord extends AppCompatActivity {
 
                     @Override
                     public void run() {
-                        // TODO Auto-generated method stub
-                        Intent a = new Intent(Intent.ACTION_MAIN);
+
+                        /*Intent a = new Intent(Intent.ACTION_MAIN);
                         a.addCategory(Intent.CATEGORY_HOME);
                         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(a);
+                        startActivity(a);*/
                     }
                 }, 4 * 1000);
             }
