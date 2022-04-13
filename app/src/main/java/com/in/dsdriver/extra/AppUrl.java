@@ -21,4 +21,8 @@ public class AppUrl {
     public static final String updateDriverProfile = "http://driversuvidha.xyz/CRM/api/Driver/updateDriverProfile";
 
     public static final String allCompletedBooking = "http://driversuvidha.xyz/CRM/api/Driver/allCompletedBooking";
+
+    public static final String availableBooking_zoewise = "http://driversuvidha.xyz/CRM/api/Driver/availableBooking_zoewise";
+
+    public static final String invoice_report = "http://driversuvidha.xyz/CRM/api/Driver/invoice_report";
 }

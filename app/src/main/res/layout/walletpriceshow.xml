@@ -1,90 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
-        android:id="@+id/first"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/seventy"
-        android:layout_margin="@dimen/ten"
-        android:background="#FFFFFF">
-
-        <ImageView
-            android:id="@+id/productImage"
-            android:layout_width="@dimen/fifty"
-            android:layout_height="@dimen/fifty"
-            android:layout_centerVertical="true"
-            android:layout_margin="@dimen/ten"
-            android:scaleType="fitXY"
-            android:src="@drawable/green_down"></ImageView>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/five"
+    android:background="@color/white">
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/fifteen"
-            android:layout_toLeftOf="@+id/staues"
-            android:layout_toRightOf="@id/productImage"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/five"
+            android:layout_marginRight="@dimen/five"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
             <TextView
-                android:id="@+id/VehicalID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/productImage"
-                android:text="Android Push notification"
+                android:id="@+id/text_InvoiceNo"
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="match_parent"
+                android:text="Invoice No"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/text_Date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Invoice No"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/text_Amount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Invoice No"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textsize"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/text_Action"
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:text="Action"
                 android:textColor="@color/black"
                 android:textSize="@dimen/edittextsize"
                 android:textStyle="bold"></TextView>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/productImage">
-
-                <TextView
-                    android:id="@+id/idname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/five"
-                    android:text="25/05/2022"
-                    android:textColor="#878585"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:layout_marginTop="@dimen/five"
-                    android:layout_toRightOf="@+id/idname"
-                    android:text="05.35 AM"
-                    android:textColor="#878585"
-                    android:textSize="@dimen/textsize"
-                    android:textStyle="bold"></TextView>
-
-            </RelativeLayout>
-
         </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/staues"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/fifteen"
-            android:layout_marginTop="@dimen/ten"
-            android:layout_marginRight="@dimen/ten"
-            android:text="250.00"
-            android:textColor="#66B50D"
-            android:textSize="@dimen/edittextsize"
-            android:textStyle="bold"></TextView>
-
-
-    </RelativeLayout>
 
 </RelativeLayout>

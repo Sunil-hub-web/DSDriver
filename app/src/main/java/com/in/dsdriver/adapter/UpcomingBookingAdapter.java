@@ -18,7 +18,10 @@ import com.in.dsdriver.fragment.BookingDetails;
 import com.in.dsdriver.fragment.UpcomingBookingFragment;
 import com.in.dsdriver.modelclass.UpcomingBooking_ModelClass;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBookingAdapter.ViewHolder> {
 
@@ -44,8 +47,23 @@ public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBooking
 
         UpcomingBooking_ModelClass upcoming_Booking = upcoming.get(position);
 
+        String reportdate = upcoming_Booking.getReportDate();
+
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+
+            Date dateFromUser = fromUser.parse(reportdate); // Parse it to the exisitng date pattern and return Date type
+            String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
+            holder.text_ReportDate.setText(dateMyFormat);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         holder.text_City.setText(upcoming_Booking.getCity());
-        holder.text_ReportDate.setText(upcoming_Booking.getReportDate());
+
         holder.text_ReportTime.setText(upcoming_Booking.getReportTime());
         holder.text_Location.setText(upcoming_Booking.getLocation());
 

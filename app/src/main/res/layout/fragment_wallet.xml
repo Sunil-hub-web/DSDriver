@@ -4,30 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.in.dsdriver.fragment.WalletFragment">
 
     <RelativeLayout
-        android:id="@+id/rel_image"
-        android:layout_width="wrap_content"
+        android:id="@+id/image"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/ten">
+        android:layout_margin="@dimen/seven">
 
         <ImageView
-            android:layout_width="@dimen/hundred_twenty"
-            android:layout_height="@dimen/sixty"
+            android:layout_width="@dimen/seventy"
+            android:layout_height="@dimen/forty"
             android:layout_marginLeft="@dimen/ten"
             android:layout_marginRight="@dimen/ten"
+            android:scaleType="centerInside"
             android:src="@drawable/logo">
 
         </ImageView>
+
+        <ImageView
+            android:layout_width="@dimen/twenty_five"
+            android:layout_height="@dimen/twenty_five"
+            android:layout_centerVertical="true"
+            android:src="@drawable/notification"
+            android:scaleType="centerInside"
+            android:layout_alignParentRight="true">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Transaction History"
+            android:textColor="@color/appcolor"
+            android:textSize="@dimen/edittextsize">
+
+        </TextView>
+
     </RelativeLayout>
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="4dp"
-        android:layout_below="@+id/rel_image"
-        android:layout_marginTop="@dimen/five"
+        android:layout_below="@+id/image"
         android:background="#AEA8A8"
         android:elevation="@dimen/five" />
 
@@ -86,7 +108,7 @@
                     android:textStyle="bold" />
 
 
-                <TextView
+             <!--   <TextView
                     android:id="@+id/text"
                     android:layout_width="@dimen/hundred_sixty"
                     android:layout_height="@dimen/forty"
@@ -101,7 +123,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/edittextsize">
 
-                </TextView>
+                </TextView>-->
 
                 <ImageView
                     android:layout_width="@dimen/eighty"
@@ -127,92 +149,69 @@
             android:textSize="@dimen/edittextsize"
             android:textStyle="bold" />
 
-
-        <RelativeLayout
-            android:id="@+id/first"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/seventy"
-            android:layout_margin="@dimen/ten"
-            android:background="#FFFFFF">
-
-
-            <ImageView
-                android:id="@+id/productImage"
-                android:layout_width="@dimen/fifty"
-                android:layout_height="@dimen/fifty"
-                android:layout_centerVertical="true"
-                android:layout_margin="@dimen/ten"
-                android:scaleType="centerCrop"
-                android:src="@drawable/red_up"></ImageView>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/fifteen"
-                android:layout_toLeftOf="@+id/staues"
-                android:layout_toRightOf="@id/productImage"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/VehicalID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/productImage"
-                    android:text="Android Push notification"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/edittextsize"
-                    android:textStyle="bold"></TextView>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/productImage">
-
-                    <TextView
-                        android:id="@+id/idname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/five"
-                        android:text="25/05/2022"
-                        android:textColor="#878585"
-                        android:textSize="@dimen/textsize"
-                        android:textStyle="bold"></TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/twenty"
-                        android:layout_marginTop="@dimen/five"
-                        android:layout_toRightOf="@+id/idname"
-                        android:text="05.35 AM"
-                        android:textColor="#878585"
-                        android:textSize="@dimen/textsize"
-                        android:textStyle="bold"></TextView>
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/five"
+            android:layout_marginRight="@dimen/five"
+            android:layout_marginTop="@dimen/fifteen"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
             <TextView
-                android:id="@+id/staues"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/fifteen"
-                android:layout_marginTop="@dimen/ten"
-                android:layout_marginRight="@dimen/ten"
-                android:text="250.00"
-                android:textColor="#F80606"
+                android:id="@+id/text_InvoiceNo"
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="match_parent"
+                android:text="Invoice No"
+                android:textColor="@color/black"
                 android:textSize="@dimen/edittextsize"
                 android:textStyle="bold"></TextView>
 
+            <TextView
+                android:id="@+id/text_Date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittextsize"
+                android:textStyle="bold"></TextView>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/text_Amount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittextsize"
+                android:textStyle="bold"></TextView>
 
-        <include layout="@layout/walletpriceshow"></include>
+            <TextView
+                android:id="@+id/text_Action"
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:text="Action"
+                android:textColor="@color/black"
+                android:textSize="@dimen/edittextsize"
+                android:textStyle="bold"></TextView>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerTransaction"
+            android:layout_marginLeft="@dimen/five"
+            android:layout_marginRight="@dimen/five"
+            android:layout_marginTop="@dimen/ten">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
     </LinearLayout>

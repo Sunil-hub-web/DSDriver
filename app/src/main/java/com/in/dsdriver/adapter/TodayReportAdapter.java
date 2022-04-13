@@ -1,5 +1,6 @@
 package com.in.dsdriver.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -21,12 +22,16 @@ import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
 import com.in.dsdriver.extra.AppUrl;
 import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.modelclass.BookingHistory_ModelClass;
 import com.in.dsdriver.modelclass.TodayReport_ModelClass;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.ViewHolder> {
 
@@ -54,8 +59,24 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
         driverId = SharedPrefManager.getInstance(context).getUser().getDriverID();
 
+
+        String reportdate = today_Report.getDate();
+
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+
+            Date dateFromUser = fromUser.parse(reportdate); // Parse it to the exisitng date pattern and return Date type
+            String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
+            holder.text_date.setText(dateMyFormat);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         holder.text_Address.setText(today_Report.getAddress());
-        holder.text_date.setText(today_Report.getDate());
+
         holder.text_Time.setText(today_Report.getTime());
 
         if(today_Report.getDuty_type().equals("Local")){

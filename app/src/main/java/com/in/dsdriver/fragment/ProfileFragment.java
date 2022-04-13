@@ -39,7 +39,10 @@ import com.in.dsdriver.extra.SharedPrefManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -236,9 +239,23 @@ public class ProfileFragment extends Fragment {
                         String dl_no = response.getString("dl_no");
                         String adresss = response.getString("adresss");
 
+
+                        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy/MM/dd");
+                        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+                        try {
+
+                            Date dateFromUser = fromUser.parse(dob); // Parse it to the exisitng date pattern and return Date type
+                            String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
+                            text_driverDob.setText(dateMyFormat);
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+
                         text_driverName.setText(name);
                         text_driverEmailId.setText(email);
-                        text_driverDob.setText(dob);
+
                         text_driverAddress.setText(adresss);
                         text_DrivingLicence.setText(dl_no);
                         text_driverContactNo.setText(mobile);
@@ -327,9 +344,22 @@ public class ProfileFragment extends Fragment {
                         String dl_no = response.getString("dl_no");
                         String adresss = response.getString("adresss");
 
+                        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy/MM/dd");
+                        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+                        try {
+
+                            Date dateFromUser = fromUser.parse(dob); // Parse it to the exisitng date pattern and return Date type
+                            String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
+                            text_driverDob.setText(dateMyFormat);
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
+
                         text_driverName.setText(name);
                         text_driverEmailId.setText(email);
-                        text_driverDob.setText(dob);
+                        //text_driverDob.setText(dob);
                         text_driverAddress.setText(adresss);
                         text_DrivingLicence.setText(dl_no);
                         text_driverContactNo.setText(mobile);

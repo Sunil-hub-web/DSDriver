@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.in.dsdriver.fragment.ProfileFragment">
 
 
@@ -14,20 +15,40 @@
 
         <RelativeLayout
             android:id="@+id/image"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/ten">
+            android:layout_margin="@dimen/seven">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/ten"
-                android:layout_marginRight="@dimen/ten"
                 android:text="@string/PROFILE"
+                android:layout_centerInParent="true"
                 android:textColor="@color/appcolor"
-                android:textSize="@dimen/twenty">
+                android:textSize="@dimen/edittextsize">
 
             </TextView>
+
+            <ImageView
+                android:layout_width="@dimen/seventy"
+                android:layout_height="@dimen/forty"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:scaleType="centerInside"
+                android:src="@drawable/logo">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/twenty_five"
+                android:layout_height="@dimen/twenty_five"
+                android:layout_centerVertical="true"
+                android:src="@drawable/notification"
+                android:scaleType="centerInside"
+                android:layout_alignParentRight="true">
+
+            </ImageView>
+
         </RelativeLayout>
 
         <View
@@ -35,7 +56,6 @@
             android:layout_width="match_parent"
             android:layout_height="4dp"
             android:layout_below="@+id/image"
-            android:layout_marginTop="@dimen/five"
             android:background="#AEA8A8"
             android:elevation="@dimen/five" />
 

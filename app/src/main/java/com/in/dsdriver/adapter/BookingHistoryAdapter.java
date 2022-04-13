@@ -13,7 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.in.dsdriver.R;
 import com.in.dsdriver.modelclass.BookingHistory_ModelClass;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAdapter.ViewHolder> {
 
@@ -38,8 +41,22 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
         BookingHistory_ModelClass booking_History = booking.get(position);
 
+        String reportdate = booking_History.getReportDate();
+
+        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+
+            Date dateFromUser = fromUser.parse(reportdate); // Parse it to the exisitng date pattern and return Date type
+            String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
+            holder.text_ReportDate.setText(dateMyFormat);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         holder.text_City.setText(booking_History.getCity());
-        holder.text_ReportDate.setText(booking_History.getReportDate());
         holder.text_ReportTime.setText(booking_History.getReportTime());
         holder.text_Location.setText(booking_History.getLocation());
         holder.text_NoofDays.setText(booking_History.getNoofDays()+" "+ "Days");
