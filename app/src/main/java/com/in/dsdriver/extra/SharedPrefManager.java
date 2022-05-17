@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.in.dsdriver.LoginPage;
-import com.in.dsdriver.modelclass.Login_ModelClass;
+import com.in.dsdriver.driver.modelclass.Login_ModelClass;
 
 
 public class SharedPrefManager {

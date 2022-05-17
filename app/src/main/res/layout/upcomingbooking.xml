@@ -25,58 +25,38 @@
                 android:layout_width="@dimen/ten"
                 android:layout_height="@dimen/hundred_fifty"
                 android:background="#4CAF50"
-                android:orientation="horizontal">
-            </LinearLayout>
+                android:orientation="horizontal"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lin"
+                android:layout_centerInParent="true"
                 android:layout_marginLeft="@dimen/fifteen"
+                android:layout_toRightOf="@id/lin"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
-                    android:layout_marginLeft="@dimen/twenty">
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:weightSum="2">
 
                     <TextView
                         android:id="@+id/text"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Report Date"
-                        android:textSize="@dimen/textsize"
                         android:textColor="@color/appcolor"
-                        android:layout_marginTop="@dimen/fifteen">
+                        android:textSize="@dimen/textsize">
+
 
                     </TextView>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/fifteen"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text"
-                        android:text="Report Time"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize"></TextView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="2"
-                    android:layout_marginLeft="@dimen/twenty">
 
                     <TextView
                         android:id="@+id/text_ReportDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/five"
                         android:layout_weight="1"
                         android:text="05/01/2022"
                         android:textColor="#949495"
@@ -84,80 +64,99 @@
 
                     </TextView>
 
-                    <TextView
-                        android:id="@+id/text_ReportTime"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text_ReportDate"
-                        android:text="05:15 PM"
-                        android:textSize="@dimen/edittextsize"
-                        android:textColor="#949495"
-                        android:layout_marginTop="@dimen/five"></TextView>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
-                    android:layout_marginLeft="@dimen/twenty">
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginTop="@dimen/ten"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/ten"
+                        android:layout_toRightOf="@id/text"
+                        android:layout_weight="1"
+                        android:text="Report Time"
+                        android:textColor="@color/appcolor"
+                        android:textSize="@dimen/textsize"></TextView>
+
+                    <TextView
+                        android:id="@+id/text_ReportTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/ten"
+                        android:layout_toRightOf="@id/text_ReportDate"
+                        android:layout_weight="1"
+                        android:text="05:15 PM"
+                        android:textColor="#949495"
+                        android:textSize="@dimen/edittextsize"></TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginTop="@dimen/ten"
+                    android:weightSum="2">
 
                     <TextView
                         android:id="@+id/text2"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="City"
-                        android:textSize="@dimen/textsize"
                         android:textColor="@color/appcolor"
-                        android:layout_marginTop="@dimen/fifteen">
+                        android:textSize="@dimen/textsize">
 
                     </TextView>
 
                     <TextView
+                        android:id="@+id/text_City"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/fifteen"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text"
-                        android:text="Location"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize"></TextView>
+                        android:layout_weight="1"
+                        android:text="Mumbai"
+                        android:textColor="#949495"
+                        android:textSize="@dimen/edittextsize">
+
+                    </TextView>
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
-                    android:layout_marginLeft="@dimen/twenty">
+                    android:layout_marginLeft="@dimen/twenty"
+                    android:layout_marginTop="@dimen/ten"
+                    android:weightSum="2">
 
                     <TextView
-                        android:id="@+id/text_City"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="Mumbai"
-                        android:textSize="@dimen/edittextsize"
-                        android:textColor="#949495"
-                        android:layout_marginTop="@dimen/five">
-
-                    </TextView>
+                        android:layout_marginRight="@dimen/ten"
+                        android:layout_toRightOf="@id/text"
+                        android:layout_weight="1"
+                        android:text="Location"
+                        android:textColor="@color/appcolor"
+                        android:textSize="@dimen/textsize"></TextView>
 
                     <TextView
                         android:id="@+id/text_Location"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="@dimen/ten"
                         android:layout_toRightOf="@id/text_City"
+                        android:layout_weight="1"
                         android:text="Andhera East"
-                        android:textSize="@dimen/edittextsize"
                         android:textColor="#949495"
-                        android:layout_marginTop="@dimen/five"></TextView>
+                        android:textSize="@dimen/edittextsize"></TextView>
 
                 </LinearLayout>
 

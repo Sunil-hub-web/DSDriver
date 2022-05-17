@@ -6,11 +6,12 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.app.ProgressDialog;
 import android.app.UiModeManager;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,19 +22,25 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.in.dsdriver.driver.drivers.ForgotPassword;
+import com.in.dsdriver.driver.drivers.HomeDeshbord;
+import com.in.dsdriver.driver.modelclass.Login_ModelClass;
 import com.in.dsdriver.extra.AppUrl;
 import com.in.dsdriver.extra.SharedPrefManager;
-import com.in.dsdriver.modelclass.Login_ModelClass;
+import com.in.dsdriver.owner.DeshBoard;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 public class LoginPage extends AppCompatActivity {
 
     Button btn_signin;
     EditText edit_MobileNo,edit_Password;
-    String str_UserName,str_Password;
+    String str_UserName,str_Password,selectLogintOption;
     TextView forgotPassword;
+    RadioGroup radioGroup;
+    RadioButton text_Driver,text_Owner,selectedRadioButton;
 
     private UiModeManager uiModeManager;
 
@@ -55,12 +62,21 @@ public class LoginPage extends AppCompatActivity {
         edit_MobileNo = findViewById(R.id.edit_MobileNo);
         edit_Password = findViewById(R.id.edit_Password);
         forgotPassword = findViewById(R.id.forgotPassword);
+        text_Driver = findViewById(R.id.text_Driver);
+        text_Owner = findViewById(R.id.text_Owner);
+        radioGroup = findViewById(R.id.radioGroup);
 
         btn_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(edit_MobileNo.getText().toString().trim().equals("")){
+                int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+
+                 if (selectedRadioButtonId == -1) {
+
+                    Toast.makeText(LoginPage.this, "select Driver Or Owner For Login", Toast.LENGTH_SHORT).show();
+
+                }else if(edit_MobileNo.getText().toString().trim().equals("")){
 
                     edit_MobileNo.setError("Fill The Details");
                     edit_MobileNo.requestFocus();
@@ -77,10 +93,22 @@ public class LoginPage extends AppCompatActivity {
 
                 }else{
 
-                    str_UserName = edit_MobileNo.getText().toString().trim();
-                    str_Password = edit_Password.getText().toString().trim();
+                    selectedRadioButton = findViewById(selectedRadioButtonId);
+                    selectLogintOption = selectedRadioButton.getText().toString();
 
-                    userLogin(str_UserName,str_Password);
+                    if(selectLogintOption.equals("Driver")){
+
+                        str_UserName = edit_MobileNo.getText().toString().trim();
+                        str_Password = edit_Password.getText().toString().trim();
+
+                        userLogin(str_UserName,str_Password);
+
+                    }else{
+
+                        Intent intent = new Intent(LoginPage.this, DeshBoard.class);
+                        startActivity(intent);
+                    }
+
                 }
             }
         });
@@ -89,7 +117,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginPage.this,ForgotPassword.class);
+                Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
                 startActivity(intent);
             }
         });
@@ -149,7 +177,7 @@ public class LoginPage extends AppCompatActivity {
 
                         SharedPrefManager.getInstance(LoginPage.this).userLogin(login_modelClass);
 
-                        Intent intent = new Intent(LoginPage.this,HomeDeshbord.class);
+                        Intent intent = new Intent(LoginPage.this, HomeDeshbord.class);
                         startActivity(intent);
 
 

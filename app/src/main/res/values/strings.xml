@@ -6,6 +6,7 @@
     <string name="BOOKING">History</string>
     <string name="WALITI">Transaction</string>
     <string name="PROFILE">Profile</string>
+    <string name="bookingDetails">Booking Details</string>
     <string name="BookingHistory">Booking History</string>
     <string name="title_activity_home_deshbord">MainActivity</string>
     <string name="title_home">Home</string>

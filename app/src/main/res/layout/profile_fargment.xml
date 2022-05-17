@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rel_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/seven">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/PROFILE"
+                android:layout_centerInParent="true"
+                android:textColor="@color/appcolor"
+                android:textSize="@dimen/edittextsize">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="@dimen/seventy"
+                android:layout_height="@dimen/forty"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginRight="@dimen/ten"
+                android:scaleType="centerInside"
+                android:src="@drawable/logo">
+
+            </ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/twenty_five"
+                android:layout_height="@dimen/twenty_five"
+                android:layout_centerVertical="true"
+                android:src="@drawable/notification"
+                android:scaleType="centerInside"
+                android:layout_alignParentRight="true">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_below="@+id/image"
+            android:background="#AEA8A8"
+            android:elevation="@dimen/five" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_top"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="@dimen/ten"
+                android:text="Edit"
+                android:textColor="@color/appcolor"
+                android:textSize="@dimen/twenty">
+
+            </TextView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+
+                android:id="@+id/nav_profile_image"
+                android:layout_width="@dimen/hundred_twenty"
+                android:layout_height="@dimen/hundred_twenty"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/ten"
+                android:src="@drawable/profileimage"
+                app:civ_border_color="@color/appcolor"
+                app:civ_border_width="@dimen/ten" />
+
+
+            <EditText
+                android:id="@+id/text_driverName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/fifteen"
+                android:layout_marginRight="@dimen/ten"
+                android:background="@color/transparent"
+                android:text="Sunil kumar dash"
+                android:textColor="@color/appcolor"
+                android:textSize="@dimen/twenty">
+
+            </EditText>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteen"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/ten"
+                    android:hint="Mobile No"
+                    app:boxStrokeColor="#393187"
+                    app:hintTextColor="#393187">
+
+                    <EditText
+                        android:id="@+id/text_driverContactNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fifty"
+                        android:inputType="phone"
+                        android:text="+91 1234567890"
+                        android:textColor="#4D4D4E"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/edittextsize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/ten"
+                    android:hint="Email ID."
+                    app:boxStrokeColor="#393187"
+                    app:hintTextColor="#393187">
+
+                    <EditText
+                        android:id="@+id/text_driverEmailId"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fifty"
+                        android:inputType="textEmailAddress"
+                        android:text="sunil@gmail.com"
+                        android:textColor="#4D4D4E"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/edittextsize" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/ten"
+                    android:hint="D.O.B"
+                    app:boxStrokeColor="#393187"
+                    app:hintTextColor="#393187">
+
+                    <EditText
+                        android:id="@+id/text_driverDob"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fifty"
+                        android:inputType="phone"
+                        android:text="25.10.2021"
+                        android:textColor="#4D4D4E"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/edittextsize"
+                        android:drawableRight="@drawable/calendar"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/ten"
+                    android:hint="Address."
+                    app:boxStrokeColor="#393187"
+                    app:hintTextColor="#393187">
+
+                    <EditText
+                        android:id="@+id/text_driverAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="B-114, Rolex Shopping Center, Station Road"
+                        android:textColor="#4D4D4E"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/edittextsize"></EditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/ten"
+                    android:hint="Driving Licence No."
+                    app:boxStrokeColor="#393187"
+                    app:hintTextColor="#393187">
+
+                    <EditText
+                        android:id="@+id/text_DrivingLicence"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/fifty"
+                        android:inputType="text"
+                        android:text="HR-0619850034761"
+                        android:textColor="#4D4D4E"
+                        android:padding="@dimen/ten"
+                        android:textSize="@dimen/edittextsize"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/text_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="@dimen/fifteen"
+                    android:layout_marginRight="@dimen/ten"
+                    android:text="Logout"
+                    android:textColor="@color/appcolor"
+                    android:textSize="@dimen/twenty_three"></TextView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

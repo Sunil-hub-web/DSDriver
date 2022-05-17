@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.in.dsdriver.fragment.ProfileFragment">
+    tools:context=".driver.fragment.ProfileFragment">
 
 
     <RelativeLayout
@@ -203,12 +203,11 @@
                     <EditText
                         android:id="@+id/text_driverAddress"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/fifty"
-                        android:inputType="text"
-                        android:text="Mumbai"
+                        android:layout_height="wrap_content"
+                        android:text="B-114, Rolex Shopping Center, Station Road"
                         android:textColor="#4D4D4E"
                         android:padding="@dimen/ten"
-                        android:textSize="@dimen/edittextsize" />
+                        android:textSize="@dimen/edittextsize"></EditText>
 
                 </com.google.android.material.textfield.TextInputLayout>
 

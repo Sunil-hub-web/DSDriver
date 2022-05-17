@@ -6,27 +6,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_marginStart="@dimen/twenty"
+        android:layout_marginLeft="@dimen/twenty"
         android:layout_marginTop="@dimen/twenty"
-        android:layout_margin="@dimen/twenty">
+        android:layout_marginEnd="@dimen/twenty"
+        android:layout_marginRight="@dimen/twenty"
+        android:layout_marginBottom="@dimen/twenty"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Close Booking"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="@dimen/twenty">
+            android:textSize="@dimen/twenty"
+            android:textStyle="bold">
 
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen"
             android:text="End Time:"
             android:textColor="@color/some_color1"
-            android:textSize="@dimen/textsize"
-            android:layout_marginTop="@dimen/fifteen">
+            android:textSize="@dimen/textsize">
 
         </TextView>
 
@@ -34,24 +38,24 @@
             android:id="@+id/text_endtime"
             android:layout_width="match_parent"
             android:layout_height="@dimen/forty"
-            android:text="End Time"
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/edittextsize"
             android:background="@drawable/stopriderback_bg"
             android:drawableRight="@drawable/clock_rider"
-            android:paddingRight="@dimen/twelve"
             android:paddingLeft="@dimen/twenty"
-            android:paddingTop="@dimen/five">
+            android:paddingTop="@dimen/five"
+            android:paddingRight="@dimen/twelve"
+            android:text="End Time"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/edittextsize">
 
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen"
             android:text="End Date:"
             android:textColor="@color/some_color1"
-            android:textSize="@dimen/textsize"
-            android:layout_marginTop="@dimen/fifteen">
+            android:textSize="@dimen/textsize">
 
         </TextView>
 
@@ -59,33 +63,33 @@
             android:id="@+id/text_enddate"
             android:layout_width="match_parent"
             android:layout_height="@dimen/forty"
-            android:text="End Date"
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/edittextsize"
             android:background="@drawable/stopriderback_bg"
             android:drawableRight="@drawable/calendar_rider"
-            android:paddingRight="@dimen/twelve"
             android:paddingLeft="@dimen/twenty"
-            android:paddingTop="@dimen/five">
+            android:paddingTop="@dimen/five"
+            android:paddingRight="@dimen/twelve"
+            android:text="End Date"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/edittextsize">
 
         </TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
+            android:layout_marginTop="@dimen/twenty"
             android:orientation="horizontal"
-            android:layout_marginTop="@dimen/twenty">
+            android:weightSum="2">
 
 
             <Button
                 android:id="@+id/btn_Close"
                 android:layout_width="0dp"
-                android:layout_weight="0.8"
                 android:layout_height="@dimen/fifty"
                 android:layout_margin="@dimen/ten"
-                android:text="Close"
+                android:layout_weight="0.8"
                 android:backgroundTint="@color/colorGrey1"
+                android:text="Close"
                 android:textSize="@dimen/textsize">
 
             </Button>
@@ -93,18 +97,16 @@
             <Button
                 android:id="@+id/btn_Submit"
                 android:layout_width="0dp"
-                android:layout_weight="0.8"
                 android:layout_height="@dimen/fifty"
                 android:layout_margin="@dimen/ten"
-                android:text="Submit"
+                android:layout_weight="0.8"
                 android:backgroundTint="@color/some_color"
+                android:text="Submit"
                 android:textSize="@dimen/textsize">
 
             </Button>
 
         </LinearLayout>
-
-
 
 
     </LinearLayout>
