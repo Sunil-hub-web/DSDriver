@@ -1,4 +1,4 @@
-package com.in.dsdriver.owner.fragment;
+package com.in.dsdriver.cabowner.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.in.dsdriver.R;
 
-public class WorkDetailsFragment extends Fragment {
+public class FragmentWallet extends Fragment {
 
     @Nullable
     @Override
@@ -19,7 +19,7 @@ public class WorkDetailsFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.workdetails_fargment,container,false);
+        View view = inflater.inflate(R.layout.wallet_fargment,container,false);
         return view;
     }
 }

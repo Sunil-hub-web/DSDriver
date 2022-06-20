@@ -26,7 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
 import com.in.dsdriver.driver.adapter.UpcomingBookingAdapter;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.driver.modelclass.UpcomingBooking_ModelClass;
 
 import org.json.JSONArray;
@@ -65,7 +65,7 @@ public class UpcomingBookingFragment extends Fragment {
         text_TomorrowDuties = view.findViewById(R.id.text_TomorrowDuties);
         text_TodayDuties = view.findViewById(R.id.text_TodayDuties);
 
-        driverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
+        driverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         /*GregorianCalendar gc = new GregorianCalendar();
        // yearat = gc.get(Calendar.YEAR);

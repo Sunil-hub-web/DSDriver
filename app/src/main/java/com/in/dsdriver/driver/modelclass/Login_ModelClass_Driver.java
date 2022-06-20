@@ -1,10 +1,10 @@
 package com.in.dsdriver.driver.modelclass;
 
-public class Login_ModelClass {
+public class Login_ModelClass_Driver {
 
     String driverID,name,email,mobileno,statues,password;
 
-    public Login_ModelClass(String driverID, String name, String email, String mobileno, String statues,String password) {
+    public Login_ModelClass_Driver(String driverID, String name, String email, String mobileno, String statues, String password) {
         this.driverID = driverID;
         this.name = name;
         this.email = email;

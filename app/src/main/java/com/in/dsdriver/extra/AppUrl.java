@@ -25,4 +25,17 @@ public class AppUrl {
     public static final String availableBooking_zoewise = "http://driversuvidha.xyz/CRM/api/Driver/availableBooking_zoewise";
 
     public static final String invoice_report = "http://driversuvidha.xyz/CRM/api/Driver/invoice_report";
+
+
+    // CAB Owner Api
+
+    public static final String cab_Login = "http://driversuvidha.xyz/CRM/api/cab_login";
+
+    public static final String change_password = "http://driversuvidha.xyz/CRM/api/cab/change_password";
+
+    public static final String home_page = "http://driversuvidha.xyz/CRM/api/cab/home_page";
+
+
+
+
 }

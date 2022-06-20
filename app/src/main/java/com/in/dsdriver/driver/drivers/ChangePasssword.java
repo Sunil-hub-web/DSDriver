@@ -11,12 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.LoginPage;
 import com.in.dsdriver.R;
@@ -24,6 +26,9 @@ import com.in.dsdriver.extra.AppUrl;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChangePasssword extends AppCompatActivity {
 
@@ -62,7 +67,7 @@ public class ChangePasssword extends AppCompatActivity {
 
                     str_Password = edit_Password.getText().toString().trim();
 
-                    changePassword(driver_id,str_Password);
+                    changePassword_Driver(driver_id,str_Password);
 
                 }else{
 
@@ -73,7 +78,7 @@ public class ChangePasssword extends AppCompatActivity {
         });
     }
 
-    public void changePassword(String driverId,String password){
+    public void changePassword_Driver(String driverId,String password){
 
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Change Password Please Wait....");
@@ -128,6 +133,67 @@ public class ChangePasssword extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.getCache().clear();
         requestQueue.add(jsonObjectRequest);
+    }
+
+
+    public void changePassword_Owner(String password,String confirm_password,String cab_owner_id){
+
+        ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Change Password Please Wait....");
+        progressDialog.show();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.change_password, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                progressDialog.dismiss();
+
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    String status = jsonObject.getString("status");
+
+                    if(status.equals("true")){
+
+                        String message = jsonObject.getString("message");
+                        Toast.makeText(ChangePasssword.this, message, Toast.LENGTH_SHORT).show();
+                        // String driver_id = response.getString("driver_id");
+
+                        Intent intent = new Intent(ChangePasssword.this, LoginPage.class);
+                        startActivity(intent);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                progressDialog.dismiss();
+                error.printStackTrace();
+                Toast.makeText(ChangePasssword.this, ""+error, Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> params = new HashMap<>();
+                params.put("password",password);
+                params.put("confirm_password",confirm_password);
+                params.put("cab_owner_id",cab_owner_id);
+
+                return params;
+            }
+        };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000,1,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.getCache().clear();
+        requestQueue.add(stringRequest);
     }
 
 }

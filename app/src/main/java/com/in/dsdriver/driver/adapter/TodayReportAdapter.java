@@ -22,7 +22,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.driver.modelclass.TodayReport_ModelClass;
 
 import org.json.JSONException;
@@ -57,7 +57,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
         TodayReport_ModelClass today_Report = reporttoday.get(position);
 
-        driverId = SharedPrefManager.getInstance(context).getUser().getDriverID();
+        driverId = SharedPrefManager_Driver.getInstance(context).getUser().getDriverID();
 
 
         String reportdate = today_Report.getDate();

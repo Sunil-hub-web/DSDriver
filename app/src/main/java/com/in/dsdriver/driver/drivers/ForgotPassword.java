@@ -51,6 +51,8 @@ public class ForgotPassword extends AppCompatActivity {
         rel_otp = findViewById(R.id.rel_otp);
         edit_MobileNo1 = findViewById(R.id.edit_MobileNo1);
 
+        String radioValue = getIntent().getStringExtra("Driver");
+
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -34,7 +34,7 @@ import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.LoginPage;
 import com.in.dsdriver.R;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -75,7 +75,7 @@ public class ProfileFragment extends Fragment {
         text_driverAddress = view.findViewById(R.id.text_driverAddress);
         text_edit = view.findViewById(R.id.text_edit);
 
-        str_DariverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
+        str_DariverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         Calendar calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
@@ -115,13 +115,13 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
 
-                    //SharedPrefManager.getInstance(MainActivity.this).logout();
+                    //SharedPrefManager_Owner.getInstance(MainActivity.this).logout();
 
                     dialog.dismiss();
                    /* System.exit(1);
                     finish();*/
 
-                    SharedPrefManager.getInstance(getActivity()).logout();
+                    SharedPrefManager_Driver.getInstance(getActivity()).logout();
 
                     Intent intent = new Intent(getActivity(), LoginPage.class);
                     startActivity(intent);

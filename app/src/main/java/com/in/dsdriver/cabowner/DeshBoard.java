@@ -1,4 +1,4 @@
-package com.in.dsdriver.owner;
+package com.in.dsdriver.cabowner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,13 +10,11 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.in.dsdriver.R;
-import com.in.dsdriver.driver.fragment.HomeFragment;
-import com.in.dsdriver.owner.fragment.BookingHistoryFragment;
-import com.in.dsdriver.owner.fragment.FragmentHome;
-import com.in.dsdriver.owner.fragment.FragmentProfile;
-import com.in.dsdriver.owner.fragment.FragmentWallet;
-import com.in.dsdriver.owner.fragment.MyReportFragment;
-import com.in.dsdriver.owner.fragment.WorkDetailsFragment;
+import com.in.dsdriver.cabowner.fragment.BookingHistoryFragment;
+import com.in.dsdriver.cabowner.fragment.FragmentHome;
+import com.in.dsdriver.cabowner.fragment.FragmentProfile;
+import com.in.dsdriver.cabowner.fragment.FragmentWallet;
+import com.in.dsdriver.cabowner.fragment.MyReportFragment;
 
 public class DeshBoard extends AppCompatActivity {
 
@@ -78,13 +76,12 @@ public class DeshBoard extends AppCompatActivity {
                         break;
 
                 }
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_home_deshbord,selectedFragment).commit();
 
                 return true;
             }
         });
-
-
 
     }
 }

@@ -23,7 +23,7 @@ import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
 import com.in.dsdriver.driver.adapter.BookingHistoryAdapter;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.driver.modelclass.BookingHistory_ModelClass;
 
 import org.json.JSONArray;
@@ -51,7 +51,7 @@ public class BookingHistory extends Fragment {
 
         recyclerBookingHistory = view.findViewById(R.id.recyclerBookingHistory);
 
-        str_driverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
+        str_driverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         assignBooking(str_driverId);
 

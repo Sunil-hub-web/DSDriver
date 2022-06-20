@@ -23,7 +23,7 @@ import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
 import com.in.dsdriver.driver.adapter.TodayReportAdapter;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.driver.modelclass.TodayReport_ModelClass;
 
 import org.json.JSONArray;
@@ -51,7 +51,7 @@ public class MyReport extends Fragment {
 
         recyclerReportDetails = view.findViewById(R.id.recyclerReportDetails);
 
-        driverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
+        driverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         avilableBooking(driverId);
 /*

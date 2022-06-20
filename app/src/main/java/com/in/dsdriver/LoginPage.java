@@ -15,22 +15,29 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.driver.drivers.ForgotPassword;
 import com.in.dsdriver.driver.drivers.HomeDeshbord;
-import com.in.dsdriver.driver.modelclass.Login_ModelClass;
+import com.in.dsdriver.driver.modelclass.Login_ModelClass_Driver;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
-import com.in.dsdriver.owner.DeshBoard;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
+import com.in.dsdriver.cabowner.DeshBoard;
+import com.in.dsdriver.cabowner.SharedPrefManager_Owner;
+import com.in.dsdriver.cabowner.modelclass.Login_ModelClass_Owner;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class LoginPage extends AppCompatActivity {
@@ -49,8 +56,6 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login_page);
-
-
 
         getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -105,8 +110,10 @@ public class LoginPage extends AppCompatActivity {
 
                     }else{
 
-                        Intent intent = new Intent(LoginPage.this, DeshBoard.class);
-                        startActivity(intent);
+                        str_UserName = edit_MobileNo.getText().toString().trim();
+                        str_Password = edit_Password.getText().toString().trim();
+
+                        Cab_Login(str_UserName,str_Password);
                     }
 
                 }
@@ -117,8 +124,20 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
-                startActivity(intent);
+                if(selectLogintOption.equals("Driver")){
+
+                    Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
+                    intent.putExtra("Driver","Driver");
+                    startActivity(intent);
+
+                }else{
+
+                    Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
+                    intent.putExtra("Driver","CABOwner");
+                    startActivity(intent);
+                }
+
+
             }
         });
 
@@ -170,12 +189,12 @@ public class LoginPage extends AppCompatActivity {
                         String status1 = jsonObject_data.getString("status");
                         String password = edit_Password.getText().toString().trim();
 
-                        Login_ModelClass login_modelClass = new Login_ModelClass(
+                        Login_ModelClass_Driver login_modelClassDriver = new Login_ModelClass_Driver(
 
                                 user_id,name,email,mobile,status1,password
                         );
 
-                        SharedPrefManager.getInstance(LoginPage.this).userLogin(login_modelClass);
+                        SharedPrefManager_Driver.getInstance(LoginPage.this).userLogin(login_modelClassDriver);
 
                         Intent intent = new Intent(LoginPage.this, HomeDeshbord.class);
                         startActivity(intent);
@@ -210,28 +229,49 @@ public class LoginPage extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
-    /*public void userLogin1(String mobileNo,String password){
+    public void Cab_Login(String mobileNo,String password){
 
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Login Please Wait....");
         progressDialog.show();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.userLogin, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, AppUrl.cab_Login, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 progressDialog.dismiss();
 
                 try {
+
                     JSONObject jsonObject = new JSONObject(response);
 
                     String status = jsonObject.getString("status");
 
                     if(status.equals("true")){
 
-                        Toast.makeText(LoginPage.this, "Login Success Fully", Toast.LENGTH_SHORT).show();
+                        String message = jsonObject.getString("message");
 
-                        Intent intent = new Intent(LoginPage.this,HomeDeshbord.class);
+                        Toast.makeText(LoginPage.this, message, Toast.LENGTH_SHORT).show();
+
+                        String data = jsonObject.getString("data");
+
+                        JSONObject jsonObject_data = new JSONObject(data);
+
+                        String user_id = jsonObject_data.getString("user_id");
+                        String email = jsonObject_data.getString("email");
+                        String name = jsonObject_data.getString("name");
+                        String mobile = jsonObject_data.getString("mobile");
+                        String status1 = jsonObject_data.getString("status");
+                        String password = edit_Password.getText().toString().trim();
+
+                        Login_ModelClass_Owner login_modelClass_owner = new Login_ModelClass_Owner(
+
+                                user_id,name,email,mobile,status1,password
+                        );
+
+                        SharedPrefManager_Owner.getInstance(LoginPage.this).userLogin(login_modelClass_owner);
+
+                        Intent intent = new Intent(LoginPage.this, DeshBoard.class);
                         startActivity(intent);
 
                     }else if(status.equals("false")){
@@ -244,6 +284,7 @@ public class LoginPage extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
 
 
             }
@@ -261,18 +302,20 @@ public class LoginPage extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String,String> params = new HashMap<>();
+
                 params.put("mobile",mobileNo);
                 params.put("password",password);
+
                 return params;
             }
         };
 
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000,1,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000,2,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.getCache().clear();
         requestQueue.add(stringRequest);
     }
-*/
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -290,9 +333,14 @@ public class LoginPage extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if (SharedPrefManager.getInstance(LoginPage.this).isLoggedIn()){
+        if (SharedPrefManager_Driver.getInstance(LoginPage.this).isLoggedIn()){
 
             Intent intent = new Intent(LoginPage.this,HomeDeshbord.class);
+            startActivity(intent);
+
+        }else if (SharedPrefManager_Owner.getInstance(LoginPage.this).isLoggedIn()){
+
+            Intent intent = new Intent(LoginPage.this,DeshBoard.class);
             startActivity(intent);
         }
     }

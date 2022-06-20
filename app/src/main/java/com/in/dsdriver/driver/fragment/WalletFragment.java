@@ -24,7 +24,7 @@ import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
 import com.in.dsdriver.driver.adapter.TransactionAdapter;
 import com.in.dsdriver.extra.AppUrl;
-import com.in.dsdriver.extra.SharedPrefManager;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.driver.modelclass.Transaction_Model;
 
 import org.json.JSONArray;
@@ -53,7 +53,7 @@ public class WalletFragment extends Fragment {
         recyclerTransaction = view.findViewById(R.id.recyclerTransaction);
         text_price = view.findViewById(R.id.text_price);
 
-        driverId = SharedPrefManager.getInstance(getActivity()).getUser().getDriverID();
+        driverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         getTransactionDetails(driverId);
 

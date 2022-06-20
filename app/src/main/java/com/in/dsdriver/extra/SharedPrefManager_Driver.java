@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.in.dsdriver.LoginPage;
-import com.in.dsdriver.driver.modelclass.Login_ModelClass;
+import com.in.dsdriver.driver.modelclass.Login_ModelClass_Driver;
 
 
-public class SharedPrefManager {
+public class SharedPrefManager_Driver {
 
     private static final String SHARED_PREF_NAME = "simplifiedcodingsharedpref";
     private static final String KEY_email = "keylast_name";
@@ -17,34 +17,34 @@ public class SharedPrefManager {
     private static final String KEY_password = "keypassword";
     private static final String KEY_Name = "keyname";
     private static final String KEY_STATUES = "statues";
-    private static SharedPrefManager mInstance;
+    private static SharedPrefManager_Driver mInstance;
     private static Context mCtx;
 
-    public SharedPrefManager(Context context) {
+    public SharedPrefManager_Driver(Context context) {
         mCtx = context;
     }
 
-    public static synchronized SharedPrefManager getInstance(Context context) {
+    public static synchronized SharedPrefManager_Driver getInstance(Context context) {
         if (mInstance == null) {
-            mInstance = new SharedPrefManager(context);
+            mInstance = new SharedPrefManager_Driver(context);
         }
         return mInstance;
     }
 
     //method to let the user register
     //this method will store the user data in shared preferences
-    public void userLogin(Login_ModelClass login_modelClass) {
+    public void userLogin(Login_ModelClass_Driver login_modelClassDriver) {
 
         SharedPreferences sharedPrefManager = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPrefManager.edit();
 
 
-        editor.putString(KEY_ID,         login_modelClass.getDriverID ());
-        editor.putString(KEY_Name,     login_modelClass.getName ());
-        editor.putString(KEY_email,                login_modelClass.getEmail ());
-        editor.putString(KEY_mobile_number,                login_modelClass.getMobileno ());
-        editor.putString(KEY_STATUES,                login_modelClass.getStatues ());
-        editor.putString(KEY_password,                login_modelClass.getPassword ());
+        editor.putString(KEY_ID,         login_modelClassDriver.getDriverID ());
+        editor.putString(KEY_Name,     login_modelClassDriver.getName ());
+        editor.putString(KEY_email,                login_modelClassDriver.getEmail ());
+        editor.putString(KEY_mobile_number,                login_modelClassDriver.getMobileno ());
+        editor.putString(KEY_STATUES,                login_modelClassDriver.getStatues ());
+        editor.putString(KEY_password,                login_modelClassDriver.getPassword ());
 
 
 
@@ -58,9 +58,9 @@ public class SharedPrefManager {
     }
 
     //this method will give the logged in user
-    public Login_ModelClass getUser() {
+    public Login_ModelClass_Driver getUser() {
         SharedPreferences sharedPrefManager = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        return new Login_ModelClass(
+        return new Login_ModelClass_Driver(
 
 
                 sharedPrefManager.getString(KEY_ID, null),

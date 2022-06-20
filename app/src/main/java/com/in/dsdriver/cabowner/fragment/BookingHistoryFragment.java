@@ -1,4 +1,4 @@
-package com.in.dsdriver.owner.fragment;
+package com.in.dsdriver.cabowner.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.in.dsdriver.R;
 
-public class MyReportFragment extends Fragment {
+public class BookingHistoryFragment extends Fragment {
 
     @Nullable
     @Override
@@ -19,7 +19,7 @@ public class MyReportFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.myreport_fargment,container,false);
+        View view = inflater.inflate(R.layout.bookinghistory_fragment,container,false);
         return view;
     }
 }
