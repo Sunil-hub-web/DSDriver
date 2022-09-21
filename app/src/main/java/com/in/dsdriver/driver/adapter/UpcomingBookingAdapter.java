@@ -95,6 +95,8 @@ public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBooking
                 args.putString("address", upcoming_Booking.getAddress());
                 args.putString("Locality", upcoming_Booking.getLocality());
                 args.putString("Landmark", upcoming_Booking.getLandmark());
+                args.putString("endtime", upcoming_Booking.getEnd_time());
+                args.putString("return_date", upcoming_Booking.getReturn_date());
 
                 bookingDetails.setArguments(args);
 

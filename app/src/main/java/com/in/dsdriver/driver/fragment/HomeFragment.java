@@ -1,6 +1,7 @@
 package com.in.dsdriver.driver.fragment;
 
 import android.app.ProgressDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,7 +35,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class HomeFragment extends Fragment {
@@ -228,6 +234,7 @@ public class HomeFragment extends Fragment {
 
                                 String booking_id = jsonObject_allbooking.getString("booking_id");
                                 String Locality = jsonObject_allbooking.getString("Locality");
+                                String City = jsonObject_allbooking.getString("City");
                                 String Landmark = jsonObject_allbooking.getString("Landmark");
                                 String bookingType = jsonObject_allbooking.getString("bookingType");
                                 String date = jsonObject_allbooking.getString("date");
@@ -241,16 +248,46 @@ public class HomeFragment extends Fragment {
                                 String return_date = jsonObject_allbooking.getString("return_date");
                                 String drop_city = jsonObject_allbooking.getString("drop_city");
                                 String to_city = jsonObject_allbooking.getString("to_city");
+                                String driver_type_name = jsonObject_allbooking.getString("driver_type_name");
+                                String driver_type = jsonObject_allbooking.getString("driver_type");
 
+                                Calendar calendar = Calendar.getInstance();
+                                Date today = calendar.getTime();
+
+                                calendar.add(Calendar.DAY_OF_YEAR, 1);
+                                Date tomorrow = calendar.getTime();
+
+                                //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+                                String todayAsString = dateFormat.format(today);
+                                String tomorrowAsString = dateFormat.format(tomorrow);
+
+                                System.out.println(todayAsString);
+                                System.out.println(tomorrowAsString);
+
+                                if(date.equals(todayAsString)){
+
+
+                                    TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
+                                            booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                    );
+
+                                    todayReport.add(todayReport_modelClass);
+
+                                }else if(date.equals(tomorrowAsString)){
+
+                                    TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
+                                            booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                    );
+
+                                    todayReport.add(todayReport_modelClass);
+
+                                }
 
                                 String address = Locality + "," + Landmark;
-
-                                TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
-                                        booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                        shift,drop_locality,car_details,remark,return_date,drop_city,to_city
-                                );
-
-                                todayReport.add(todayReport_modelClass);
 
                             }
 
@@ -308,6 +345,7 @@ public class HomeFragment extends Fragment {
         }
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppUrl.availableBooking_zoewise, jsonObject, new Response.Listener<JSONObject>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(JSONObject response) {
 
@@ -347,18 +385,48 @@ public class HomeFragment extends Fragment {
                                 String return_date = jsonObject_allbooking.getString("return_date");
                                 String drop_city = jsonObject_allbooking.getString("drop_city");
                                 String to_city = jsonObject_allbooking.getString("to_city");
+                                String driver_type_name = jsonObject_allbooking.getString("driver_type_name");
+                                String driver_type = jsonObject_allbooking.getString("driver_type");
 
+
+                                Calendar calendar = Calendar.getInstance();
+                                Date today = calendar.getTime();
+
+                                calendar.add(Calendar.DAY_OF_YEAR, 1);
+                                Date tomorrow = calendar.getTime();
+
+                                //DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+                                String todayAsString = dateFormat.format(today);
+                                String tomorrowAsString = dateFormat.format(tomorrow);
+
+                                System.out.println(todayAsString);
+                                System.out.println(tomorrowAsString);
+
+                                if(date.equals(todayAsString)){
+
+                                    TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
+                                            booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                    );
+
+
+                                    todayReport.add(todayReport_modelClass);
+
+                                }else if(date.equals(tomorrowAsString)){
+
+                                    TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
+                                            booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                    );
+
+
+                                    todayReport.add(todayReport_modelClass);
+
+                                }
 
                                 String address = Locality + "," + Landmark;
-
-                                TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
-                                        booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                        shift,drop_locality,car_details,remark,return_date,drop_city,to_city
-                                );
-
-
-                                todayReport.add(todayReport_modelClass);
-
                             }
 
                             linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);

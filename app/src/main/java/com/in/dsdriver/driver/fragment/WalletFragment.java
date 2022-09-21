@@ -87,9 +87,9 @@ public class WalletFragment extends Fragment {
                 try {
                     String status = response.getString("status");
                     String driver_balance = response.getString("driver_balance");
-                    String allbooking = response.getString("allbooking");
+                    String allbooking = response.getString("transactions");
 
-                    text_price.setText(driver_balance);
+                    text_price.setText("Rs  "+ driver_balance);
 
                     JSONArray jsonArray_booking = new JSONArray(allbooking);
 
@@ -97,19 +97,20 @@ public class WalletFragment extends Fragment {
 
                         JSONObject jsonObject_booking = jsonArray_booking.getJSONObject(i);
 
-                        String id = jsonObject_booking.getString("id");
-                        String invoice_no = jsonObject_booking.getString("invoice_no");
-                        String driver_id = jsonObject_booking.getString("driver_id");
-                        String booking_idss = jsonObject_booking.getString("booking_idss");
+                        String invoice_id = jsonObject_booking.getString("invoice_id");
+                        String amount = jsonObject_booking.getString("amount");
+                        String tr_date = jsonObject_booking.getString("tr_date");
+
+                       /* String booking_idss = jsonObject_booking.getString("booking_idss");
                         String payable_amount = jsonObject_booking.getString("payable_amount");
                         String invoice_date = jsonObject_booking.getString("invoice_date");
                         String deosite_amount = jsonObject_booking.getString("deosite_amount");
                         String amount = jsonObject_booking.getString("amount");
                         String gst_amount = jsonObject_booking.getString("gst_amount");
                         String invoice_amount = jsonObject_booking.getString("invoice_amount");
-                        String balance_deposite = jsonObject_booking.getString("balance_deposite");
+                        String balance_deposite = jsonObject_booking.getString("balance_deposite");*/
 
-                        Transaction_Model transaction_model = new Transaction_Model(invoice_no,invoice_date,amount,"View");
+                        Transaction_Model transaction_model = new Transaction_Model(invoice_id,tr_date,amount,"View");
                         tarnsaction.add(transaction_model);
 
                     }

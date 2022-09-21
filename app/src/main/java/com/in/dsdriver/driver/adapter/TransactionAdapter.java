@@ -44,7 +44,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         String date = trans.getDate();
 
-        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd HH:MM:SS");
+        /*SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd HH:MM:SS");
         SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         try {
@@ -55,13 +55,13 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
 
-        holder.text_Action.setText(trans.getAction());
+        holder.text_Date.setText(trans.getDate());
+       // holder.text_Action.setText(trans.getAction());
         holder.text_InvoiceNo.setText(trans.getInvoice_No());
         //holder.text_Date.setText(date);
         holder.text_Amount.setText("Rs "+trans.getAmount());
-
 
     }
 
@@ -80,7 +80,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             text_InvoiceNo = itemView.findViewById(R.id.text_InvoiceNo);
             text_Date = itemView.findViewById(R.id.text_Date);
             text_Amount = itemView.findViewById(R.id.text_Amount);
-            text_Action = itemView.findViewById(R.id.text_Action);
+            //text_Action = itemView.findViewById(R.id.text_Action);
 
 
         }

@@ -6,41 +6,41 @@
     android:background="@color/white">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/five"
-            android:orientation="horizontal"
-            android:weightSum="4">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/five"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
-            <TextView
-                android:id="@+id/text_InvoiceNo"
-                android:layout_width="0dp"
-                android:layout_weight="1.2"
-                android:layout_height="match_parent"
-                android:text="Invoice No"
-                android:textColor="@color/some_color1"
-                android:textSize="@dimen/textsize"></TextView>
+        <TextView
+            android:id="@+id/text_InvoiceNo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:text="Invoice No"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/textsize"></TextView>
 
-            <TextView
-                android:id="@+id/text_Date"
-                android:layout_width="0dp"
-                android:layout_weight="1.2"
-                android:layout_height="match_parent"
-                android:text="Date"
-                android:textColor="@color/some_color1"
-                android:textSize="@dimen/textsize"></TextView>
+        <TextView
+            android:id="@+id/text_Date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:text="Date"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/textsize"></TextView>
 
-            <TextView
-                android:id="@+id/text_Amount"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:text="Amount"
-                android:textColor="@color/some_color1"
-                android:textSize="@dimen/textsize"></TextView>
+        <TextView
+            android:id="@+id/text_Amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Amount"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/textsize"></TextView>
 
-            <TextView
+        <!-- <TextView
                 android:id="@+id/text_Action"
                 android:layout_width="0dp"
                 android:layout_weight="0.7"
@@ -48,8 +48,8 @@
                 android:text="View"
                 android:textColor="@color/black"
                 android:textSize="@dimen/sixteen"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"></TextView>-->
 
-        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

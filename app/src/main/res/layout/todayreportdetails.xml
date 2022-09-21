@@ -432,6 +432,38 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/liner7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="@dimen/ten"
+                    >
+                    <TextView
+                        android:id="@+id/DeliveryType"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Delivery Type"
+                        android:textSize="@dimen/twelve"
+                        android:textColor="@color/appcolor">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/text_DeliveryType"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:text="Rs. 1800"
+                        android:textSize="@dimen/twelve"
+                        android:textColor="#555557">
+
+                    </TextView>
+
+                </LinearLayout>
+
                 <TextView
                     android:id="@+id/text_acceptBooking"
                     android:layout_width="@dimen/hundred_sixty"

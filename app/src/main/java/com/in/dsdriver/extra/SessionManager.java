@@ -22,6 +22,7 @@ public class SessionManager {
     private static final String CATEGORY_iD = "categoryid";
     private static final String IS_LOGIN="islogin";
     private static final String IS_OTP="isotp";
+    private static final String FCM_TOKEN="fcmtoken";
 
 
     public SessionManager(Context context){
@@ -34,6 +35,18 @@ public class SessionManager {
     public void setSubcatId(String id ){
 
         editor.putString(SUBCAT_ID,id);
+        editor.commit();
+
+    }
+
+    public String getFcmToken(){
+
+        return  sharedprefernce.getString(FCM_TOKEN,"DEFAULT");
+    }
+
+    public void setFcmToken(String id){
+
+        editor.putString(FCM_TOKEN,id);
         editor.commit();
 
     }

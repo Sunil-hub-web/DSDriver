@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/book_Card"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/hundred_eighty"
+        android:layout_height="@dimen/two_hundred"
         android:layout_marginLeft="@dimen/fifteen"
         android:layout_marginTop="@dimen/ten"
         android:layout_marginRight="@dimen/fifteen"
@@ -16,266 +16,291 @@
         app:cardCornerRadius="@dimen/five"
         app:cardElevation="@dimen/ten">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/lin"
-                android:layout_width="@dimen/ten"
-                android:layout_height="match_parent"
-                android:background="#DC1D0F"
-                android:orientation="horizontal"></LinearLayout>
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/ten"
-                android:layout_toRightOf="@id/lin"
-                android:layout_toLeftOf="@+id/price"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:id="@+id/lin"
+                    android:layout_width="@dimen/ten"
+                    android:layout_height="match_parent"
+                    android:background="#DC1D0F"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:weightSum="2">
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_toRightOf="@id/lin"
+                    android:layout_toLeftOf="@+id/price"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/text"
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_weight="1"
-                        android:text="Report Date"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize">
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:weightSum="2">
 
-                    </TextView>
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_weight="1"
+                            android:text="Report Date"
+                            android:textColor="@color/appcolor"
+                            android:textSize="@dimen/textsize">
 
-                    <TextView
-                        android:layout_width="0dp"
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginRight="@dimen/ten"
+                            android:layout_toRightOf="@id/text"
+                            android:layout_weight="1"
+                            android:text="Report Time"
+                            android:textColor="@color/appcolor"
+                            android:textSize="@dimen/textsize"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text"
-                        android:layout_weight="1"
-                        android:text="Report Time"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize"></TextView>
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/text_ReportDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="05/01/2022"
+                            android:textColor="#949495"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_ReportTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/ten"
+                            android:layout_toRightOf="@id/text_ReportDate"
+                            android:layout_weight="1"
+                            android:text="05:15 PM"
+                            android:textColor="#949495"
+                            android:textSize="@dimen/textsize"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_weight="1"
+                            android:text="City"
+                            android:textColor="@color/appcolor"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginRight="@dimen/ten"
+                            android:layout_toRightOf="@id/text"
+                            android:layout_weight="1"
+                            android:text="Location"
+                            android:textColor="@color/appcolor"
+                            android:textSize="@dimen/textsize"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/text_City"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mumbai"
+                            android:textColor="#949495"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Location"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/ten"
+                            android:layout_toRightOf="@id/text_City"
+                            android:layout_weight="1"
+                            android:text="Andhera East"
+                            android:textColor="#949495"
+                            android:textSize="@dimen/textsize"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/text3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_weight="1"
+                            android:text="Duty Type"
+                            android:textColor="@color/appcolor"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten"
+                            android:layout_marginRight="@dimen/ten"
+                            android:layout_toRightOf="@id/text"
+                            android:layout_weight="1"
+                            android:text="No.Of Days"
+                            android:textColor="@color/appcolor"
+                            android:textSize="@dimen/textsize"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/twenty"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/text_DutyType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Outstation"
+                            android:textColor="#949495"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_NoofDays"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/ten"
+                            android:layout_toRightOf="@id/text_City"
+                            android:layout_weight="1"
+                            android:text="10 hours"
+                            android:textColor="#949495"
+                            android:textSize="@dimen/textsize"></TextView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/text_ReportDate"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="05/01/2022"
-                        android:textColor="#949495"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_ReportTime"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text_ReportDate"
-                        android:layout_weight="1"
-                        android:text="05:15 PM"
-                        android:textColor="#949495"
-                        android:textSize="@dimen/textsize"></TextView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/text2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_weight="1"
-                        android:text="City"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text"
-                        android:layout_weight="1"
-                        android:text="Location"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize"></TextView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/text_City"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Mumbai"
-                        android:textColor="#949495"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_Location"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text_City"
-                        android:layout_weight="1"
-                        android:text="Andhera East"
-                        android:textColor="#949495"
-                        android:textSize="@dimen/textsize"></TextView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/text3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_weight="1"
-                        android:text="Duty Type"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/ten"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text"
-                        android:layout_weight="1"
-                        android:text="No.Of Days"
-                        android:textColor="@color/appcolor"
-                        android:textSize="@dimen/textsize"></TextView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/twenty"
-                    android:weightSum="2">
-
-                    <TextView
-                        android:id="@+id/text_DutyType"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Outstation"
-                        android:textColor="#949495"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_NoofDays"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/ten"
-                        android:layout_toRightOf="@id/text_City"
-                        android:layout_weight="1"
-                        android:text="10 hours"
-                        android:textColor="#949495"
-                        android:textSize="@dimen/textsize"></TextView>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:orientation="vertical"
-                android:layout_marginRight="@dimen/ten"
-                android:layout_marginLeft="@dimen/five">
-
-                <TextView
+                    android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="price collected"
-                    android:textSize="@dimen/textsize"
-                    android:textColor="#868688"
-                    android:layout_marginTop="@dimen/fifteen">
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/ten"
+                    android:layout_marginLeft="@dimen/five">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="price collected"
+                        android:textSize="@dimen/textsize"
+                        android:textColor="#868688"
+                        android:layout_marginTop="@dimen/fifteen">
+
+                    </TextView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_symbol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/five"
+                            android:text="Rs"
+                            android:textColor="#FA1100"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_Price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/five"
+                            android:layout_marginLeft="@dimen/ten"
+                            android:text="500"
+                            android:textColor="#FA1100"
+                            android:layout_toRightOf="@id/text_symbol"
+                            android:textSize="@dimen/textsize">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/text_GuestRequest"
+                    android:layout_width="@dimen/hundred_sixty"
+                    android:layout_height="@dimen/forty"
+                    android:layout_below="@+id/linout"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/ten"
+                    android:layout_marginTop="@dimen/five"
+                    android:layout_marginRight="@dimen/ten"
+                    android:layout_marginBottom="@dimen/five"
+                    android:background="@drawable/reportbutton_bg"
+                    android:gravity="center"
+                    android:text="Guest Request "
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/text_symbol"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/five"
-                        android:text="Rs"
-                        android:textColor="#FA1100"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/text_Price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/five"
-                        android:layout_marginLeft="@dimen/ten"
-                        android:text="500"
-                        android:textColor="#FA1100"
-                        android:layout_toRightOf="@id/text_symbol"
-                        android:textSize="@dimen/textsize">
-
-                    </TextView>
-
-                </RelativeLayout>
-
-
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 

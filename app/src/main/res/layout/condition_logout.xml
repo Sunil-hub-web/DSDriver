@@ -14,45 +14,47 @@
         android:background="@drawable/edittextback"
         android:elevation="@dimen/ten">
 
-    <TextView
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Are you Sure Want to Logout Your application"
-        android:textColor="#0C0C0C"
-        android:textSize="@dimen/textsize"
-        android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="Are you sure you want to accept the booking"
+            android:textColor="#0C0C0C"
+            android:textSize="@dimen/textsize" />
 
-    <Button
-        android:id="@+id/no"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/forty"
-        android:text="No"
-        android:textSize="@dimen/textsize"
-        android:layout_gravity="end"
-        android:layout_margin="@dimen/ten"
-        android:layout_below="@+id/editText"
-        android:textColor="@color/white"
-        android:layout_alignParentRight="true"
-        android:textStyle="bold"
-        android:background="@drawable/reject_bg"
-        app:backgroundTint="#DA291C"
-        />
+        <Button
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/forty"
+            android:layout_below="@+id/editText"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/ten"
+            android:background="@drawable/reject_bg"
+            android:text="No"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize"
+            android:textStyle="bold"
+            app:backgroundTint="#DA291C" />
 
         <Button
             android:id="@+id/yes"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/forty"
-            android:text="Yes"
-            android:textSize="@dimen/textsize"
-            android:layout_gravity="end"
-            android:layout_margin="@dimen/ten"
             android:layout_below="@+id/editText"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginTop="@dimen/ten"
+            android:layout_marginEnd="@dimen/ten"
+            android:layout_marginBottom="@dimen/ten"
+            android:background="@drawable/reportbutton_bg"
+            android:text="Yes"
             android:textColor="@color/white"
+            android:textSize="@dimen/textsize"
             android:textStyle="bold"
-            app:backgroundTint="#3BA61E"
-            android:background="@drawable/reportbutton_bg"/>
+            app:backgroundTint="#3BA61E" />
 
     </RelativeLayout>
 

@@ -89,7 +89,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_margin="@dimen/ten"
+                    android:layout_marginStart="@dimen/ten"
+                    android:layout_marginTop="@dimen/ten"
+                    android:layout_marginEnd="@dimen/ten"
+                    android:layout_marginBottom="@dimen/ten"
                     android:text="Available Balance"
                     android:textColor="#FFFFFF"
                     android:textSize="@dimen/textsize"
@@ -163,7 +166,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.2"
-                android:text="Invoice No"
+                android:text="Tr. No"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize"
                 android:textStyle="bold"></TextView>
@@ -188,7 +191,7 @@
                 android:textSize="@dimen/textsize"
                 android:textStyle="bold"></TextView>
 
-            <TextView
+          <!--  <TextView
                 android:id="@+id/text_Action"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -196,7 +199,7 @@
                 android:text="Action"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"></TextView>-->
 
         </LinearLayout>
 

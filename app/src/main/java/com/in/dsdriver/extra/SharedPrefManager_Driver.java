@@ -17,6 +17,8 @@ public class SharedPrefManager_Driver {
     private static final String KEY_password = "keypassword";
     private static final String KEY_Name = "keyname";
     private static final String KEY_STATUES = "statues";
+    private static final String KEY_shifttype = "shift_type";
+    private static final String KEY_driver_type = "driver_type";
     private static SharedPrefManager_Driver mInstance;
     private static Context mCtx;
 
@@ -45,6 +47,8 @@ public class SharedPrefManager_Driver {
         editor.putString(KEY_mobile_number,                login_modelClassDriver.getMobileno ());
         editor.putString(KEY_STATUES,                login_modelClassDriver.getStatues ());
         editor.putString(KEY_password,                login_modelClassDriver.getPassword ());
+        editor.putString(KEY_driver_type,                login_modelClassDriver.getDriver_type ());
+        editor.putString(KEY_shifttype,                login_modelClassDriver.getShift_type ());
 
 
 
@@ -68,7 +72,9 @@ public class SharedPrefManager_Driver {
                 sharedPrefManager.getString(KEY_email, null),
                 sharedPrefManager.getString(KEY_mobile_number, null),
                 sharedPrefManager.getString(KEY_STATUES, null),
-                sharedPrefManager.getString(KEY_password, null)
+                sharedPrefManager.getString(KEY_password, null),
+                sharedPrefManager.getString(KEY_driver_type, null),
+                sharedPrefManager.getString(KEY_shifttype, null)
 
         );
 

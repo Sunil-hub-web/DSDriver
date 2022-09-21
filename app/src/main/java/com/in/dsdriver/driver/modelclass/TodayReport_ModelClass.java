@@ -3,11 +3,12 @@ package com.in.dsdriver.driver.modelclass;
 public class TodayReport_ModelClass {
 
     String booking_id,Locality,Landmark,date,time,dutyHour,noofDays,duty_type,shift,drop_locality,
-            car_details,remark,return_date,drop_city,to_city;
+            car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type;
 
     public TodayReport_ModelClass(String booking_id, String locality, String landmark, String date, String time, String dutyHour,
                                   String noofDays, String duty_type, String shift, String drop_locality,
-                                  String car_details, String remark,String return_date,String drop_city,String to_city) {
+                                  String car_details, String remark,String return_date,String drop_city,
+                                  String to_city,String driver_type_name,String driver_type) {
         this.booking_id = booking_id;
         this.Locality = locality;
         this.Landmark = landmark;
@@ -23,6 +24,8 @@ public class TodayReport_ModelClass {
         this.return_date = return_date;
         this.drop_city = drop_city;
         this.to_city = to_city;
+        this.driver_type_name = driver_type_name;
+        this.driver_type = driver_type;
     }
 
     public String getBooking_id() {
@@ -143,5 +146,21 @@ public class TodayReport_ModelClass {
 
     public void setTo_city(String to_city) {
         this.to_city = to_city;
+    }
+
+    public String getDriver_type_name() {
+        return driver_type_name;
+    }
+
+    public void setDriver_type_name(String driver_type_name) {
+        this.driver_type_name = driver_type_name;
+    }
+
+    public String getDriver_type() {
+        return driver_type;
+    }
+
+    public void setDriver_type(String driver_type) {
+        this.driver_type = driver_type;
     }
 }

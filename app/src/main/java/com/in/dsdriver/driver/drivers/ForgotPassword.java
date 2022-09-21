@@ -34,7 +34,7 @@ public class ForgotPassword extends AppCompatActivity {
     OtpTextView otp_view;
     Button btn_submit;
     RelativeLayout rel_otp;
-    String driver_id;
+    String driver_id,str_otp = "";
     TextInputLayout edit_MobileNo1;
 
     @Override
@@ -85,9 +85,20 @@ public class ForgotPassword extends AppCompatActivity {
                     }else{
 
                         String otp = otp_view.getOTP();
-                        verifayOTP(driver_id,otp);
-                    }
 
+                        //otp_view.setOTP(str_otp);
+
+                        if(str_otp.equals(otp)){
+
+                            Intent intent = new Intent(ForgotPassword.this,ChangePasssword.class);
+                            intent.putExtra("driver_id",driver_id);
+                            startActivity(intent);
+
+                        }else{
+
+                            Toast.makeText(ForgotPassword.this, "Invalide Otp", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
             }
         });
@@ -126,7 +137,7 @@ public class ForgotPassword extends AppCompatActivity {
                         Toast.makeText(ForgotPassword.this, "OTP send Your Mobile No", Toast.LENGTH_SHORT).show();
 
                         driver_id = response.getString("driver_id");
-                        String otp = response.getString("otp");
+                        str_otp = response.getString("otp");
 
                         rel_otp.setVisibility(View.VISIBLE);
                         edit_MobileNo.setVisibility(View.GONE);
@@ -195,9 +206,6 @@ public class ForgotPassword extends AppCompatActivity {
 
                         String driver_id = response.getString("driver_id");
 
-                        Intent intent = new Intent(ForgotPassword.this,ChangePasssword.class);
-                        intent.putExtra("driver_id",driver_id);
-                        startActivity(intent);
 
                     }else if(status.equals("false")){
 

@@ -3,11 +3,11 @@ package com.in.dsdriver.driver.modelclass;
 public class UpcomingBooking_ModelClass {
 
     String bookingType,customerName,city,time,date,shift,day,DutyHours,DropLoc,CarDetails,Remarks,Charges,
-            OTHours,OTAmount,TotalAmount,address,return_date,to_city,Locality,Landmark;
+            OTHours,OTAmount,TotalAmount,address,return_date,to_city,Locality,Landmark,end_time;
 
     public UpcomingBooking_ModelClass(String bookingType, String customerName, String city, String time, String date, String shift,
                                       String day, String dutyHours, String dropLoc, String carDetails, String remarks, String charges,
-                                      String OTHours, String OTAmount, String totalAmount,String address,String return_date,String to_city,String Locality,String Landmark) {
+                                      String OTHours, String OTAmount, String totalAmount,String address,String return_date,String to_city,String Locality,String Landmark,String end_time) {
 
         this.bookingType = bookingType;
         this.customerName = customerName;
@@ -29,6 +29,7 @@ public class UpcomingBooking_ModelClass {
         this.to_city = to_city;
         this.Locality = Locality;
         this.Landmark = Landmark;
+        this.end_time = end_time;
     }
 
     public String getBookingType() {
@@ -189,5 +190,13 @@ public class UpcomingBooking_ModelClass {
 
     public void setLandmark(String landmark) {
         Landmark = landmark;
+    }
+
+    public String getEnd_time() {
+        return end_time;
+    }
+
+    public void setEnd_time(String end_time) {
+        this.end_time = end_time;
     }
 }

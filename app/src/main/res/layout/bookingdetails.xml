@@ -326,6 +326,39 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/liner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/location"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_marginTop="@dimen/ten"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/textendTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="End Time"
+                    android:textColor="@color/appcolor"
+                    android:textSize="@dimen/textsize">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textend_Time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.3"
+                    android:textColor="#555557"
+                    android:textSize="@dimen/textsize">
+
+                </TextView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/ten"
@@ -668,7 +701,8 @@
                     android:gravity="center"
                     android:text="End Booking"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/textsize"></TextView>
+                    android:textSize="@dimen/textsize"
+                    android:visibility="gone"></TextView>
 
 
             </LinearLayout>

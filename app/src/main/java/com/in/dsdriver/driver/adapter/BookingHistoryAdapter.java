@@ -63,6 +63,14 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
         holder.text_DutyType.setText(booking_History.getDutyType());
         holder.text_Price.setText(booking_History.getRate());
 
+        holder.text_GuestRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+
 
 
     }
@@ -74,7 +82,8 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView text_ReportDate,text_ReportTime,text_City,text_Location,text_DutyType,text_NoofDays,text_Price;
+        TextView text_ReportDate,text_ReportTime,text_City,text_Location,text_DutyType,text_NoofDays,
+                text_Price,text_GuestRequest;
         CardView book_Card;
 
         public ViewHolder(@NonNull  View itemView) {
@@ -88,8 +97,10 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
             text_NoofDays = itemView.findViewById(R.id.text_NoofDays);
             text_DutyType = itemView.findViewById(R.id.text_DutyType);
             text_Price = itemView.findViewById(R.id.text_Price);
+            text_GuestRequest = itemView.findViewById(R.id.text_GuestRequest);
 
 
         }
     }
+
 }

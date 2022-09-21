@@ -36,11 +36,12 @@ public class BookingDetails extends Fragment {
 
     TextView text_BookingType,text_CustomerName,text_Address,text_Time,text_Date,text_Shift,text_Day,text_DutyHours,
             text_DropLoc,text_CarDetails,text_Remarks,text_Charges,text_OTHours,text_OTAmount,text_TotalAmount,
-            text_StopRider,text_CallCustomer,text_endtime,text_enddate,textShift,textDay,textDutyHours,text_Locality,text_Landmark;
+            text_StopRider,text_CallCustomer,text_endtime,text_enddate,textShift,textDay,textDutyHours,text_Locality,text_Landmark,textend_Time;
 
     String str_BookingType,str_CustomerName,str_Address,str_Time,str_Date,str_Shift,str_Day,
             str_DutyHours, str_DropLoc,str_CarDetails,str_Remarks,str_Charges,str_OTHours,str_City,
-            str_OTAmount,str_TotalAmount, str_StopRider,str_CallCustomer,str_endtime,str_enddate,date,time,str_Locality,str_Landmark;
+            str_OTAmount,str_TotalAmount, str_StopRider,str_CallCustomer,str_endtime,str_enddate,date,time,
+            str_Locality,str_Landmark,endtime,return_date;
 
     Button btn_Close,btn_Submit;
 
@@ -83,6 +84,7 @@ public class BookingDetails extends Fragment {
         text_Landmark = view.findViewById(R.id.text_Landmark);
         lin2 = view.findViewById(R.id.lin2);
         lin3 = view.findViewById(R.id.lin3);
+        textend_Time = view.findViewById(R.id.textend_Time);
 
         str_BookingType =  getArguments().getString("bookingType");
         str_CustomerName =  getArguments().getString("customerName");
@@ -100,6 +102,8 @@ public class BookingDetails extends Fragment {
         str_Charges =  getArguments().getString("Charges");
         str_Locality =  getArguments().getString("Locality");
         str_Landmark =  getArguments().getString("Landmark");
+        endtime =  getArguments().getString("endtime");
+        return_date =  getArguments().getString("return_date");
 
         lin2.setVisibility(View.VISIBLE);
 
@@ -123,8 +127,10 @@ public class BookingDetails extends Fragment {
 
             text_Charges.setText(str_Charges);
             text_TotalAmount.setText(str_TotalAmount);
+            textend_Time.setText(endtime);
 
-        }else if(str_BookingType.equals("Outstation")){
+        }
+        else if(str_BookingType.equals("Outstation")){
 
             text_BookingType.setText(str_BookingType);
             text_CustomerName.setText(str_CustomerName);
@@ -147,10 +153,12 @@ public class BookingDetails extends Fragment {
             text_CarDetails.setText(str_CarDetails);
             text_Remarks.setText(str_Remarks);
             text_Charges.setText(str_Charges);
+            textend_Time.setText(endtime);
 
             lin2.setVisibility(View.GONE);
 
-        }else if(str_BookingType.equals("Drop")){
+        }
+        else if(str_BookingType.equals("Drop")){
 
             text_BookingType.setText(str_BookingType);
             text_CustomerName.setText(str_CustomerName);
@@ -176,6 +184,7 @@ public class BookingDetails extends Fragment {
             text_CarDetails.setText(str_CarDetails);
             text_Remarks.setText(str_Remarks);
             text_Charges.setText(str_Charges);
+            textend_Time.setText(endtime);
 
         }
 
@@ -188,6 +197,11 @@ public class BookingDetails extends Fragment {
 
         date = new SimpleDateFormat("dd/mm/yyyy", Locale.getDefault()).format(new Date());
         time = new SimpleDateFormat("hh:mm aa",Locale.getDefault()).format(new Date());
+
+        if(time.equals(endtime)){
+
+            text_StopRider.setVisibility(View.VISIBLE);
+        }
 
         text_CallCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -215,7 +229,10 @@ public class BookingDetails extends Fragment {
                 text_endtime = dialog.findViewById(R.id.text_endtime);
                 text_enddate = dialog.findViewById(R.id.text_enddate);
 
-                text_endtime.setOnClickListener(new View.OnClickListener() {
+                text_endtime.setText(endtime);
+                text_enddate.setText(return_date);
+
+               /* text_endtime.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
@@ -240,7 +257,7 @@ public class BookingDetails extends Fragment {
 
                                 text_endtime.setText(android.text.format.DateFormat.format("hh:mm aa",calendar1));
 
-                               /* if(calendar1.getTimeInMillis() == Calendar.getInstance().getTimeInMillis()){
+                               *//* if(calendar1.getTimeInMillis() == Calendar.getInstance().getTimeInMillis()){
 
                                     Toast.makeText(getActivity(), "Current Time selected", Toast.LENGTH_SHORT).show();
                                     
@@ -252,7 +269,7 @@ public class BookingDetails extends Fragment {
 
                                     Toast.makeText(getActivity(),"Past time selected",Toast.LENGTH_LONG).show();
                                 }
-*/
+*//*
 
                             }
                         },hour,minute,false);
@@ -286,7 +303,7 @@ public class BookingDetails extends Fragment {
 
                         datePickerDialog.show();
                     }
-                });
+                });*/
 
                 btn_Submit.setOnClickListener(new View.OnClickListener() {
                     @Override
