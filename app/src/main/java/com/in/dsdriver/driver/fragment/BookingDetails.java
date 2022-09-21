@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment;
 
 import com.in.dsdriver.R;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -198,10 +199,24 @@ public class BookingDetails extends Fragment {
         date = new SimpleDateFormat("dd/mm/yyyy", Locale.getDefault()).format(new Date());
         time = new SimpleDateFormat("hh:mm aa",Locale.getDefault()).format(new Date());
 
-        if(time.equals(endtime)){
+        String pattern = "hh:mm aa";
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 
-            text_StopRider.setVisibility(View.VISIBLE);
+        //text_StopRider.setVisibility(View.VISIBLE);
+
+        try {
+            Date date1 = sdf.parse(time);
+            Date date2 = sdf.parse(endtime);
+
+            if(date1.after(date2)){
+
+                text_StopRider.setVisibility(View.VISIBLE);
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
+
 
         text_CallCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -257,7 +272,7 @@ public class BookingDetails extends Fragment {
 
                                 text_endtime.setText(android.text.format.DateFormat.format("hh:mm aa",calendar1));
 
-                               *//* if(calendar1.getTimeInMillis() == Calendar.getInstance().getTimeInMillis()){
+                                if(calendar1.getTimeInMillis() == Calendar.getInstance().getTimeInMillis()){
 
                                     Toast.makeText(getActivity(), "Current Time selected", Toast.LENGTH_SHORT).show();
                                     
@@ -269,7 +284,7 @@ public class BookingDetails extends Fragment {
 
                                     Toast.makeText(getActivity(),"Past time selected",Toast.LENGTH_LONG).show();
                                 }
-*//*
+
 
                             }
                         },hour,minute,false);

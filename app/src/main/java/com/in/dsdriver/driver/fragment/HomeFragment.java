@@ -345,7 +345,6 @@ public class HomeFragment extends Fragment {
         }
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppUrl.availableBooking_zoewise, jsonObject, new Response.Listener<JSONObject>() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(JSONObject response) {
 

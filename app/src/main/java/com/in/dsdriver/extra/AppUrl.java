@@ -26,6 +26,8 @@ public class AppUrl {
 
     public static final String invoice_report = "https://driversuvidha.in/CRM/api/Driver/invoice_report";
 
+    public static final String guestBooking = "https://driversuvidha.in/CRM/api/Driver/guestBooking";
+
 
     // CAB Owner Api
 
