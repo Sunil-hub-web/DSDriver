@@ -1,5 +1,6 @@
 package com.in.dsdriver;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -7,6 +8,7 @@ import android.app.ProgressDialog;
 import android.app.UiModeManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,10 +26,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.in.dsdriver.driver.drivers.ForgotPassword;
 import com.in.dsdriver.driver.drivers.HomeDeshbord;
 import com.in.dsdriver.driver.modelclass.Login_ModelClass_Driver;
 import com.in.dsdriver.extra.AppUrl;
+import com.in.dsdriver.extra.SessionManager;
 import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.cabowner.DeshBoard;
 import com.in.dsdriver.cabowner.SharedPrefManager_Owner;
@@ -43,11 +49,15 @@ import java.util.Map;
 public class LoginPage extends AppCompatActivity {
 
     Button btn_signin;
-    EditText edit_MobileNo,edit_Password;
-    String str_UserName,str_Password,selectLogintOption;
+    EditText edit_MobileNo, edit_Password;
+    String str_UserName, str_Password, selectLogintOption;
     TextView forgotPassword;
     RadioGroup radioGroup;
-    RadioButton text_Driver,text_Owner,selectedRadioButton;
+    RadioButton text_Driver, text_Owner, selectedRadioButton;
+
+    SessionManager sessionManager;
+
+    String token;
 
     private UiModeManager uiModeManager;
 
@@ -60,6 +70,8 @@ public class LoginPage extends AppCompatActivity {
         getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        sessionManager = new SessionManager(LoginPage.this);
+
         uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
         uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
 
@@ -71,49 +83,72 @@ public class LoginPage extends AppCompatActivity {
         text_Owner = findViewById(R.id.text_Owner);
         radioGroup = findViewById(R.id.radioGroup);
 
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+
+                        if (!task.isSuccessful()) {
+                            Log.w("hgsavajshj", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        token = task.getResult();
+                        sessionManager.setFcmToken(token);
+
+
+                        // Log and toast
+                        //String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d("hujasgugjgh", token);
+                        //Toast.makeText(LoginPage.this, token, Toast.LENGTH_LONG).show();
+                    }
+                });
+
         btn_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
 
-                 if (selectedRadioButtonId == -1) {
+                if (selectedRadioButtonId == -1) {
 
                     Toast.makeText(LoginPage.this, "select Driver Or Owner For Login", Toast.LENGTH_SHORT).show();
 
-                }else if(edit_MobileNo.getText().toString().trim().equals("")){
+                } else if (edit_MobileNo.getText().toString().trim().equals("")) {
 
                     edit_MobileNo.setError("Fill The Details");
                     edit_MobileNo.requestFocus();
 
-                }else if(edit_MobileNo.getText().toString().trim().length()!=10){
+                } else if (edit_MobileNo.getText().toString().trim().length() != 10) {
 
                     edit_MobileNo.setError("Enter 10 Digite Mobile No");
                     edit_MobileNo.requestFocus();
 
-                }else if(edit_Password.getText().toString().trim().equals("")){
+                } else if (edit_Password.getText().toString().trim().equals("")) {
 
                     edit_Password.setError("Fill the details");
                     edit_Password.requestFocus();
 
-                }else{
+                } else {
 
                     selectedRadioButton = findViewById(selectedRadioButtonId);
                     selectLogintOption = selectedRadioButton.getText().toString();
 
-                    if(selectLogintOption.equals("Driver")){
+                    if (selectLogintOption.equals("Driver")) {
+
+                        str_UserName = edit_MobileNo.getText().toString().trim();
+                        str_Password = edit_Password.getText().toString().trim();
+                        String token = sessionManager.getFcmToken();
+
+                        userLogin(str_UserName, str_Password,token);
+
+                    } else {
 
                         str_UserName = edit_MobileNo.getText().toString().trim();
                         str_Password = edit_Password.getText().toString().trim();
 
-                        userLogin(str_UserName,str_Password);
-
-                    }else{
-
-                        str_UserName = edit_MobileNo.getText().toString().trim();
-                        str_Password = edit_Password.getText().toString().trim();
-
-                        Cab_Login(str_UserName,str_Password);
+                        Cab_Login(str_UserName, str_Password);
                     }
 
                 }
@@ -124,27 +159,37 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(selectLogintOption.equals("Driver")){
+                int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
 
-                    Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
-                    intent.putExtra("Driver","Driver");
-                    startActivity(intent);
+                if (selectedRadioButtonId == -1) {
 
-                }else{
+                    Toast.makeText(LoginPage.this, "select Driver Or Owner For ForgotPassword", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
-                    intent.putExtra("Driver","CABOwner");
-                    startActivity(intent);
+                } else {
+
+                    selectedRadioButton = findViewById(selectedRadioButtonId);
+                    selectLogintOption = selectedRadioButton.getText().toString();
+
+                    if (selectLogintOption.equals("Driver")) {
+
+                        Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
+                        intent.putExtra("Driver", "Driver");
+                        startActivity(intent);
+
+                    } else {
+
+                        Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
+                        intent.putExtra("Driver", "CABOwner");
+                        startActivity(intent);
+                    }
                 }
+        }
+    });
 
 
-            }
-        });
+}
 
-
-    }
-
-    public void userLogin(String mobileNo,String password){
+    public void userLogin(String mobileNo, String password,String token) {
 
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Login Please Wait....");
@@ -152,12 +197,13 @@ public class LoginPage extends AppCompatActivity {
 
         JSONObject jsonObject = new JSONObject();
 
-        try{
+        try {
 
-            jsonObject.put("mobile",mobileNo);
-            jsonObject.put("password",password);
+            jsonObject.put("mobile", mobileNo);
+            jsonObject.put("password", password);
+            jsonObject.put("token", token);
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
 
@@ -172,9 +218,11 @@ public class LoginPage extends AppCompatActivity {
                 try {
                     String status = response.getString("status");
 
-                    if(status.equals("true")){
+                    if (status.equals("true")) {
 
                         String message = response.getString("message");
+                        String shift_type = response.getString("shift_type");
+                        String driver_type = response.getString("driver_type");
 
                         Toast.makeText(LoginPage.this, message, Toast.LENGTH_SHORT).show();
 
@@ -191,7 +239,7 @@ public class LoginPage extends AppCompatActivity {
 
                         Login_ModelClass_Driver login_modelClassDriver = new Login_ModelClass_Driver(
 
-                                user_id,name,email,mobile,status1,password
+                                user_id, name, email, mobile, status1, password, driver_type, shift_type
                         );
 
                         SharedPrefManager_Driver.getInstance(LoginPage.this).userLogin(login_modelClassDriver);
@@ -200,7 +248,7 @@ public class LoginPage extends AppCompatActivity {
                         startActivity(intent);
 
 
-                    }else if(status.equals("false")){
+                    } else if (status.equals("false")) {
 
                         String message = response.getString("message");
 
@@ -219,17 +267,17 @@ public class LoginPage extends AppCompatActivity {
 
                 progressDialog.dismiss();
                 error.printStackTrace();
-                Toast.makeText(LoginPage.this, ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginPage.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         });
 
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(30000,1,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(30000, 1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.getCache().clear();
         requestQueue.add(jsonObjectRequest);
     }
 
-    public void Cab_Login(String mobileNo,String password){
+    public void Cab_Login(String mobileNo, String password) {
 
         ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Login Please Wait....");
@@ -247,7 +295,7 @@ public class LoginPage extends AppCompatActivity {
 
                     String status = jsonObject.getString("status");
 
-                    if(status.equals("true")){
+                    if (status.equals("true")) {
 
                         String message = jsonObject.getString("message");
 
@@ -266,7 +314,7 @@ public class LoginPage extends AppCompatActivity {
 
                         Login_ModelClass_Owner login_modelClass_owner = new Login_ModelClass_Owner(
 
-                                user_id,name,email,mobile,status1,password
+                                user_id, name, email, mobile, status1, password
                         );
 
                         SharedPrefManager_Owner.getInstance(LoginPage.this).userLogin(login_modelClass_owner);
@@ -274,7 +322,7 @@ public class LoginPage extends AppCompatActivity {
                         Intent intent = new Intent(LoginPage.this, DeshBoard.class);
                         startActivity(intent);
 
-                    }else if(status.equals("false")){
+                    } else if (status.equals("false")) {
 
                         String message = jsonObject.getString("message");
 
@@ -286,7 +334,6 @@ public class LoginPage extends AppCompatActivity {
                 }
 
 
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -294,23 +341,23 @@ public class LoginPage extends AppCompatActivity {
 
                 progressDialog.dismiss();
                 error.printStackTrace();
-                Toast.makeText(LoginPage.this, ""+error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginPage.this, "" + error, Toast.LENGTH_SHORT).show();
             }
-        }){
+        }) {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                Map<String,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
 
-                params.put("mobile",mobileNo);
-                params.put("password",password);
+                params.put("mobile", mobileNo);
+                params.put("password", password);
 
                 return params;
             }
         };
 
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000,2,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(30000, 2, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.getCache().clear();
         requestQueue.add(stringRequest);
@@ -333,24 +380,24 @@ public class LoginPage extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if (SharedPrefManager_Driver.getInstance(LoginPage.this).isLoggedIn()){
+        if (SharedPrefManager_Driver.getInstance(LoginPage.this).isLoggedIn()) {
 
-            Intent intent = new Intent(LoginPage.this,HomeDeshbord.class);
+            Intent intent = new Intent(LoginPage.this, HomeDeshbord.class);
             startActivity(intent);
 
-        }else if (SharedPrefManager_Owner.getInstance(LoginPage.this).isLoggedIn()){
+        } else if (SharedPrefManager_Owner.getInstance(LoginPage.this).isLoggedIn()) {
 
-            Intent intent = new Intent(LoginPage.this,DeshBoard.class);
+            Intent intent = new Intent(LoginPage.this, DeshBoard.class);
             startActivity(intent);
         }
     }
 
-    private void setThemeDark(){
+    private void setThemeDark() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         setContentView(R.layout.activity_splash_screen);
     }
 
-    private void setThemeLight(){
+    private void setThemeLight() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_splash_screen);
     }
