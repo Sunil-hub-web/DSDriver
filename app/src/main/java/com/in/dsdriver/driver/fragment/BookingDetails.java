@@ -37,12 +37,13 @@ public class BookingDetails extends Fragment {
 
     TextView text_BookingType,text_CustomerName,text_Address,text_Time,text_Date,text_Shift,text_Day,text_DutyHours,
             text_DropLoc,text_CarDetails,text_Remarks,text_Charges,text_OTHours,text_OTAmount,text_TotalAmount,
-            text_StopRider,text_CallCustomer,text_endtime,text_enddate,textShift,textDay,textDutyHours,text_Locality,text_Landmark,textend_Time;
+            text_StopRider,text_CallCustomer,text_endtime,text_enddate,textShift,textDay,textDutyHours,text_Locality,
+            text_Landmark,textend_Time,text_MobileNo;
 
     String str_BookingType,str_CustomerName,str_Address,str_Time,str_Date,str_Shift,str_Day,
             str_DutyHours, str_DropLoc,str_CarDetails,str_Remarks,str_Charges,str_OTHours,str_City,
             str_OTAmount,str_TotalAmount, str_StopRider,str_CallCustomer,str_endtime,str_enddate,date,time,
-            str_Locality,str_Landmark,endtime,return_date;
+            str_Locality,str_Landmark,endtime,return_date,customer_mobile;
 
     Button btn_Close,btn_Submit;
 
@@ -86,6 +87,7 @@ public class BookingDetails extends Fragment {
         lin2 = view.findViewById(R.id.lin2);
         lin3 = view.findViewById(R.id.lin3);
         textend_Time = view.findViewById(R.id.textend_Time);
+        text_MobileNo = view.findViewById(R.id.text_MobileNo);
 
         str_BookingType =  getArguments().getString("bookingType");
         str_CustomerName =  getArguments().getString("customerName");
@@ -105,6 +107,7 @@ public class BookingDetails extends Fragment {
         str_Landmark =  getArguments().getString("Landmark");
         endtime =  getArguments().getString("endtime");
         return_date =  getArguments().getString("return_date");
+        customer_mobile =  getArguments().getString("customer_mobile");
 
         lin2.setVisibility(View.VISIBLE);
 
@@ -129,6 +132,7 @@ public class BookingDetails extends Fragment {
             text_Charges.setText(str_Charges);
             text_TotalAmount.setText(str_TotalAmount);
             textend_Time.setText(endtime);
+            text_MobileNo.setText(customer_mobile);
 
         }
         else if(str_BookingType.equals("Outstation")){
@@ -155,6 +159,7 @@ public class BookingDetails extends Fragment {
             text_Remarks.setText(str_Remarks);
             text_Charges.setText(str_Charges);
             textend_Time.setText(endtime);
+            text_MobileNo.setText(customer_mobile);
 
             lin2.setVisibility(View.GONE);
 
@@ -180,6 +185,7 @@ public class BookingDetails extends Fragment {
             text_Day.setVisibility(View.GONE);
 
             text_DutyHours.setText(str_City);
+            text_MobileNo.setText(customer_mobile);
 
 
             text_CarDetails.setText(str_CarDetails);
@@ -349,7 +355,7 @@ public class BookingDetails extends Fragment {
 
     private void makePhoneCall() {
        // String number = items;
-        String number = "tel:"+"9937506028";
+        String number = "tel:"+customer_mobile;
         if (number.trim().length() > 0) {
             if (ContextCompat.checkSelfPermission(getActivity(),
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

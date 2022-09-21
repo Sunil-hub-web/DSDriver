@@ -225,6 +225,7 @@ public class UpcomingBookingFragment extends Fragment {
                             String charge = jsonObject_allbooking.getString("charge");
                             String customer_name = jsonObject_allbooking.getString("customer_name");
                             String address = jsonObject_allbooking.getString("address");
+                            String customer_mobile = jsonObject_allbooking.getString("customer_mobile");
                             String end_time = jsonObject_allbooking.getString("end_time");
 
                             String droploc = drop_city +","+ drop_locality;
@@ -233,7 +234,7 @@ public class UpcomingBookingFragment extends Fragment {
 
                                 UpcomingBooking_ModelClass upcomingBooking_modelClass = new UpcomingBooking_ModelClass(
                                        bookingType,customer_name,City,report_time,report_date,shift,no_of_day,duty_hour,droploc,
-                                        car_details,remark,charge,"0","0",charge,address,return_date,to_city,Locality,Landmark,end_time
+                                        car_details,remark,charge,"0","0",charge,address,return_date,to_city,Locality,Landmark,end_time,customer_mobile
                                 );
 
                                 upcomingBooking.add(upcomingBooking_modelClass);
