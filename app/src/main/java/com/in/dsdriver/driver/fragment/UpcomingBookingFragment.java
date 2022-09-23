@@ -234,7 +234,8 @@ public class UpcomingBookingFragment extends Fragment {
 
                                 UpcomingBooking_ModelClass upcomingBooking_modelClass = new UpcomingBooking_ModelClass(
                                        bookingType,customer_name,City,report_time,report_date,shift,no_of_day,duty_hour,droploc,
-                                        car_details,remark,charge,"0","0",charge,address,return_date,to_city,Locality,Landmark,end_time,customer_mobile
+                                        car_details,remark,charge,"0","0",charge,address,return_date,to_city,Locality,
+                                        Landmark,end_time,customer_mobile,booking_id
                                 );
 
                                 upcomingBooking.add(upcomingBooking_modelClass);

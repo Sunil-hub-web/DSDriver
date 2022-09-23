@@ -48,7 +48,7 @@ import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
-    EditText text_driverName,text_driverContactNo,text_driverEmailId,text_driverDob,text_driverAddress,text_DrivingLicence;
+    EditText text_driverName,text_driverContactNo,text_driverEmailId,text_driverDob;
 
     TextView text_logout,text_edit;
 
@@ -67,12 +67,12 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile,container,false);
 
         text_logout = view.findViewById(R.id.text_logout);
-        text_DrivingLicence = view.findViewById(R.id.text_DrivingLicence);
+       // text_DrivingLicence = view.findViewById(R.id.text_DrivingLicence);
         text_driverName = view.findViewById(R.id.text_driverName);
         text_driverContactNo = view.findViewById(R.id.text_driverContactNo);
         text_driverEmailId = view.findViewById(R.id.text_driverEmailId);
         text_driverDob = view.findViewById(R.id.text_driverDob);
-        text_driverAddress = view.findViewById(R.id.text_driverAddress);
+        //text_driverAddress = view.findViewById(R.id.text_driverAddress);
         text_edit = view.findViewById(R.id.text_edit);
 
         str_DariverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
@@ -152,8 +152,8 @@ public class ProfileFragment extends Fragment {
                 text_driverName.setEnabled(true);
                 text_driverEmailId.setEnabled(true);
                 text_driverDob.setEnabled(true);
-                text_driverAddress.setEnabled(true);
-                text_DrivingLicence.setEnabled(true);
+                //text_driverAddress.setEnabled(true);
+               // text_DrivingLicence.setEnabled(true);
                 //text_driverContactNo.setEnabled(false);
 
                 text_edit.setText("Save");
@@ -172,7 +172,7 @@ public class ProfileFragment extends Fragment {
 
                     text_driverDob.setError("Fill The Details");
 
-                }else if(TextUtils.isEmpty(text_driverAddress.getText())){
+                }/*else if(TextUtils.isEmpty(text_driverAddress.getText())){
 
                     text_driverAddress.setError("Fill The Details");
 
@@ -180,15 +180,15 @@ public class ProfileFragment extends Fragment {
 
                     text_DrivingLicence.setError("Fill The Details");
 
-                }else{
+                }*/else{
 
                     str_driverName = text_driverName.getText().toString().trim();
                     str_driverEmailId = text_driverEmailId.getText().toString().trim();
                     str_driverDob = text_driverDob.getText().toString().trim();
-                    str_driverAddress = text_driverAddress.getText().toString().trim();
-                    str_DrivingLicence = text_DrivingLicence.getText().toString().trim();
+                   // str_driverAddress = text_driverAddress.getText().toString().trim();
+                    //str_DrivingLicence = text_DrivingLicence.getText().toString().trim();
 
-                    updateDetails(str_DariverId,str_driverName,str_driverEmailId,str_driverDob,str_DrivingLicence,str_driverAddress);
+                    updateDetails(str_DariverId,str_driverName,str_driverEmailId,str_driverDob);
 
 
                 }
@@ -256,15 +256,15 @@ public class ProfileFragment extends Fragment {
                         text_driverName.setText(name);
                         text_driverEmailId.setText(email);
 
-                        text_driverAddress.setText(adresss);
-                        text_DrivingLicence.setText(dl_no);
+                        //text_driverAddress.setText(adresss);
+                        //text_DrivingLicence.setText(dl_no);
                         text_driverContactNo.setText(mobile);
 
                         text_driverName.setEnabled(false);
                         text_driverEmailId.setEnabled(false);
                         text_driverDob.setEnabled(false);
-                        text_driverAddress.setEnabled(false);
-                        text_DrivingLicence.setEnabled(false);
+                        //text_driverAddress.setEnabled(false);
+                        //text_DrivingLicence.setEnabled(false);
                         text_driverContactNo.setEnabled(false);
 
 
@@ -296,8 +296,7 @@ public class ProfileFragment extends Fragment {
 
     }
 
-    public void updateDetails(String driver_id,String driverName,String driverEmail,String driverDOB,
-                              String driverDlNo,String driverAddress){
+    public void updateDetails(String driver_id,String driverName,String driverEmail,String driverDOB){
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Please Wait....");
@@ -312,8 +311,8 @@ public class ProfileFragment extends Fragment {
             params.put("name",driverName);
             params.put("email",driverEmail);
             params.put("dob",driverDOB);
-            params.put("licence_no",driverDlNo);
-            params.put("address",driverAddress);
+            params.put("licence_no","");
+            params.put("address","");
 
         }catch (Exception e){
 
@@ -360,15 +359,15 @@ public class ProfileFragment extends Fragment {
                         text_driverName.setText(name);
                         text_driverEmailId.setText(email);
                         //text_driverDob.setText(dob);
-                        text_driverAddress.setText(adresss);
-                        text_DrivingLicence.setText(dl_no);
+                        //text_driverAddress.setText(adresss);
+                        //text_DrivingLicence.setText(dl_no);
                         text_driverContactNo.setText(mobile);
 
                         text_driverName.setEnabled(false);
                         text_driverEmailId.setEnabled(false);
                         text_driverDob.setEnabled(false);
-                        text_driverAddress.setEnabled(false);
-                        text_DrivingLicence.setEnabled(false);
+                       // text_driverAddress.setEnabled(false);
+                       // text_DrivingLicence.setEnabled(false);
                         text_driverContactNo.setEnabled(false);
 
                         text_edit.setText("Edit");

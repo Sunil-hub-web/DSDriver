@@ -28,6 +28,8 @@ public class AppUrl {
 
     public static final String guestBooking = "https://driversuvidha.in/CRM/api/Driver/guestBooking";
 
+    public static final String endBooking = "https://driversuvidha.in/CRM/api/Driver/endBooking";
+
 
     // CAB Owner Api
 

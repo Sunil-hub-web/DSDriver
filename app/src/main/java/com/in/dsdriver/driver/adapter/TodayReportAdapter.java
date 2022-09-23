@@ -123,253 +123,76 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
         String shift_type = SharedPrefManager_Driver.getInstance(context).getUser().getShift_type();
         String driver_type = SharedPrefManager_Driver.getInstance(context).getUser().getDriver_type();
 
-        if(shift_type.equals("Full Time")){
+        if(today_Report.getDuty_type().equals("Local")){
 
-            if(driver_type.equals("Chauffer")){
+            holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
+            holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
+            holder.text_BookingType.setText(today_Report.getDuty_type());
+            holder.text_Date.setText(today_Report.getDate());
+            holder.text_ReportTime.setText(today_Report.getTime());
 
-                if(today_Report.getDuty_type().equals("Local")){
+            holder.text_NoofDays.setText(today_Report.getNoofDays() +" "+"Day");
+            holder.textNoofDays.setText("Day");
 
-                    holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                    holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                    holder.text_BookingType.setText(today_Report.getDuty_type());
-                    holder.text_Date.setText(today_Report.getDate());
-                    holder.text_ReportTime.setText(today_Report.getTime());
+            holder.text_DutyHours.setText(today_Report.getDutyHour() +" "+"Hours");
+            holder.text_Shift.setText(today_Report.getShift());
+            holder.text_DropLoc.setText(today_Report.getDrop_locality());
 
-                    holder.text_NoofDays.setText(today_Report.getNoofDays() +" "+"Day");
-                    holder.textNoofDays.setText("Day");
+            holder.text_CarDetails.setText(today_Report.getCar_details());
+            holder.text_Remarks.setText(today_Report.getRemark());
+            holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
+            holder.text_Date.setText(today_Report.getDate());
 
-                    holder.text_DutyHours.setText(today_Report.getDutyHour() +" "+"Hours");
-                    holder.text_Shift.setText(today_Report.getShift());
-                    holder.text_DropLoc.setText(today_Report.getDrop_locality());
-
-                    holder.text_CarDetails.setText(today_Report.getCar_details());
-                    holder.text_Remarks.setText(today_Report.getRemark());
-                    holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-                    holder.text_Date.setText(today_Report.getDate());
-
-                    holder.liner7.setVisibility(View.GONE);
-                    holder.liner3.setVisibility(View.GONE);
-
-                }
-                else if(today_Report.getDuty_type().equals("Outstation")){
-
-                    holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                    holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                    holder.text_BookingType.setText(today_Report.getDuty_type());
-                    holder.text_ReportTime.setText(today_Report.getTime());
-
-                    holder.text_Date.setText(today_Report.getDate());
-                    holder.text_NoofDays.setText(today_Report.getNoofDays());
-                    holder.textNoofDays.setText("No of Days");
-
-                    holder.text_ReturnDate.setText(today_Report.getReturn_date());
-                    holder.text_ToCity.setText(today_Report.getTo_city());
-
-                    holder.text_CarDetails.setText(today_Report.getCar_details());
-                    holder.text_Remarks.setText(today_Report.getRemark());
-                    holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-                    holder.text_Date.setText(today_Report.getDate());
-
-                    holder.liner2.setVisibility(View.GONE);
-                    holder.liner4.setVisibility(View.GONE);
-                    holder.liner7.setVisibility(View.GONE);
-
-                }
-                else if(today_Report.getDuty_type().equals("Drop")){
-
-                    holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                    holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                    holder.text_BookingType.setText(today_Report.getDuty_type());
-                    holder.text_Date.setText(today_Report.getDate());
-                    holder.text_ReportTime.setText(today_Report.getTime());
-
-                    holder.text_NoofDays.setText(today_Report.getDrop_city());
-                    holder.textNoofDays.setText("Drop City");
-                    holder.text_Charges.setText("");
-
-                    holder.text_CarDetails.setText(today_Report.getCar_details());
-                    holder.text_Remarks.setText(today_Report.getRemark());
-
-                    holder.textCharges.setVisibility(View.VISIBLE);
-                    holder.text_Charges.setVisibility(View.VISIBLE);
-                    holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                    holder.liner4.setVisibility(View.GONE);
-                    holder.liner2.setVisibility(View.GONE);
-                    holder.liner3.setVisibility(View.GONE);
-
-           /* holder.text_DutyHours.setVisibility(View.GONE);
-            holder.text_Shift.setVisibility(View.GONE);
-            holder.text_DropLoc.setVisibility(View.GONE);
-            holder.textDutyHours.setVisibility(View.GONE);
-            holder.textShift.setVisibility(View.GONE);
-            holder.textDropLoc.setVisibility(View.GONE);
-            holder.text_ReturnDate.setVisibility(View.GONE);
-            holder.textReturnDate.setVisibility(View.GONE);*/
-
-                }
-
-            }else{
-
-                if(today_Report.getDriver_type_name().equals("Regular")){
-
-                    if(today_Report.getDuty_type().equals("Local")){
-
-                        holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                        holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                        holder.text_BookingType.setText(today_Report.getDuty_type());
-                        holder.text_Date.setText(today_Report.getDate());
-                        holder.text_ReportTime.setText(today_Report.getTime());
-
-                        holder.text_NoofDays.setText(today_Report.getNoofDays() +" "+"Day");
-                        holder.textNoofDays.setText("Day");
-
-                        holder.text_DutyHours.setText(today_Report.getDutyHour() +" "+"Hours");
-                        holder.text_Shift.setText(today_Report.getShift());
-                        holder.text_DropLoc.setText(today_Report.getDrop_locality());
-
-                        holder.text_CarDetails.setText(today_Report.getCar_details());
-                        holder.text_Remarks.setText(today_Report.getRemark());
-                        holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                        holder.liner7.setVisibility(View.GONE);
-                        holder.liner3.setVisibility(View.GONE);
-
-                    }
-                    else if(today_Report.getDuty_type().equals("Outstation")){
-
-                        holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                        holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                        holder.text_BookingType.setText(today_Report.getDuty_type());
-                        holder.text_ReportTime.setText(today_Report.getTime());
-
-                        holder.text_Date.setText(today_Report.getDate());
-                        holder.text_NoofDays.setText(today_Report.getNoofDays());
-                        holder.textNoofDays.setText("No of Days");
-
-                        holder.text_ReturnDate.setText(today_Report.getReturn_date());
-                        holder.text_ToCity.setText(today_Report.getTo_city());
-
-                        holder.text_CarDetails.setText(today_Report.getCar_details());
-                        holder.text_Remarks.setText(today_Report.getRemark());
-                        holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                        holder.liner2.setVisibility(View.GONE);
-                        holder.liner4.setVisibility(View.GONE);
-                        holder.liner7.setVisibility(View.GONE);
-
-                    }
-                    else if(today_Report.getDuty_type().equals("Drop")){
-
-                        holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                        holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                        holder.text_BookingType.setText(today_Report.getDuty_type());
-                        holder.text_Date.setText(today_Report.getDate());
-                        holder.text_ReportTime.setText(today_Report.getTime());
-
-                        holder.text_NoofDays.setText(today_Report.getDrop_city());
-                        holder.textNoofDays.setText("Drop City");
-                        holder.text_Charges.setText("");
-
-                        holder.text_CarDetails.setText(today_Report.getCar_details());
-                        holder.text_Remarks.setText(today_Report.getRemark());
-
-                        holder.textCharges.setVisibility(View.VISIBLE);
-                        holder.text_Charges.setVisibility(View.VISIBLE);
-                        holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                        holder.liner4.setVisibility(View.GONE);
-                        holder.liner2.setVisibility(View.GONE);
-                        holder.liner3.setVisibility(View.GONE);
-
-           /* holder.text_DutyHours.setVisibility(View.GONE);
-            holder.text_Shift.setVisibility(View.GONE);
-            holder.text_DropLoc.setVisibility(View.GONE);
-            holder.textDutyHours.setVisibility(View.GONE);
-            holder.textShift.setVisibility(View.GONE);
-            holder.textDropLoc.setVisibility(View.GONE);
-            holder.text_ReturnDate.setVisibility(View.GONE);
-            holder.textReturnDate.setVisibility(View.GONE);*/
-
-                    }
-                }
-            }
+            holder.liner7.setVisibility(View.GONE);
+            holder.liner3.setVisibility(View.GONE);
 
         }
-        else{
+        else if(today_Report.getDuty_type().equals("Outstation")){
 
-            if(driver_type.equals("Chauffer")){
+            holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
+            holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
+            holder.text_BookingType.setText(today_Report.getDuty_type());
+            holder.text_ReportTime.setText(today_Report.getTime());
 
-                if(today_Report.getShift().equals("Night")){
+            holder.text_Date.setText(today_Report.getDate());
+            holder.text_NoofDays.setText(today_Report.getNoofDays());
+            holder.textNoofDays.setText("No of Days");
 
-                    if(today_Report.getDuty_type().equals("Local")){
+            holder.text_ReturnDate.setText(today_Report.getReturn_date());
+            holder.text_ToCity.setText(today_Report.getTo_city());
 
-                        holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                        holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                        holder.text_BookingType.setText(today_Report.getDuty_type());
-                        holder.text_Date.setText(today_Report.getDate());
-                        holder.text_ReportTime.setText(today_Report.getTime());
+            holder.text_CarDetails.setText(today_Report.getCar_details());
+            holder.text_Remarks.setText(today_Report.getRemark());
+            holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
+            holder.text_Date.setText(today_Report.getDate());
 
-                        holder.text_NoofDays.setText(today_Report.getNoofDays() +" "+"Day");
-                        holder.textNoofDays.setText("Day");
+            holder.liner2.setVisibility(View.GONE);
+            holder.liner4.setVisibility(View.GONE);
+            holder.liner7.setVisibility(View.GONE);
 
-                        holder.text_DutyHours.setText(today_Report.getDutyHour() +" "+"Hours");
-                        holder.text_Shift.setText(today_Report.getShift());
-                        holder.text_DropLoc.setText(today_Report.getDrop_locality());
+        }
+        else if(today_Report.getDuty_type().equals("Drop")){
 
-                        holder.text_CarDetails.setText(today_Report.getCar_details());
-                        holder.text_Remarks.setText(today_Report.getRemark());
-                        holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
+            holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
+            holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
+            holder.text_BookingType.setText(today_Report.getDuty_type());
+            holder.text_Date.setText(today_Report.getDate());
+            holder.text_ReportTime.setText(today_Report.getTime());
 
-                        holder.liner7.setVisibility(View.GONE);
-                        holder.liner3.setVisibility(View.GONE);
+            holder.text_NoofDays.setText(today_Report.getDrop_city());
+            holder.textNoofDays.setText("Drop City");
+            holder.text_Charges.setText("");
 
-                    }
-                    else if(today_Report.getDuty_type().equals("Outstation")){
+            holder.text_CarDetails.setText(today_Report.getCar_details());
+            holder.text_Remarks.setText(today_Report.getRemark());
 
-                        holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                        holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                        holder.text_BookingType.setText(today_Report.getDuty_type());
-                        holder.text_ReportTime.setText(today_Report.getTime());
+            holder.textCharges.setVisibility(View.VISIBLE);
+            holder.text_Charges.setVisibility(View.VISIBLE);
+            holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
 
-                        holder.text_Date.setText(today_Report.getDate());
-                        holder.text_NoofDays.setText(today_Report.getNoofDays());
-                        holder.textNoofDays.setText("No of Days");
-
-                        holder.text_ReturnDate.setText(today_Report.getReturn_date());
-                        holder.text_ToCity.setText(today_Report.getTo_city());
-
-                        holder.text_CarDetails.setText(today_Report.getCar_details());
-                        holder.text_Remarks.setText(today_Report.getRemark());
-                        holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                        holder.liner2.setVisibility(View.GONE);
-                        holder.liner4.setVisibility(View.GONE);
-                        holder.liner7.setVisibility(View.GONE);
-
-                    }
-                    else if(today_Report.getDuty_type().equals("Drop")){
-
-                        holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                        holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                        holder.text_BookingType.setText(today_Report.getDuty_type());
-                        holder.text_Date.setText(today_Report.getDate());
-                        holder.text_ReportTime.setText(today_Report.getTime());
-
-                        holder.text_NoofDays.setText(today_Report.getDrop_city());
-                        holder.textNoofDays.setText("Drop City");
-                        holder.text_Charges.setText("");
-
-                        holder.text_CarDetails.setText(today_Report.getCar_details());
-                        holder.text_Remarks.setText(today_Report.getRemark());
-
-                        holder.textCharges.setVisibility(View.VISIBLE);
-                        holder.text_Charges.setVisibility(View.VISIBLE);
-                        holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                        holder.liner4.setVisibility(View.GONE);
-                        holder.liner2.setVisibility(View.GONE);
-                        holder.liner3.setVisibility(View.GONE);
+            holder.liner4.setVisibility(View.GONE);
+            holder.liner2.setVisibility(View.GONE);
+            holder.liner3.setVisibility(View.GONE);
 
            /* holder.text_DutyHours.setVisibility(View.GONE);
             holder.text_Shift.setVisibility(View.GONE);
@@ -379,106 +202,6 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.textDropLoc.setVisibility(View.GONE);
             holder.text_ReturnDate.setVisibility(View.GONE);
             holder.textReturnDate.setVisibility(View.GONE);*/
-
-                    }
-
-                }else{
-
-                    Toast.makeText(context, "Night Booking Is Not Avilable", Toast.LENGTH_SHORT).show();
-                }
-
-            }else{
-
-                if(today_Report.getDriver_type_name().equals("Regular")){
-
-                    if(today_Report.getShift().equals("Night")){
-
-                        if(today_Report.getDuty_type().equals("Local")){
-
-                            holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                            holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                            holder.text_BookingType.setText(today_Report.getDuty_type());
-                            holder.text_Date.setText(today_Report.getDate());
-                            holder.text_ReportTime.setText(today_Report.getTime());
-
-                            holder.text_NoofDays.setText(today_Report.getNoofDays() +" "+"Day");
-                            holder.textNoofDays.setText("Day");
-
-                            holder.text_DutyHours.setText(today_Report.getDutyHour() +" "+"Hours");
-                            holder.text_Shift.setText(today_Report.getShift());
-                            holder.text_DropLoc.setText(today_Report.getDrop_locality());
-
-                            holder.text_CarDetails.setText(today_Report.getCar_details());
-                            holder.text_Remarks.setText(today_Report.getRemark());
-                            holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                            holder.liner7.setVisibility(View.GONE);
-                            holder.liner3.setVisibility(View.GONE);
-
-                        }
-                        else if(today_Report.getDuty_type().equals("Outstation")){
-
-                            holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                            holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                            holder.text_BookingType.setText(today_Report.getDuty_type());
-                            holder.text_ReportTime.setText(today_Report.getTime());
-
-                            holder.text_Date.setText(today_Report.getDate());
-                            holder.text_NoofDays.setText(today_Report.getNoofDays());
-                            holder.textNoofDays.setText("No of Days");
-
-                            holder.text_ReturnDate.setText(today_Report.getReturn_date());
-                            holder.text_ToCity.setText(today_Report.getTo_city());
-
-                            holder.text_CarDetails.setText(today_Report.getCar_details());
-                            holder.text_Remarks.setText(today_Report.getRemark());
-                            holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                            holder.liner2.setVisibility(View.GONE);
-                            holder.liner4.setVisibility(View.GONE);
-                            holder.liner7.setVisibility(View.GONE);
-
-                        }
-                        else if(today_Report.getDuty_type().equals("Drop")){
-
-                            holder.text_Locality.setText("Locality :" +" "+ today_Report.getLocality());
-                            holder.text_Landmark.setText("Landmark :" +" "+ today_Report.getLandmark());
-                            holder.text_BookingType.setText(today_Report.getDuty_type());
-                            holder.text_Date.setText(today_Report.getDate());
-                            holder.text_ReportTime.setText(today_Report.getTime());
-
-                            holder.text_NoofDays.setText(today_Report.getDrop_city());
-                            holder.textNoofDays.setText("Drop City");
-                            holder.text_Charges.setText("");
-
-                            holder.text_CarDetails.setText(today_Report.getCar_details());
-                            holder.text_Remarks.setText(today_Report.getRemark());
-
-                            holder.textCharges.setVisibility(View.VISIBLE);
-                            holder.text_Charges.setVisibility(View.VISIBLE);
-                            holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
-
-                            holder.liner4.setVisibility(View.GONE);
-                            holder.liner2.setVisibility(View.GONE);
-                            holder.liner3.setVisibility(View.GONE);
-
-           /* holder.text_DutyHours.setVisibility(View.GONE);
-            holder.text_Shift.setVisibility(View.GONE);
-            holder.text_DropLoc.setVisibility(View.GONE);
-            holder.textDutyHours.setVisibility(View.GONE);
-            holder.textShift.setVisibility(View.GONE);
-            holder.textDropLoc.setVisibility(View.GONE);
-            holder.text_ReturnDate.setVisibility(View.GONE);
-            holder.textReturnDate.setVisibility(View.GONE);*/
-
-                        }
-
-                    }else{
-
-                        Toast.makeText(context, "Night Booking Is Not Avilable", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
 
         }
 

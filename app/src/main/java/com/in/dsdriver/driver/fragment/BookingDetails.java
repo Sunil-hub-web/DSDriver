@@ -3,6 +3,7 @@ package com.in.dsdriver.driver.fragment;
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -25,7 +26,19 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.R;
+import com.in.dsdriver.extra.AppUrl;
+import com.in.dsdriver.extra.SharedPrefManager_Driver;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -43,7 +56,7 @@ public class BookingDetails extends Fragment {
     String str_BookingType,str_CustomerName,str_Address,str_Time,str_Date,str_Shift,str_Day,
             str_DutyHours, str_DropLoc,str_CarDetails,str_Remarks,str_Charges,str_OTHours,str_City,
             str_OTAmount,str_TotalAmount, str_StopRider,str_CallCustomer,str_endtime,str_enddate,date,time,
-            str_Locality,str_Landmark,endtime,return_date,customer_mobile;
+            str_Locality,str_Landmark,endtime,return_date,customer_mobile,booking_id,driverID;
 
     Button btn_Close,btn_Submit;
 
@@ -108,6 +121,8 @@ public class BookingDetails extends Fragment {
         endtime =  getArguments().getString("endtime");
         return_date =  getArguments().getString("return_date");
         customer_mobile =  getArguments().getString("customer_mobile");
+        booking_id =  getArguments().getString("bookingid");
+        driverID = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         lin2.setVisibility(View.VISIBLE);
 
@@ -329,7 +344,7 @@ public class BookingDetails extends Fragment {
                 btn_Submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        endBooking(driverID,booking_id);
                         dialog.dismiss();
                     }
                 });
@@ -340,7 +355,6 @@ public class BookingDetails extends Fragment {
                         dialog.dismiss();
                     }
                 });
-
 
                 Window window = dialog.getWindow();
                 dialog.setCanceledOnTouchOutside(false);
@@ -382,5 +396,65 @@ public class BookingDetails extends Fragment {
                 Toast.makeText(getActivity(), "Permission DENIED", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+
+    public void endBooking(String driverId,String bookingId){
+
+        ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("Please Wait....");
+        progressDialog.setTitle("Show Booking Details");
+        progressDialog.show();
+
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+
+            jsonObject.put("driver_id",driverId);
+            jsonObject.put("booking_id",bookingId);
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, AppUrl.endBooking, jsonObject, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                progressDialog.dismiss();
+
+                try {
+                    String status = response.getString("status");
+                    String message = response.getString("message");
+
+                    if(status.equals("true")){
+
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                progressDialog.dismiss();
+                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(30000,1,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.getCache().clear();
+        requestQueue.add(jsonObjectRequest);
     }
 }

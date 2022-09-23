@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.2"
-            android:text="Invoice No"
+            android:text="Tr. No."
             android:textColor="@color/some_color1"
             android:textSize="@dimen/textsize"></TextView>
 

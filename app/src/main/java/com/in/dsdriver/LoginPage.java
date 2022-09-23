@@ -102,6 +102,7 @@ public class LoginPage extends AppCompatActivity {
                         //String msg = getString(R.string.msg_token_fmt, token);
                         Log.d("hujasgugjgh", token);
                         //Toast.makeText(LoginPage.this, token, Toast.LENGTH_LONG).show();
+
                     }
                 });
 

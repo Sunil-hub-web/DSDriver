@@ -76,6 +76,7 @@ public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBooking
 
                 Bundle args = new Bundle();
 
+                args.putString("bookingid", upcoming_Booking.getBooking_id());
                 args.putString("bookingType", upcoming_Booking.getBookingType());
                 args.putString("customerName", upcoming_Booking.getCustomerName());
                 args.putString("time", upcoming_Booking.getTime());
