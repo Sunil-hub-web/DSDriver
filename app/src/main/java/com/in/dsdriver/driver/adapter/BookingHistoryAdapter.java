@@ -8,8 +8,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -38,6 +40,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAdapter.ViewHolder> {
 
@@ -66,25 +69,35 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
         String reportdate = booking_History.getReportDate();
 
-        SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd");
+       /* SimpleDateFormat fromUser = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat myFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         try {
 
             Date dateFromUser = fromUser.parse(reportdate); // Parse it to the exisitng date pattern and return Date type
             String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
-            holder.text_ReportDate.setText(dateMyFormat);
+
 
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
 
         holder.text_City.setText(booking_History.getCity());
         holder.text_ReportTime.setText(booking_History.getReportTime());
         holder.text_Location.setText(booking_History.getLocation());
-        holder.text_NoofDays.setText(booking_History.getNoofDays() + " " + "Days");
         holder.text_DutyType.setText(booking_History.getDutyType());
         holder.text_Price.setText(booking_History.getRate());
+        holder.text_ReportDate.setText(booking_History.getReportDate());
+
+        Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+        hour = calendar.get(Calendar.HOUR_OF_DAY);
+        minute = calendar.get(Calendar.MINUTE);
+
+        date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        time = new SimpleDateFormat("hh:mm aa",Locale.getDefault()).format(new Date());
 
         holder.text_GuestRequest.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +126,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
                                 String sDate = date;
 
-                                String[] string = sDate.split("/");
+                                String[] string = sDate.split("-");
 
                                 int sDay = Integer.parseInt(string[0]);
 
@@ -155,7 +168,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
                                 month = month + 1;
-                                String date = day + "/" + month + "/" + year;
+                                String date = day + "-" + month + "-" + year;
                                 //String date = year+"-"+month+"-"+day;
                                 text_enddate.setText(date);
                             }
@@ -194,6 +207,12 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
                     }
                 });
 
+                Window window = dialog.getWindow();
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.setCancelable(false);
+                window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                dialog.show();
+
             }
         });
 
@@ -222,7 +241,6 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
             text_DutyType = itemView.findViewById(R.id.text_DutyType);
             text_Price = itemView.findViewById(R.id.text_Price);
             text_GuestRequest = itemView.findViewById(R.id.text_GuestRequest);
-
 
         }
     }

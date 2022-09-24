@@ -8,7 +8,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/book_Card"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/two_hundred"
+        android:layout_height="220dp"
         android:layout_marginLeft="@dimen/fifteen"
         android:layout_marginTop="@dimen/ten"
         android:layout_marginRight="@dimen/fifteen"
@@ -38,7 +38,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/ten"
                     android:layout_toRightOf="@id/lin"
-                    android:layout_toLeftOf="@+id/price"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -188,7 +187,7 @@
                             android:layout_marginRight="@dimen/ten"
                             android:layout_toRightOf="@id/text"
                             android:layout_weight="1"
-                            android:text="No.Of Days"
+                            android:text="price collected"
                             android:textColor="@color/appcolor"
                             android:textSize="@dimen/textsize"></TextView>
 
@@ -212,7 +211,7 @@
                         </TextView>
 
                         <TextView
-                            android:id="@+id/text_NoofDays"
+                            android:id="@+id/text_Price"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="@dimen/ten"
@@ -226,7 +225,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
+               <!-- <LinearLayout
                     android:id="@+id/price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -276,7 +275,7 @@
 
                     </RelativeLayout>
 
-                </LinearLayout>
+                </LinearLayout>-->
 
                 <TextView
                     android:id="@+id/text_GuestRequest"
@@ -285,7 +284,7 @@
                     android:layout_below="@+id/linout"
                     android:layout_alignParentRight="true"
                     android:layout_marginLeft="@dimen/ten"
-                    android:layout_marginTop="@dimen/five"
+                    android:layout_marginTop="@dimen/fifteen"
                     android:layout_marginRight="@dimen/ten"
                     android:layout_marginBottom="@dimen/five"
                     android:background="@drawable/reportbutton_bg"

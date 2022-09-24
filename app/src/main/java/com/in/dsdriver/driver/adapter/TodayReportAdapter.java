@@ -108,6 +108,15 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_acceptBooking.setBackgroundResource(R.drawable.back_red);
         }
 
+        if(today_Report.getBooking().equals("AvilableBoking")){
+
+            holder.cardlin_out.setBackgroundResource(R.drawable.background_back1);
+
+        }else{
+
+            holder.cardlin_out.setBackgroundResource(R.drawable.background_back);
+        }
+
         System.out.println(todayAsString);
         System.out.println(tomorrowAsString);
 
@@ -205,7 +214,6 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
         }
 
-
         holder.text_acceptBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -262,7 +270,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
                 textToCity,text_ToCity,textDropLoc,text_DropLoc,textCarDetails,text_CarDetails,textRemarks,text_Remarks,text_acceptBooking,
                 textCharges,text_Charges,text_DeliveryType;
 
-        LinearLayout liner,liner1,liner2,liner3,liner4,liner5,liner6,liner7;
+        LinearLayout liner,liner1,liner2,liner3,liner4,liner5,liner6,liner7,cardlin_out;
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
@@ -295,6 +303,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             textCharges = itemView.findViewById(R.id.textCharges);
             text_Charges = itemView.findViewById(R.id.text_Charges);
             text_DeliveryType = itemView.findViewById(R.id.text_DeliveryType);
+            cardlin_out = itemView.findViewById(R.id.cardlin_out);
 
             liner = itemView.findViewById(R.id.liner);
             liner1 = itemView.findViewById(R.id.liner1);

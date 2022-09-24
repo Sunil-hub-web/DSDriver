@@ -30,6 +30,8 @@ public class AppUrl {
 
     public static final String endBooking = "https://driversuvidha.in/CRM/api/Driver/endBooking";
 
+    public static final String profileImageUpload = "https://driversuvidha.in/CRM/api/Driver/profileImageUpload";
+
 
     // CAB Owner Api
 

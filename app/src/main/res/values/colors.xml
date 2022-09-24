@@ -17,6 +17,7 @@
     <color name="colorGrey">#9AB5B5</color>
     <color name="green">#046F1E</color>
     <color name="red">#800101</color>
+    <color name="maroon">#800000</color>
 
 
     <attr name="bgColor" format="color"/>

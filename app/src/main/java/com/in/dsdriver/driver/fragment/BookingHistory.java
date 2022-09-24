@@ -96,31 +96,31 @@ public class BookingHistory extends Fragment {
 
                             JSONObject jsonObject_allbooking = jsonArray_assignBooking.getJSONObject(i);
 
-                            String id = jsonObject_allbooking.getString("id");
-                            String customer_id = jsonObject_allbooking.getString("customer_id");
-                            String address_id = jsonObject_allbooking.getString("address_id");
-                            String driver_id = jsonObject_allbooking.getString("driver_id");
-                            String invoice_for = jsonObject_allbooking.getString("invoice_for");
-                            String reporting_time = jsonObject_allbooking.getString("reporting_time");
-                            String form_date = jsonObject_allbooking.getString("form_date");
-                            String reporting_date = jsonObject_allbooking.getString("reporting_date");
-                            String reporting_end_date = jsonObject_allbooking.getString("reporting_end_date");
-                            String driver_type = jsonObject_allbooking.getString("driver_type");
-                            String car_detail = jsonObject_allbooking.getString("car_detail");
-                            String duty_type = jsonObject_allbooking.getString("duty_type");
-                            String duty_hours = jsonObject_allbooking.getString("duty_hours");
-                            String to_city = jsonObject_allbooking.getString("to_city");
-                            String end_city = jsonObject_allbooking.getString("end_city");
-                            String datecount = jsonObject_allbooking.getString("datecount");
-                            String rate = jsonObject_allbooking.getString("rate");
-                            String commision = jsonObject_allbooking.getString("commision");
-                            String reference = jsonObject_allbooking.getString("reference");
-                            String status1 = jsonObject_allbooking.getString("status");
+                            String booking_id = jsonObject_allbooking.getString("booking_id");
 
-                            String address = to_city +","+ end_city;
+                            String Locality = jsonObject_allbooking.getString("Locality");
+                            String City = jsonObject_allbooking.getString("City");
+                            String Landmark = jsonObject_allbooking.getString("Landmark");
+                            String bookingType = jsonObject_allbooking.getString("bookingType");
+                            String date = jsonObject_allbooking.getString("date");
+                            String report_time = jsonObject_allbooking.getString("report_time");
+                            String shift = jsonObject_allbooking.getString("shift");
+                            String no_of_day = jsonObject_allbooking.getString("no_of_day");
+                            String duty_hour = jsonObject_allbooking.getString("duty_hour");
+                            String drop_locality = jsonObject_allbooking.getString("drop_locality");
+                            String car_details = jsonObject_allbooking.getString("car_details");
+                            String return_date = jsonObject_allbooking.getString("return_date");
+                            String drop_city = jsonObject_allbooking.getString("drop_city");
+                            String to_city = jsonObject_allbooking.getString("to_city");
+                            String charge = jsonObject_allbooking.getString("charge");
+                            String customer_name = jsonObject_allbooking.getString("customer_name");
+                            String address = jsonObject_allbooking.getString("address");
+                            String end_time = jsonObject_allbooking.getString("end_time");
+                            String dutyType = jsonObject_allbooking.getString("dutyType");
+
 
                             BookingHistory_ModelClass bookingHistory_modelClass = new BookingHistory_ModelClass(
-                                    id,reporting_date,reporting_time,to_city,end_city,datecount,duty_type,rate
+                                   booking_id,return_date,report_time,City,Locality,"",dutyType,charge
                             );
 
 

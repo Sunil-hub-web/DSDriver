@@ -271,7 +271,7 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"AvilableBoking"
                                     );
 
                                     todayReport.add(todayReport_modelClass);
@@ -280,7 +280,7 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"AvilableBoking"
                                     );
 
                                     todayReport.add(todayReport_modelClass);
@@ -407,7 +407,7 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"myZoneBooking"
                                     );
 
 
@@ -417,7 +417,7 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"myZoneBooking"
                                     );
 
 
