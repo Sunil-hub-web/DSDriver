@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "516468622489",
+    "project_id": "ds-driver-3d0e7",
+    "storage_bucket": "ds-driver-3d0e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516468622489:android:5201a6b3b101fdcf72e408",
+        "android_client_info": {
+          "package_name": "com.in.dsdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516468622489-oufphjj6f4pral13oohrut85pdo5pmmo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.in.dsdriver",
+            "certificate_hash": "e8207b9edee7ffaaebf0e6769ab9c1d4552b96b0"
+          }
+        },
+        {
+          "client_id": "516468622489-0g3opqpmr2aohb1rmtfjg9hes4ed5086.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8FiLyDzjKlZFoJkpppsrP_evQ9mQ0KY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516468622489-0g3opqpmr2aohb1rmtfjg9hes4ed5086.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -38,6 +38,14 @@
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/wallet_fargment.xml" value="0.22083333333333333" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/walletpriceshow.xml" value="0.2037037037037037" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/workdetails_fargment.xml" value="0.22083333333333333" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/drawable/back_red.xml" value="0.1305" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/acceptingdialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/bookingdetails.xml" value="0.19907407407407407" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/bookinghistory.xml" value="0.19907407407407407" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/condition_logout.xml" value="0.20416666666666666" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/stopriderdialog.xml" value="0.19907407407407407" />
+        <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/todayreportdetails.xml" value="0.42828685258964144" />
       </map>
     </option>
   </component>

@@ -257,7 +257,9 @@ public class BookingDetails extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Dialog dialog = new Dialog(getActivity());
+                endBooking(driverID,booking_id);
+
+               /* Dialog dialog = new Dialog(getActivity());
                 dialog.setContentView(R.layout.stopriderdialog);
 
                 btn_Close = dialog.findViewById(R.id.btn_Close);
@@ -268,7 +270,7 @@ public class BookingDetails extends Fragment {
                 text_endtime.setText(endtime);
                 text_enddate.setText(return_date);
 
-               /* text_endtime.setOnClickListener(new View.OnClickListener() {
+               *//* text_endtime.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
@@ -339,12 +341,12 @@ public class BookingDetails extends Fragment {
 
                         datePickerDialog.show();
                     }
-                });*/
+                });*//*
 
                 btn_Submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        endBooking(driverID,booking_id);
+
                         dialog.dismiss();
                     }
                 });
@@ -360,7 +362,7 @@ public class BookingDetails extends Fragment {
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.setCancelable(false);
                 window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                dialog.show();
+                dialog.show();*/
             }
         });
 
@@ -369,15 +371,17 @@ public class BookingDetails extends Fragment {
 
     private void makePhoneCall() {
        // String number = items;
-        String number = "tel:"+customer_mobile;
-        if (number.trim().length() > 0) {
+      //  String number = "tel:"+customer_mobile;
+
+        if (customer_mobile.trim().length() > 0) {
             if (ContextCompat.checkSelfPermission(getActivity(),
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
             } else {
-                String dial = "tel:" + number;
-                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+customer_mobile));
+                startActivity(callIntent);
             }
         } else {
             Toast.makeText(getActivity(), "Enter Phone Number", Toast.LENGTH_SHORT).show();
@@ -403,7 +407,7 @@ public class BookingDetails extends Fragment {
 
         ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Please Wait....");
-        progressDialog.setTitle("Show Booking Details");
+        progressDialog.setTitle("Booking End Please Wait....");
         progressDialog.show();
 
         JSONObject jsonObject = new JSONObject();
@@ -431,6 +435,8 @@ public class BookingDetails extends Fragment {
                     if(status.equals("true")){
 
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+
+                        text_StopRider.setVisibility(View.INVISIBLE);
 
                     }else{
 

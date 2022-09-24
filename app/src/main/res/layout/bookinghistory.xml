@@ -187,7 +187,7 @@
                             android:layout_marginRight="@dimen/ten"
                             android:layout_toRightOf="@id/text"
                             android:layout_weight="1"
-                            android:text="price collected"
+                            android:text="Price"
                             android:textColor="@color/appcolor"
                             android:textSize="@dimen/textsize"></TextView>
 

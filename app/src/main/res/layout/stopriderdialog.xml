@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Close Booking"
+            android:text="Guest Request"
             android:textColor="@color/black"
             android:textSize="@dimen/twenty"
             android:textStyle="bold">
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/fifteen"
-            android:text="End Time:"
+            android:text="Reporting Time:"
             android:textColor="@color/some_color1"
             android:textSize="@dimen/textsize">
 
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/fifteen"
-            android:text="End Date:"
+            android:text="Reporting Date:"
             android:textColor="@color/some_color1"
             android:textSize="@dimen/textsize">
 
