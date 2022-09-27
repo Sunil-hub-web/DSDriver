@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guest Request"
+            android:text="Close Booking"
             android:textColor="@color/black"
             android:textSize="@dimen/twenty"
             android:textStyle="bold">
@@ -28,32 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/fifteen"
-            android:text="Reporting Date:"
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/textsize">
-
-        </TextView>
-
-        <TextView
-            android:id="@+id/text_enddate"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/forty"
-            android:background="@drawable/stopriderback_bg"
-            android:drawableRight="@drawable/calendar_rider"
-            android:paddingLeft="@dimen/twenty"
-            android:paddingTop="@dimen/five"
-            android:paddingRight="@dimen/twelve"
-            android:text="Reporting Date"
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/edittextsize">
-
-        </TextView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fifteen"
-            android:text="Reporting Time:"
+            android:text="End Time:"
             android:textColor="@color/some_color1"
             android:textSize="@dimen/textsize">
 
@@ -68,7 +43,32 @@
             android:paddingLeft="@dimen/twenty"
             android:paddingTop="@dimen/five"
             android:paddingRight="@dimen/twelve"
-            android:text="Reporting Time"
+            android:text="End Time"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/edittextsize">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen"
+            android:text="End Date:"
+            android:textColor="@color/some_color1"
+            android:textSize="@dimen/textsize">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_enddate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/forty"
+            android:background="@drawable/stopriderback_bg"
+            android:drawableRight="@drawable/calendar_rider"
+            android:paddingLeft="@dimen/twenty"
+            android:paddingTop="@dimen/five"
+            android:paddingRight="@dimen/twelve"
+            android:text="End Date"
             android:textColor="@color/some_color1"
             android:textSize="@dimen/edittextsize">
 
