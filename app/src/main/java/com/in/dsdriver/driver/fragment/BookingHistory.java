@@ -129,6 +129,8 @@ public class BookingHistory extends Fragment {
                         }
 
                         linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+                        linearLayoutManager.setReverseLayout(true);
+                        linearLayoutManager.setStackFromEnd(true);
                         upcomingBookingAdapter = new BookingHistoryAdapter(getContext(),bookingHistory);
                         recyclerBookingHistory.setLayoutManager(linearLayoutManager);
                         recyclerBookingHistory.setHasFixedSize(true);

@@ -56,13 +56,13 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
     @NonNull
     @Override
-    public TodayReportAdapter.ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.todayreportdetails,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull  TodayReportAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull  ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         TodayReport_ModelClass today_Report = reporttoday.get(position);
 
@@ -111,10 +111,22 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
         if(today_Report.getBooking().equals("AvilableBoking")){
 
             holder.cardlin_out.setBackgroundResource(R.drawable.background_back1);
+            holder.text_acceptBooking.setTextColor(ContextCompat.getColor(context,R.color.maroon));
 
-        }else{
+        }else if(today_Report.getBooking().equals("AvilableBoking1")){
 
             holder.cardlin_out.setBackgroundResource(R.drawable.background_back);
+            holder.text_acceptBooking.setTextColor(ContextCompat.getColor(context,R.color.green));
+
+        }else if(today_Report.getBooking().equals("myZoneBooking")){
+
+            holder.cardlin_out.setBackgroundResource(R.drawable.background_back);
+            holder.text_acceptBooking.setTextColor(ContextCompat.getColor(context,R.color.green));
+
+        }else if(today_Report.getBooking().equals("myZoneBooking1")){
+
+            holder.cardlin_out.setBackgroundResource(R.drawable.background_back1);
+            holder.text_acceptBooking.setTextColor(ContextCompat.getColor(context,R.color.maroon));
         }
 
         System.out.println(todayAsString);

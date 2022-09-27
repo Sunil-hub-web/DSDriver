@@ -50,8 +50,8 @@ public class BookingDetails extends Fragment {
 
     TextView text_BookingType,text_CustomerName,text_Address,text_Time,text_Date,text_Shift,text_Day,text_DutyHours,
             text_DropLoc,text_CarDetails,text_Remarks,text_Charges,text_OTHours,text_OTAmount,text_TotalAmount,
-            text_StopRider,text_CallCustomer,text_endtime,text_enddate,textShift,textDay,textDutyHours,text_Locality,
-            text_Landmark,textend_Time,text_MobileNo;
+            text_StopRider,text_CallCustomer,text_enddate,textShift,textDay,textDutyHours,text_Locality,
+            text_Landmark;
 
     String str_BookingType,str_CustomerName,str_Address,str_Time,str_Date,str_Shift,str_Day,
             str_DutyHours, str_DropLoc,str_CarDetails,str_Remarks,str_Charges,str_OTHours,str_City,
@@ -99,8 +99,8 @@ public class BookingDetails extends Fragment {
         text_Landmark = view.findViewById(R.id.text_Landmark);
         lin2 = view.findViewById(R.id.lin2);
         lin3 = view.findViewById(R.id.lin3);
-        textend_Time = view.findViewById(R.id.textend_Time);
-        text_MobileNo = view.findViewById(R.id.text_MobileNo);
+        //textend_Time = view.findViewById(R.id.textend_Time);
+        //text_MobileNo = view.findViewById(R.id.text_MobileNo);
 
         str_BookingType =  getArguments().getString("bookingType");
         str_CustomerName =  getArguments().getString("customerName");
@@ -146,8 +146,8 @@ public class BookingDetails extends Fragment {
 
             text_Charges.setText(str_Charges);
             text_TotalAmount.setText(str_TotalAmount);
-            textend_Time.setText(endtime);
-            text_MobileNo.setText(customer_mobile);
+            //textend_Time.setText(endtime);
+            //text_MobileNo.setText(customer_mobile);
 
         }
         else if(str_BookingType.equals("Outstation")){
@@ -173,8 +173,8 @@ public class BookingDetails extends Fragment {
             text_CarDetails.setText(str_CarDetails);
             text_Remarks.setText(str_Remarks);
             text_Charges.setText(str_Charges);
-            textend_Time.setText(endtime);
-            text_MobileNo.setText(customer_mobile);
+            //textend_Time.setText(endtime);
+            //text_MobileNo.setText(customer_mobile);
 
             lin2.setVisibility(View.GONE);
 
@@ -200,13 +200,13 @@ public class BookingDetails extends Fragment {
             text_Day.setVisibility(View.GONE);
 
             text_DutyHours.setText(str_City);
-            text_MobileNo.setText(customer_mobile);
+            //text_MobileNo.setText(customer_mobile);
 
 
             text_CarDetails.setText(str_CarDetails);
             text_Remarks.setText(str_Remarks);
             text_Charges.setText(str_Charges);
-            textend_Time.setText(endtime);
+            //textend_Time.setText(endtime);
 
         }
 
@@ -257,7 +257,9 @@ public class BookingDetails extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Dialog dialog = new Dialog(getActivity());
+                endBooking(driverID,booking_id);
+
+               /* Dialog dialog = new Dialog(getActivity());
                 dialog.setContentView(R.layout.stopriderdialog);
 
                 btn_Close = dialog.findViewById(R.id.btn_Close);
@@ -268,7 +270,7 @@ public class BookingDetails extends Fragment {
                 text_endtime.setText(endtime);
                 text_enddate.setText(return_date);
 
-               /* text_endtime.setOnClickListener(new View.OnClickListener() {
+               *//* text_endtime.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
@@ -339,12 +341,12 @@ public class BookingDetails extends Fragment {
 
                         datePickerDialog.show();
                     }
-                });*/
+                });*//*
 
                 btn_Submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        endBooking(driverID,booking_id);
+
                         dialog.dismiss();
                     }
                 });
@@ -360,7 +362,7 @@ public class BookingDetails extends Fragment {
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.setCancelable(false);
                 window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                dialog.show();
+                dialog.show();*/
             }
         });
 
@@ -369,15 +371,17 @@ public class BookingDetails extends Fragment {
 
     private void makePhoneCall() {
        // String number = items;
-        String number = "tel:"+customer_mobile;
-        if (number.trim().length() > 0) {
+      //  String number = "tel:"+customer_mobile;
+
+        if (customer_mobile.trim().length() > 0) {
             if (ContextCompat.checkSelfPermission(getActivity(),
                     Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(getActivity(),
                         new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
             } else {
-                String dial = "tel:" + number;
-                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+customer_mobile));
+                startActivity(callIntent);
             }
         } else {
             Toast.makeText(getActivity(), "Enter Phone Number", Toast.LENGTH_SHORT).show();
@@ -403,7 +407,7 @@ public class BookingDetails extends Fragment {
 
         ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Please Wait....");
-        progressDialog.setTitle("Show Booking Details");
+        progressDialog.setTitle("Booking End Please Wait....");
         progressDialog.show();
 
         JSONObject jsonObject = new JSONObject();
@@ -431,6 +435,8 @@ public class BookingDetails extends Fragment {
                     if(status.equals("true")){
 
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+
+                        text_StopRider.setVisibility(View.INVISIBLE);
 
                     }else{
 

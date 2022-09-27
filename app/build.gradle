@@ -12,8 +12,8 @@ android {
         applicationId "com.in.dsdriver"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 8
-        versionName "1.8"
+        versionCode 9
+        versionName "1.9"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,4 +55,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 }

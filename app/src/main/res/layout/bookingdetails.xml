@@ -157,7 +157,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/five"
                     android:layout_marginRight="@dimen/five"
-                    android:layout_toLeftOf="@id/image1"
                     android:layout_toRightOf="@id/image"
                     android:text="Indradhanu Market Road, Block N5, IRC Village, Nayapalli, Bhubaneswar, Odisha, 751015"
                     android:textColor="@color/black"
@@ -192,13 +191,13 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize" />-->
 
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/image1"
                     android:layout_width="@dimen/thirty_five"
                     android:layout_height="@dimen/thirty_five"
                     android:layout_alignParentRight="true"
                     android:background="#C2C0D5"
-                    android:src="@drawable/navigation"></ImageView>
+                    android:src="@drawable/navigation"></ImageView>-->
 
             </RelativeLayout>
 
@@ -325,7 +324,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+           <!-- <LinearLayout
                 android:id="@+id/liner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -356,7 +355,7 @@
                 </TextView>
 
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -630,7 +629,7 @@
 
             </LinearLayout>-->
 
-            <LinearLayout
+         <!--   <LinearLayout
                 android:id="@+id/lin4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -661,7 +660,7 @@
 
                 </TextView>
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/lin4"
@@ -713,12 +712,13 @@
                     android:layout_marginBottom="@dimen/fifteen"
                     android:layout_weight="1.1"
                     android:background="@drawable/reportbutton_bg"
-                    android:drawableLeft="@drawable/customer_care"
+                    android:drawableLeft="@drawable/telephone_call"
                     android:gravity="center"
-                    android:paddingLeft="@dimen/ten"
+                    android:paddingLeft="@dimen/twenty"
                     android:text="Call Customer"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/textsize"></TextView>
+                    android:textSize="@dimen/textsize"
+                    android:backgroundTint="@color/green"></TextView>
 
                 <TextView
                     android:id="@+id/text_StopRider"
@@ -736,7 +736,6 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/textsize"
                     android:visibility="gone"></TextView>
-
 
             </LinearLayout>
 

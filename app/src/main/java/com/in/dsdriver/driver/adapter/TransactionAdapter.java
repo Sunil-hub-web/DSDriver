@@ -31,14 +31,14 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
     @NonNull
     @Override
-    public TransactionAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.walletpriceshow,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TransactionAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Transaction_Model trans = transction.get(position);
 
@@ -81,7 +81,6 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             text_Date = itemView.findViewById(R.id.text_Date);
             text_Amount = itemView.findViewById(R.id.text_Amount);
             //text_Action = itemView.findViewById(R.id.text_Action);
-
 
         }
 

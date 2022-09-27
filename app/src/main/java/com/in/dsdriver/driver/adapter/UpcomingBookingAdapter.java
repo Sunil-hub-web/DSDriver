@@ -35,14 +35,14 @@ public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBooking
 
     @NonNull
     @Override
-    public UpcomingBookingAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.upcomingbooking,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UpcomingBookingAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         UpcomingBooking_ModelClass upcoming_Booking = upcoming.get(position);
 

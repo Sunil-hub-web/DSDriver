@@ -57,13 +57,13 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
 
     @NonNull
     @Override
-    public BookingHistoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bookinghistory, parent, false);
-        return new BookingHistoryAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BookingHistoryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         BookingHistory_ModelClass booking_History = booking.get(position);
 
@@ -178,7 +178,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
                         datePickerDialog.updateDate(year, month, day);
 
                         //disiable past date
-                        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                        //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
                         datePickerDialog.show();
                     }

@@ -45,6 +45,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.in.dsdriver.LoginPage;
 import com.in.dsdriver.R;
 import com.in.dsdriver.extra.AppUrl;
@@ -69,7 +70,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
 
-    EditText text_driverName, text_driverContactNo, text_driverEmailId, text_driverDob;
+    EditText text_driverName, text_driverContactNo, text_driverEmailId;
 
     TextView text_logout, text_edit;
 
@@ -100,7 +101,7 @@ public class ProfileFragment extends Fragment {
         text_driverName = view.findViewById(R.id.text_driverName);
         text_driverContactNo = view.findViewById(R.id.text_driverContactNo);
         text_driverEmailId = view.findViewById(R.id.text_driverEmailId);
-        text_driverDob = view.findViewById(R.id.text_driverDob);
+        //text_driverDob = view.findViewById(R.id.text_driverDob);
         nav_profile_image = view.findViewById(R.id.nav_profile_image);
         //text_driverAddress = view.findViewById(R.id.text_driverAddress);
         text_edit = view.findViewById(R.id.text_edit);
@@ -119,18 +120,18 @@ public class ProfileFragment extends Fragment {
                 month = month + 1;
                 String date = day + "/" + month + "/" + year;
                 //String date = year+"-"+month+"-"+day;
-                text_driverDob.setText(date);
+                //text_driverDob.setText(date);
 
             }
         };
 
-        text_driverDob.setOnClickListener(new View.OnClickListener() {
+        /*text_driverDob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 showCalander();
             }
-        });
+        });*/
 
         text_logout.setOnClickListener(v -> {
             //Show Your Another AlertDialog
@@ -181,7 +182,7 @@ public class ProfileFragment extends Fragment {
 
                 text_driverName.setEnabled(true);
                 text_driverEmailId.setEnabled(true);
-                text_driverDob.setEnabled(true);
+                //text_driverDob.setEnabled(true);
                 //text_driverAddress.setEnabled(true);
                 // text_DrivingLicence.setEnabled(true);
                 //text_driverContactNo.setEnabled(false);
@@ -198,11 +199,11 @@ public class ProfileFragment extends Fragment {
 
                     text_driverEmailId.setError("Fill The Details");
 
-                } else if (TextUtils.isEmpty(text_driverDob.getText())) {
+                } /*else if (TextUtils.isEmpty(text_driverDob.getText())) {
 
                     text_driverDob.setError("Fill The Details");
 
-                }/*else if(TextUtils.isEmpty(text_driverAddress.getText())){
+                }*//*else if(TextUtils.isEmpty(text_driverAddress.getText())){
 
                     text_driverAddress.setError("Fill The Details");
 
@@ -214,7 +215,7 @@ public class ProfileFragment extends Fragment {
 
                     str_driverName = text_driverName.getText().toString().trim();
                     str_driverEmailId = text_driverEmailId.getText().toString().trim();
-                    str_driverDob = text_driverDob.getText().toString().trim();
+                    //str_driverDob = text_driverDob.getText().toString().trim();
                     // str_driverAddress = text_driverAddress.getText().toString().trim();
                     //str_DrivingLicence = text_DrivingLicence.getText().toString().trim();
 
@@ -325,6 +326,11 @@ public class ProfileFragment extends Fragment {
                         String dob = response.getString("dob");
                         String dl_no = response.getString("dl_no");
                         String adresss = response.getString("adresss");
+                        String driver_image = response.getString("driver_image");
+
+                        String image = "https://driversuvidha.in/uploads/"+driver_image;
+
+                        Glide.with(getActivity()).load(image).centerCrop().placeholder(R.drawable.profileimage).into(nav_profile_image);
 
 
                         SimpleDateFormat fromUser = new SimpleDateFormat("yyyy/MM/dd");
@@ -334,7 +340,7 @@ public class ProfileFragment extends Fragment {
 
                             Date dateFromUser = fromUser.parse(dob); // Parse it to the exisitng date pattern and return Date type
                             String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
-                            text_driverDob.setText(dateMyFormat);
+                            //text_driverDob.setText(dateMyFormat);
 
                         } catch (ParseException e) {
                             e.printStackTrace();
@@ -349,7 +355,7 @@ public class ProfileFragment extends Fragment {
 
                         text_driverName.setEnabled(false);
                         text_driverEmailId.setEnabled(false);
-                        text_driverDob.setEnabled(false);
+                        //text_driverDob.setEnabled(false);
                         //text_driverAddress.setEnabled(false);
                         //text_DrivingLicence.setEnabled(false);
                         text_driverContactNo.setEnabled(false);
@@ -437,7 +443,7 @@ public class ProfileFragment extends Fragment {
 
                             Date dateFromUser = fromUser.parse(dob); // Parse it to the exisitng date pattern and return Date type
                             String dateMyFormat = myFormat.format(dateFromUser); // format it to the date pattern you prefer
-                            text_driverDob.setText(dateMyFormat);
+                            //text_driverDob.setText(dateMyFormat);
 
                         } catch (ParseException e) {
                             e.printStackTrace();
@@ -452,7 +458,7 @@ public class ProfileFragment extends Fragment {
 
                         text_driverName.setEnabled(false);
                         text_driverEmailId.setEnabled(false);
-                        text_driverDob.setEnabled(false);
+                        //text_driverDob.setEnabled(false);
                         // text_driverAddress.setEnabled(false);
                         // text_DrivingLicence.setEnabled(false);
                         text_driverContactNo.setEnabled(false);
@@ -507,7 +513,7 @@ public class ProfileFragment extends Fragment {
                 month = month + 1;
                 String date = day + "/" + month + "/" + year;
                 //String date = year+"-"+month+"-"+day;
-                text_driverDob.setText(date);
+                //text_driverDob.setText(date);
             }
         }, year, month, day);
 
