@@ -168,19 +168,34 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
                                 month = month + 1;
-                                String date = day + "-" + month + "-" + year;
+                                String date = dayOfMonth + "-" + month + "-" + year;
                                 //String date = year+"-"+month+"-"+day;
                                 text_enddate.setText(date);
                             }
                         }, year, month, day);
 
                         //display previous selected date
-                        datePickerDialog.updateDate(year, month, day);
+                       // datePickerDialog.updateDate(year, month, day);
 
                         //disiable past date
                         //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
 
                         datePickerDialog.show();
+
+
+                  /*      DatePickerDialog datePickerDialog = new DatePickerDialog(context,
+                                new DatePickerDialog.OnDateSetListener() {
+
+                                    @Override
+                                    public void onDateSet(DatePicker view, int year,
+                                                          int monthOfYear, int dayOfMonth) {
+
+                                        text_enddate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
+                                    }
+                                }, year, month, day);
+
+                        datePickerDialog.show();*/
                     }
                 });
 

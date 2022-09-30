@@ -7,7 +7,9 @@
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/drawable/back_red.xml" value="0.1105" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/drawable/background_back.xml" value="0.1195" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/drawable/background_back1.xml" value="0.1195" />
+        <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/drawable/deshbord_bg.xml" value="0.1195" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/drawable/reportbutton_bg.xml" value="0.1105" />
+        <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/drawable/transaction.xml" value="0.1195" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/acceptingdialog.xml" value="0.21979166666666666" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/activity_change_passsword.xml" value="0.2037037037037037" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/activity_forgot_password.xml" value="0.2037037037037037" />
@@ -36,7 +38,7 @@
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/todayreportdetails.xml" value="0.3844621513944223" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/upcomingbooking.xml" value="0.22083333333333333" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/wallet_fargment.xml" value="0.22083333333333333" />
-        <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/walletpriceshow.xml" value="0.2037037037037037" />
+        <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/walletpriceshow.xml" value="0.25" />
         <entry key="..\:/New folder/DriverSuvidha/app/src/main/res/layout/workdetails_fargment.xml" value="0.22083333333333333" />
         <entry key="..\:/newFolder/DSDriver/app/src/main/res/drawable/back_red.xml" value="0.1305" />
         <entry key="..\:/newFolder/DSDriver/app/src/main/res/layout/acceptingdialog.xml" value="0.20416666666666666" />

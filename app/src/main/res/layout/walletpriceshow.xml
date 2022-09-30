@@ -2,54 +2,126 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/five"
     android:background="@color/white">
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/five"
-        android:orientation="horizontal"
-        android:weightSum="4">
+        android:layout_margin="@dimen/five"
+        android:background="@drawable/transaction"
+        android:elevation="@dimen/five"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/text_InvoiceNo"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"
-            android:text="Tr. No."
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/textsize"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten"
+            android:orientation="horizontal"
+            android:weightSum="4">
 
-        <TextView
-            android:id="@+id/text_Date"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1.2"
-            android:text="Date"
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/textsize"></TextView>
-
-        <TextView
-            android:id="@+id/text_Amount"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Amount"
-            android:textColor="@color/some_color1"
-            android:textSize="@dimen/textsize"></TextView>
-
-        <!-- <TextView
-                android:id="@+id/text_Action"
+            <TextView
                 android:layout_width="0dp"
-                android:layout_weight="0.7"
                 android:layout_height="match_parent"
-                android:text="View"
+                android:layout_weight="1"
+                android:text="Tr. No."
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:id="@+id/text_InvoiceNo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Date"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:id="@+id/text_Date"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:textColor="@color/black"
-                android:textSize="@dimen/sixteen"
-                android:textStyle="bold"></TextView>-->
+                android:textSize="@dimen/sixteen"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Amount"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:id="@+id/text_Amount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Tr. Type"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:id="@+id/text_TRType"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sixteen"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/ten"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:text="Remarks"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+            <TextView
+                android:id="@+id/text_Remarks"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:textColor="@color/some_color1"
+                android:textSize="@dimen/textsize"></TextView>
+
+        </LinearLayout>
 
     </LinearLayout>
+
+
+
 
 </RelativeLayout>

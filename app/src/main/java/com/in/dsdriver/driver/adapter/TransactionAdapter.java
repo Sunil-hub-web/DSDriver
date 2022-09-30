@@ -62,6 +62,8 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.text_InvoiceNo.setText(trans.getInvoice_No());
         //holder.text_Date.setText(date);
         holder.text_Amount.setText("Rs "+trans.getAmount());
+        holder.text_TRType.setText(trans.getTr_type());
+        holder.text_Remarks.setText(trans.getRemark());
 
     }
 
@@ -72,7 +74,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView text_InvoiceNo,text_Date,text_Amount,text_Action;
+        TextView text_InvoiceNo,text_Date,text_Amount,text_TRType,text_Remarks;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -80,7 +82,8 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
             text_InvoiceNo = itemView.findViewById(R.id.text_InvoiceNo);
             text_Date = itemView.findViewById(R.id.text_Date);
             text_Amount = itemView.findViewById(R.id.text_Amount);
-            //text_Action = itemView.findViewById(R.id.text_Action);
+            text_TRType = itemView.findViewById(R.id.text_TRType);
+            text_Remarks = itemView.findViewById(R.id.text_Remarks);
 
         }
 

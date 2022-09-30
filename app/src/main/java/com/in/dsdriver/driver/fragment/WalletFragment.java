@@ -100,6 +100,8 @@ public class WalletFragment extends Fragment {
                         String invoice_id = jsonObject_booking.getString("invoice_id");
                         String amount = jsonObject_booking.getString("amount");
                         String tr_date = jsonObject_booking.getString("tr_date");
+                        String tr_type = jsonObject_booking.getString("tr_type");
+                        String remark = jsonObject_booking.getString("remark");
 
                        /* String booking_idss = jsonObject_booking.getString("booking_idss");
                         String payable_amount = jsonObject_booking.getString("payable_amount");
@@ -110,7 +112,7 @@ public class WalletFragment extends Fragment {
                         String invoice_amount = jsonObject_booking.getString("invoice_amount");
                         String balance_deposite = jsonObject_booking.getString("balance_deposite");*/
 
-                        Transaction_Model transaction_model = new Transaction_Model(invoice_id,tr_date,amount,"View");
+                        Transaction_Model transaction_model = new Transaction_Model(invoice_id,tr_date,amount,"View",tr_type,remark);
                         tarnsaction.add(transaction_model);
 
                     }

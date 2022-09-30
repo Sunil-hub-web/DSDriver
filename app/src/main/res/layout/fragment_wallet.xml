@@ -152,7 +152,7 @@
             android:textSize="@dimen/edittextsize"
             android:textStyle="bold" />
 
-        <LinearLayout
+       <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/five"
@@ -191,17 +191,17 @@
                 android:textSize="@dimen/textsize"
                 android:textStyle="bold"></TextView>
 
-          <!--  <TextView
+            <TextView
                 android:id="@+id/text_Action"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.7"
-                android:text="Action"
+                android:text="tr_Type"
                 android:textColor="@color/black"
                 android:textSize="@dimen/textsize"
-                android:textStyle="bold"></TextView>-->
+                android:textStyle="bold"></TextView>
 
-        </LinearLayout>
+        </LinearLayout>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerTransaction"
