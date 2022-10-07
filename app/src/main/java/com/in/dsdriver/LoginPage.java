@@ -52,8 +52,8 @@ public class LoginPage extends AppCompatActivity {
     EditText edit_MobileNo, edit_Password;
     String str_UserName, str_Password, selectLogintOption;
     TextView forgotPassword;
-    RadioGroup radioGroup;
-    RadioButton text_Driver, text_Owner, selectedRadioButton;
+    //RadioGroup radioGroup;
+    //RadioButton text_Driver, text_Owner, selectedRadioButton;
 
     SessionManager sessionManager;
 
@@ -79,9 +79,9 @@ public class LoginPage extends AppCompatActivity {
         edit_MobileNo = findViewById(R.id.edit_MobileNo);
         edit_Password = findViewById(R.id.edit_Password);
         forgotPassword = findViewById(R.id.forgotPassword);
-        text_Driver = findViewById(R.id.text_Driver);
-        text_Owner = findViewById(R.id.text_Owner);
-        radioGroup = findViewById(R.id.radioGroup);
+        //text_Driver = findViewById(R.id.text_Driver);
+        //text_Owner = findViewById(R.id.text_Owner);
+       //radioGroup = findViewById(R.id.radioGroup);
 
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
@@ -110,13 +110,13 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+                //int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
 
-                if (selectedRadioButtonId == -1) {
+              /*  if (selectedRadioButtonId == -1) {
 
                     Toast.makeText(LoginPage.this, "select Driver Or Owner For Login", Toast.LENGTH_SHORT).show();
 
-                } else if (edit_MobileNo.getText().toString().trim().equals("")) {
+                }*/ if (edit_MobileNo.getText().toString().trim().equals("")) {
 
                     edit_MobileNo.setError("Fill The Details");
                     edit_MobileNo.requestFocus();
@@ -133,16 +133,18 @@ public class LoginPage extends AppCompatActivity {
 
                 } else {
 
-                    selectedRadioButton = findViewById(selectedRadioButtonId);
-                    selectLogintOption = selectedRadioButton.getText().toString();
+                    //selectedRadioButton = findViewById(selectedRadioButtonId);
+                    //selectLogintOption = selectedRadioButton.getText().toString();
 
-                    if (selectLogintOption.equals("Driver")) {
+                    str_UserName = edit_MobileNo.getText().toString().trim();
+                    str_Password = edit_Password.getText().toString().trim();
+                    String token = sessionManager.getFcmToken();
 
-                        str_UserName = edit_MobileNo.getText().toString().trim();
-                        str_Password = edit_Password.getText().toString().trim();
-                        String token = sessionManager.getFcmToken();
+                    userLogin(str_UserName, str_Password,token);
 
-                        userLogin(str_UserName, str_Password,token);
+                  /*  if (selectLogintOption.equals("Driver")) {
+
+
 
                     } else {
 
@@ -150,7 +152,7 @@ public class LoginPage extends AppCompatActivity {
                         str_Password = edit_Password.getText().toString().trim();
 
                         Cab_Login(str_UserName, str_Password);
-                    }
+                    }*/
 
                 }
             }
@@ -160,22 +162,20 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+                //int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
 
-                if (selectedRadioButtonId == -1) {
+              /*  if (selectedRadioButtonId == -1) {
 
                     Toast.makeText(LoginPage.this, "select Driver Or Owner For ForgotPassword", Toast.LENGTH_SHORT).show();
 
                 } else {
 
-                    selectedRadioButton = findViewById(selectedRadioButtonId);
-                    selectLogintOption = selectedRadioButton.getText().toString();
+                    //selectedRadioButton = findViewById(selectedRadioButtonId);
+                    //selectLogintOption = selectedRadioButton.getText().toString();
 
                     if (selectLogintOption.equals("Driver")) {
 
-                        Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
-                        intent.putExtra("Driver", "Driver");
-                        startActivity(intent);
+
 
                     } else {
 
@@ -183,10 +183,13 @@ public class LoginPage extends AppCompatActivity {
                         intent.putExtra("Driver", "CABOwner");
                         startActivity(intent);
                     }
-                }
+                }*/
+
+                Intent intent = new Intent(LoginPage.this, ForgotPassword.class);
+                intent.putExtra("Driver", "Driver");
+                startActivity(intent);
         }
     });
-
 
 }
 

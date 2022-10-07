@@ -22,7 +22,7 @@
 
         </ImageView>
 
-        <RadioGroup
+       <!-- <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
 
             </RadioButton>
 
-        </RadioGroup>
+        </RadioGroup>-->
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
