@@ -112,7 +112,7 @@ public class BookingDetails extends Fragment {
         str_DutyHours =  getArguments().getString("DutyHours");
         str_DropLoc =  getArguments().getString("DropLoc");
         str_CarDetails =  getArguments().getString("CarDetails");
-        str_Remarks =  getArguments().getString("Remastr_Chargesrks");
+        str_Remarks =  getArguments().getString("Remarks");
         str_TotalAmount =  getArguments().getString("TotalAmount");
         str_Address =  getArguments().getString("address");
         str_Charges =  getArguments().getString("Charges");
@@ -192,7 +192,7 @@ public class BookingDetails extends Fragment {
             text_CarDetails.setText(str_CarDetails);
 
             textShift.setVisibility(View.GONE);
-            textDay.setText(View.GONE);
+            textDay.setVisibility(View.GONE);
 
             textDutyHours.setText("To City");
 

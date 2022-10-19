@@ -4,9 +4,11 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -55,14 +57,14 @@ public class NotificationHelper {
                 PendingIntent resultPendingIntent = PendingIntent.getActivity(mContext,
                         0 /* Request code */, resultIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
-
+            Uri sound = Uri. parse (ContentResolver. SCHEME_ANDROID_RESOURCE + "://" + mContext.getPackageName() + "/raw/quite_impressed.mp3" ) ;
                 mBuilder = new NotificationCompat.Builder(mContext, NOTIFICATION_CHANNEL_ID);
                 mBuilder.setSmallIcon(R.drawable.logo);
                 mBuilder.setContentTitle(title)
                         .setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setContentText(message)
-                        .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
+                        .setSound(sound)
                         .setContentIntent(resultPendingIntent);
 
                 mNotificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);

@@ -292,7 +292,7 @@ public class HomeFragment extends Fragment {
                             }
 
                             linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-                            todayReportAdapter = new TodayReportAdapter(getContext(), todayReport);
+                            todayReportAdapter = new TodayReportAdapter(getActivity(), todayReport);
                             recyclerReportDetails.setLayoutManager(linearLayoutManager);
                             recyclerReportDetails.setHasFixedSize(true);
                             recyclerReportDetails.setAdapter(todayReportAdapter);

@@ -15,7 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -27,6 +30,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.in.dsdriver.LoginPage;
 import com.in.dsdriver.R;
+import com.in.dsdriver.driver.fragment.HomeFragment;
 import com.in.dsdriver.extra.AppUrl;
 import com.in.dsdriver.extra.SharedPrefManager_Driver;
 import com.in.dsdriver.driver.modelclass.TodayReport_ModelClass;
@@ -163,6 +167,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_Remarks.setText(today_Report.getRemark());
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
             holder.text_Date.setText(today_Report.getDate());
+            holder.text_Remark.setText(today_Report.getRemark());
 
             holder.liner7.setVisibility(View.GONE);
             holder.liner3.setVisibility(View.GONE);
@@ -186,6 +191,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_Remarks.setText(today_Report.getRemark());
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
             holder.text_Date.setText(today_Report.getDate());
+            holder.text_Remark.setText(today_Report.getRemark());
 
             holder.liner2.setVisibility(View.GONE);
             holder.liner4.setVisibility(View.GONE);
@@ -210,6 +216,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.textCharges.setVisibility(View.VISIBLE);
             holder.text_Charges.setVisibility(View.VISIBLE);
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
+            holder.text_Remark.setText(today_Report.getRemark());
 
             holder.liner4.setVisibility(View.GONE);
             holder.liner2.setVisibility(View.GONE);
@@ -244,12 +251,13 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
                         String bookingId = today_Report.getBooking_id();
 
-                        acceptBooking(driverId,bookingId);
+                        acceptBooking(driverId,bookingId,v);
 
                         reporttoday.remove(position);
                         notifyDataSetChanged();
 
                         dialog.dismiss();
+
                     }
                 });
                 btn_No.setOnClickListener(new View.OnClickListener() {
@@ -280,7 +288,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
         TextView text_Locality,text_Landmark,textDate,text_Date,textReportTime,text_ReportTime,textBookingType,text_BookingType,
                 textNoofDays,text_NoofDays,textShift,text_Shift,textDutyHours,text_DutyHours,textReturnDate,text_ReturnDate,
                 textToCity,text_ToCity,textDropLoc,text_DropLoc,textCarDetails,text_CarDetails,textRemarks,text_Remarks,text_acceptBooking,
-                textCharges,text_Charges,text_DeliveryType;
+                textCharges,text_Charges,text_DeliveryType,text_Remark;
 
         LinearLayout liner,liner1,liner2,liner3,liner4,liner5,liner6,liner7,cardlin_out;
 
@@ -316,6 +324,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             text_Charges = itemView.findViewById(R.id.text_Charges);
             text_DeliveryType = itemView.findViewById(R.id.text_DeliveryType);
             cardlin_out = itemView.findViewById(R.id.cardlin_out);
+            text_Remark = itemView.findViewById(R.id.text_Remark);
 
             liner = itemView.findViewById(R.id.liner);
             liner1 = itemView.findViewById(R.id.liner1);
@@ -328,7 +337,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
         }
     }
 
-    public void acceptBooking(String driverId,String bookingId){
+    public void acceptBooking(String driverId,String bookingId,View v){
 
         ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Accept Booking Please Wait....");
@@ -359,6 +368,10 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
                         
                         String message = response.getString("message");
                         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+
+                        HomeFragment yourfragmentobject = new HomeFragment();
+                        AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                        activity.getSupportFragmentManager().beginTransaction().detach(yourfragmentobject).attach(yourfragmentobject).commit();
 
                     }
                 } catch (JSONException e) {
