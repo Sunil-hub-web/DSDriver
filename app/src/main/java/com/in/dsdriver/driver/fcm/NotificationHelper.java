@@ -57,7 +57,7 @@ public class NotificationHelper {
                 PendingIntent resultPendingIntent = PendingIntent.getActivity(mContext,
                         0 /* Request code */, resultIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
-            Uri sound = Uri. parse (ContentResolver. SCHEME_ANDROID_RESOURCE + "://" + mContext.getPackageName() + "/raw/quite_impressed.mp3" ) ;
+            Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + mContext.getPackageName() + "/" + R.raw.notification);
                 mBuilder = new NotificationCompat.Builder(mContext, NOTIFICATION_CHANNEL_ID);
                 mBuilder.setSmallIcon(R.drawable.logo);
                 mBuilder.setContentTitle(title)

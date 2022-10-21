@@ -3,12 +3,12 @@ package com.in.dsdriver.driver.modelclass;
 public class TodayReport_ModelClass {
 
     String booking_id,Locality,Landmark,date,time,dutyHour,noofDays,duty_type,shift,drop_locality,
-            car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,booking;
+            car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,booking,car_type;
 
     public TodayReport_ModelClass(String booking_id, String locality, String landmark, String date, String time, String dutyHour,
                                   String noofDays, String duty_type, String shift, String drop_locality,
                                   String car_details, String remark,String return_date,String drop_city,
-                                  String to_city,String driver_type_name,String driver_type,String booking) {
+                                  String to_city,String driver_type_name,String driver_type,String booking,String car_type) {
         this.booking_id = booking_id;
         this.Locality = locality;
         this.Landmark = landmark;
@@ -27,6 +27,7 @@ public class TodayReport_ModelClass {
         this.driver_type_name = driver_type_name;
         this.driver_type = driver_type;
         this.booking = booking;
+        this.car_type = car_type;
     }
 
     public String getBooking_id() {
@@ -171,5 +172,13 @@ public class TodayReport_ModelClass {
 
     public void setBooking(String booking) {
         this.booking = booking;
+    }
+
+    public String getCar_type() {
+        return car_type;
+    }
+
+    public void setCar_type(String car_type) {
+        this.car_type = car_type;
     }
 }

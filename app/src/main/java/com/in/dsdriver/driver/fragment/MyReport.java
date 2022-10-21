@@ -115,6 +115,7 @@ public class MyReport extends Fragment {
                                 String duty_hour = jsonObject_allbooking.getString("duty_hour");
                                 String drop_locality = jsonObject_allbooking.getString("drop_locality");
                                 String car_details = jsonObject_allbooking.getString("car_details");
+                                String car_type = jsonObject_allbooking.getString("car_type");
                                 String remark = jsonObject_allbooking.getString("remark");
                                 String return_date = jsonObject_allbooking.getString("return_date");
                                 String drop_city = jsonObject_allbooking.getString("drop_city");
@@ -124,7 +125,8 @@ public class MyReport extends Fragment {
 
                                 TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                         booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                        shift,drop_locality,car_details,remark,return_date,drop_city,to_city,"","",""
+                                        shift,drop_locality,car_details,remark,return_date,drop_city,to_city,
+                                        "","","",car_type
                                 );
 
 

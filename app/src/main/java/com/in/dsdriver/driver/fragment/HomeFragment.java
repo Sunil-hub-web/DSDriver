@@ -244,6 +244,7 @@ public class HomeFragment extends Fragment {
                                 String duty_hour = jsonObject_allbooking.getString("duty_hour");
                                 String drop_locality = jsonObject_allbooking.getString("drop_locality");
                                 String car_details = jsonObject_allbooking.getString("car_details");
+                                String car_type = jsonObject_allbooking.getString("car_type");
                                 String remark = jsonObject_allbooking.getString("remark");
                                 String return_date = jsonObject_allbooking.getString("return_date");
                                 String drop_city = jsonObject_allbooking.getString("drop_city");
@@ -271,7 +272,8 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"AvilableBoking1"
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,
+                                            driver_type,"AvilableBoking1",car_type
                                     );
 
                                     todayReport.add(todayReport_modelClass);
@@ -280,7 +282,8 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"AvilableBoking"
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,
+                                            driver_type,"AvilableBoking",car_type
                                     );
 
                                     todayReport.add(todayReport_modelClass);
@@ -380,6 +383,7 @@ public class HomeFragment extends Fragment {
                                 String duty_hour = jsonObject_allbooking.getString("duty_hour");
                                 String drop_locality = jsonObject_allbooking.getString("drop_locality");
                                 String car_details = jsonObject_allbooking.getString("car_details");
+                                String car_type = jsonObject_allbooking.getString("car_type");
                                 String remark = jsonObject_allbooking.getString("remark");
                                 String return_date = jsonObject_allbooking.getString("return_date");
                                 String drop_city = jsonObject_allbooking.getString("drop_city");
@@ -407,7 +411,8 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"myZoneBooking"
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,
+                                            driver_type,"myZoneBooking",car_type
                                     );
 
 
@@ -417,7 +422,8 @@ public class HomeFragment extends Fragment {
 
                                     TodayReport_ModelClass todayReport_modelClass = new TodayReport_ModelClass(
                                             booking_id, Locality,Landmark, date, report_time, duty_hour, no_of_day, bookingType,
-                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,driver_type,"myZoneBooking1"
+                                            shift,drop_locality,car_details,remark,return_date,drop_city,to_city,driver_type_name,
+                                            driver_type,"myZoneBooking1",car_type
                                     );
 
 

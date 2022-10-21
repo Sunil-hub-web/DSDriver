@@ -163,7 +163,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_Shift.setText(today_Report.getShift());
             holder.text_DropLoc.setText(today_Report.getDrop_locality());
 
-            holder.text_CarDetails.setText(today_Report.getCar_details());
+            holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
             holder.text_Remarks.setText(today_Report.getRemark());
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
             holder.text_Date.setText(today_Report.getDate());
@@ -187,7 +187,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_ReturnDate.setText(today_Report.getReturn_date());
             holder.text_ToCity.setText(today_Report.getTo_city());
 
-            holder.text_CarDetails.setText(today_Report.getCar_details());
+            holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
             holder.text_Remarks.setText(today_Report.getRemark());
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
             holder.text_Date.setText(today_Report.getDate());
@@ -210,7 +210,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.textNoofDays.setText("Drop City");
             holder.text_Charges.setText("");
 
-            holder.text_CarDetails.setText(today_Report.getCar_details());
+            holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
             holder.text_Remarks.setText(today_Report.getRemark());
 
             holder.textCharges.setVisibility(View.VISIBLE);

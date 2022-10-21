@@ -56,7 +56,7 @@ public class BookingDetails extends Fragment {
     String str_BookingType,str_CustomerName,str_Address,str_Time,str_Date,str_Shift,str_Day,
             str_DutyHours, str_DropLoc,str_CarDetails,str_Remarks,str_Charges,str_OTHours,str_City,
             str_OTAmount,str_TotalAmount, str_StopRider,str_CallCustomer,str_endtime,str_enddate,date,time,
-            str_Locality,str_Landmark,endtime,return_date,customer_mobile,booking_id,driverID;
+            str_Locality,str_Landmark,endtime,return_date,customer_mobile,booking_id,driverID,CarType;
 
     Button btn_Close,btn_Submit;
 
@@ -122,6 +122,7 @@ public class BookingDetails extends Fragment {
         return_date =  getArguments().getString("return_date");
         customer_mobile =  getArguments().getString("customer_mobile");
         booking_id =  getArguments().getString("bookingid");
+        CarType =  getArguments().getString("CarType");
         driverID = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
 
         lin2.setVisibility(View.VISIBLE);
@@ -142,7 +143,7 @@ public class BookingDetails extends Fragment {
 
             text_DropLoc.setText(str_DropLoc);
             text_Remarks.setText(str_Remarks);
-            text_CarDetails.setText(str_CarDetails);
+            text_CarDetails.setText(str_CarDetails+"("+CarType+")");
 
             text_Charges.setText(str_Charges);
             text_TotalAmount.setText(str_TotalAmount);
@@ -160,7 +161,7 @@ public class BookingDetails extends Fragment {
             text_Time.setText(str_Time);
             text_Date.setText(str_Date);
             text_Date.setText(str_Date);
-            text_CarDetails.setText(str_CarDetails);
+            text_CarDetails.setText(str_CarDetails+"("+CarType+")");
 
             textShift.setText("Return Date");
             textDay.setText("No of Day");
@@ -189,7 +190,7 @@ public class BookingDetails extends Fragment {
             text_Time.setText(str_Time);
             text_Date.setText(str_Date);
             text_Date.setText(str_Date);
-            text_CarDetails.setText(str_CarDetails);
+            text_CarDetails.setText(str_CarDetails+"("+CarType+")");
 
             textShift.setVisibility(View.GONE);
             textDay.setVisibility(View.GONE);

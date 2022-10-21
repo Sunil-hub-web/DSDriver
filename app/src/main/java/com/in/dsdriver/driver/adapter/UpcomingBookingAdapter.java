@@ -82,6 +82,7 @@ public class UpcomingBookingAdapter extends RecyclerView.Adapter<UpcomingBooking
                 args.putString("customerName", upcoming_Booking.getCustomerName());
                 args.putString("time", upcoming_Booking.getTime());
                 args.putString("CarDetails", upcoming_Booking.getCarDetails());
+                args.putString("CarType", upcoming_Booking.getCar_type());
                 args.putString("date", upcoming_Booking.getDate());
                 args.putString("city", upcoming_Booking.getCity());
                 args.putString("day", upcoming_Booking.getDay());

@@ -4,12 +4,12 @@ public class UpcomingBooking_ModelClass {
 
     String bookingType,customerName,city,time,date,shift,day,DutyHours,DropLoc,CarDetails,Remarks,Charges,
             OTHours,OTAmount,TotalAmount,address,return_date,to_city,Locality,Landmark,end_time,customer_mobile,
-             booking_id;
+             booking_id,car_type;
 
     public UpcomingBooking_ModelClass(String bookingType, String customerName, String city, String time, String date, String shift,
                                       String day, String dutyHours, String dropLoc, String carDetails, String remarks, String charges,
                                       String OTHours, String OTAmount, String totalAmount,String address,String return_date,String to_city,String Locality,
-                                      String Landmark,String end_time,String customer_mobile,String booking_id) {
+                                      String Landmark,String end_time,String customer_mobile,String booking_id,String car_type) {
 
         this.bookingType = bookingType;
         this.customerName = customerName;
@@ -34,6 +34,7 @@ public class UpcomingBooking_ModelClass {
         this.end_time = end_time;
         this.customer_mobile = customer_mobile;
         this.booking_id = booking_id;
+        this.car_type = car_type;
     }
 
     public String getBookingType() {
@@ -218,5 +219,13 @@ public class UpcomingBooking_ModelClass {
 
     public void setBooking_id(String booking_id) {
         this.booking_id = booking_id;
+    }
+
+    public String getCar_type() {
+        return car_type;
+    }
+
+    public void setCar_type(String car_type) {
+        this.car_type = car_type;
     }
 }
