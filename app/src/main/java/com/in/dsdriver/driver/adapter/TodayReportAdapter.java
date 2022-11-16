@@ -206,8 +206,8 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_Date.setText(today_Report.getDate());
             holder.text_ReportTime.setText(today_Report.getTime());
 
-            holder.text_NoofDays.setText(today_Report.getDrop_city());
-            holder.textNoofDays.setText("Drop City");
+            holder.text_NoofDays.setText(today_Report.getTo_city());
+            holder.textNoofDays.setText("To City");
             holder.text_Charges.setText("");
 
             holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
@@ -332,7 +332,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             liner3 = itemView.findViewById(R.id.liner3);
             liner4 = itemView.findViewById(R.id.liner4);
             liner5 = itemView.findViewById(R.id.liner5);
-            liner6 = itemView.findViewById(R.id.liner6);
+            //liner6 = itemView.findViewById(R.id.liner6);
             liner7 = itemView.findViewById(R.id.liner7);
         }
     }
