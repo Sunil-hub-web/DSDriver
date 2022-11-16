@@ -142,7 +142,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
         holder.liner3.setVisibility(View.VISIBLE);
         holder.liner4.setVisibility(View.VISIBLE);
         holder.liner5.setVisibility(View.VISIBLE);
-        holder.liner6.setVisibility(View.VISIBLE);
+        //holder.liner6.setVisibility(View.VISIBLE);
         holder.liner7.setVisibility(View.VISIBLE);
 
         String shift_type = SharedPrefManager_Driver.getInstance(context).getUser().getShift_type();
@@ -164,7 +164,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_DropLoc.setText(today_Report.getDrop_locality());
 
             holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
-            holder.text_Remarks.setText(today_Report.getRemark());
+           // holder.text_Remarks.setText(today_Report.getRemark());
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
             holder.text_Date.setText(today_Report.getDate());
             holder.text_Remark.setText(today_Report.getRemark());
@@ -188,7 +188,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_ToCity.setText(today_Report.getTo_city());
 
             holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
-            holder.text_Remarks.setText(today_Report.getRemark());
+            //holder.text_Remarks.setText(today_Report.getRemark());
             holder.text_DeliveryType.setText(today_Report.getDriver_type_name());
             holder.text_Date.setText(today_Report.getDate());
             holder.text_Remark.setText(today_Report.getRemark());
@@ -211,7 +211,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_Charges.setText("");
 
             holder.text_CarDetails.setText(today_Report.getCar_details()+"("+today_Report.getCar_type()+")");
-            holder.text_Remarks.setText(today_Report.getRemark());
+            //holder.text_Remarks.setText(today_Report.getRemark());
 
             holder.textCharges.setVisibility(View.VISIBLE);
             holder.text_Charges.setVisibility(View.VISIBLE);
@@ -287,7 +287,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
         TextView text_Locality,text_Landmark,textDate,text_Date,textReportTime,text_ReportTime,textBookingType,text_BookingType,
                 textNoofDays,text_NoofDays,textShift,text_Shift,textDutyHours,text_DutyHours,textReturnDate,text_ReturnDate,
-                textToCity,text_ToCity,textDropLoc,text_DropLoc,textCarDetails,text_CarDetails,textRemarks,text_Remarks,text_acceptBooking,
+                textToCity,text_ToCity,textDropLoc,text_DropLoc,textCarDetails,text_CarDetails,textRemarks,text_acceptBooking,
                 textCharges,text_Charges,text_DeliveryType,text_Remark;
 
         LinearLayout liner,liner1,liner2,liner3,liner4,liner5,liner6,liner7,cardlin_out;
@@ -319,7 +319,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             textCarDetails = itemView.findViewById(R.id.textCarDetails);
             text_CarDetails = itemView.findViewById(R.id.text_CarDetails);
             textRemarks = itemView.findViewById(R.id.textRemarks);
-            text_Remarks = itemView.findViewById(R.id.text_Remarks);
+            //text_Remarks = itemView.findViewById(R.id.text_Remarks);
             textCharges = itemView.findViewById(R.id.textCharges);
             text_Charges = itemView.findViewById(R.id.text_Charges);
             text_DeliveryType = itemView.findViewById(R.id.text_DeliveryType);

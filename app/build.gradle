@@ -12,8 +12,8 @@ android {
         applicationId "com.in.dsdriver"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 14
-        versionName "2.5"
+        versionCode 15
+        versionName "2.6"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
