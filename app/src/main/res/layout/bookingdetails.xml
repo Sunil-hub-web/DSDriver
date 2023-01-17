@@ -65,8 +65,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/ten">
+            android:layout_margin="@dimen/ten"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -161,8 +161,6 @@
                     android:text="Indradhanu Market Road, Block N5, IRC Village, Nayapalli, Bhubaneswar, Odisha, 751015"
                     android:textColor="@color/black"
                     android:textSize="@dimen/textsize" />
-
-
 
 
                 <!--    <TextView
@@ -324,7 +322,7 @@
 
             </LinearLayout>
 
-           <!-- <LinearLayout
+            <!-- <LinearLayout
                 android:id="@+id/liner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -629,7 +627,7 @@
 
             </LinearLayout>-->
 
-         <!--   <LinearLayout
+            <!--   <LinearLayout
                 android:id="@+id/lin4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -669,6 +667,7 @@
                 android:layout_below="@+id/lin2"
                 android:layout_marginLeft="@dimen/ten"
                 android:layout_marginTop="@dimen/ten"
+                android:visibility="invisible"
                 android:weightSum="2">
 
                 <TextView
@@ -712,13 +711,13 @@
                     android:layout_marginBottom="@dimen/fifteen"
                     android:layout_weight="1.1"
                     android:background="@drawable/reportbutton_bg"
+                    android:backgroundTint="@color/green"
                     android:drawableLeft="@drawable/telephone_call"
                     android:gravity="center"
                     android:paddingLeft="@dimen/twenty"
                     android:text="Call Customer"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/textsize"
-                    android:backgroundTint="@color/green"></TextView>
+                    android:textSize="@dimen/textsize"></TextView>
 
                 <TextView
                     android:id="@+id/text_StopRider"

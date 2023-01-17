@@ -441,7 +441,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
-                        android:text="Rs. 1800"
+                        android:text="Rs."
                         android:textSize="@dimen/twelve"
                         android:textColor="@color/white">
 
@@ -474,7 +474,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
-                        android:text="Rs. 1800"
+                        android:text="Rs."
                         android:textSize="@dimen/twelve"
                         android:textColor="@color/white">
 

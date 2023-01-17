@@ -252,10 +252,12 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
                         String bookingId = today_Report.getBooking_id();
 
                         acceptBooking(driverId,bookingId,v);
+//if(reportdate.length()>0) {
 
-                        reporttoday.remove(position);
-                        notifyDataSetChanged();
 
+    reporttoday.remove(position);
+//    notifyDataSetChanged();
+//}
                         dialog.dismiss();
 
                     }

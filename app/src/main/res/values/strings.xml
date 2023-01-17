@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">DS Driver</string>
 
-    <string name="home">Home</string>
-    <string name="upcoming">Booking</string>
+    <string name="home">Booking</string>
+    <string name="upcoming">Reporting</string>
     <string name="BOOKING">History</string>
     <string name="WALITI">Transaction</string>
     <string name="PROFILE">Profile</string>

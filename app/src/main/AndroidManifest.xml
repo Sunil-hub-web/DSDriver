@@ -19,14 +19,18 @@
             android:name=".cabowner.DeshBoard"
             android:exported="true" ></activity>
 
-        <activity android:name=".driver.drivers.ChangePasssword" />
-        <activity android:name=".driver.drivers.ForgotPassword" />
-        <activity android:name=".driver.drivers.SuccessOrderActivity" />
+        <activity android:name=".driver.drivers.ChangePasssword"
+            android:exported="false"/>
+        <activity android:name=".driver.drivers.ForgotPassword"
+            android:exported="false"/>
+        <activity android:name=".driver.drivers.SuccessOrderActivity"
+            android:exported="false"/>
         <activity
             android:name=".driver.drivers.HomeDeshbord"
             android:label="@string/title_activity_home_deshbord" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".SplashScreen" >
+        <activity android:name=".SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

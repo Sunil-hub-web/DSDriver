@@ -328,7 +328,7 @@ public class ProfileFragment extends Fragment {
                         String adresss = response.getString("adresss");
                         String driver_image = response.getString("driver_image");
 
-                        String image = "https://driversuvidha.in/CRM/uploads/"+driver_image;
+                        String image = "https://driversuvidha.com/CRM/uploads/"+driver_image;
 
                         Glide.with(getActivity()).load(image).centerCrop().placeholder(R.drawable.profileimage).into(nav_profile_image);
 

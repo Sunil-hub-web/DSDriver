@@ -1,8 +1,10 @@
 package com.in.dsdriver.driver.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -146,6 +148,7 @@ public class HomeFragment extends Fragment {
         text_MyCity = view.findViewById(R.id.text_MyCity);
 
         driverId = SharedPrefManager_Driver.getInstance(getActivity()).getUser().getDriverID();
+        Log.d("Driver_id",driverId);
 
         myZoneDetails(driverId);
 
@@ -154,6 +157,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
 
                 todayReport.clear();
+
 
                 text_MyCity.setBackgroundResource(R.drawable.upcoming_bg);
                 text_MyCity.setTextColor(ContextCompat.getColor(getActivity(),R.color.white));
@@ -212,6 +216,8 @@ public class HomeFragment extends Fragment {
             public void onResponse(JSONObject response) {
 
                 progressDialog.dismiss();
+
+                Log.d("HomeMycity",response.toString());
 
                 try {
                     String status = response.getString("status");
@@ -299,17 +305,22 @@ public class HomeFragment extends Fragment {
                             recyclerReportDetails.setLayoutManager(linearLayoutManager);
                             recyclerReportDetails.setHasFixedSize(true);
                             recyclerReportDetails.setAdapter(todayReportAdapter);
+//                            todayReportAdapter.notifyDataSetChanged();
                         }
 
                     } else if (status.equals("false")) {
 
                         String message = response.getString("message");
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                        Log.d("HomeMycityErrorElse",message.toString());
 
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
+
+                    Log.d("HomeMycityErrorElsecacg",e.toString());
+
                 }
 
             }
