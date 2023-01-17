@@ -227,6 +227,7 @@ public class BookingDetails extends Fragment {
         //text_StopRider.setVisibility(View.VISIBLE);
 
         try {
+
             Date date1 = sdf.parse(time);
             Date date2 = sdf.parse(endtime);
 
@@ -238,7 +239,6 @@ public class BookingDetails extends Fragment {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
 
         text_CallCustomer.setOnClickListener(new View.OnClickListener() {
             @Override

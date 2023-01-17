@@ -255,7 +255,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 //if(reportdate.length()>0) {
 
 
-    reporttoday.remove(position);
+                              reporttoday.remove(position);
 //    notifyDataSetChanged();
 //}
                         dialog.dismiss();

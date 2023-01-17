@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
 
     Button btn_TodayReportDetails,btn_WorkDetails,btn_MyProfile,btn_CompleteDuty,btn_Wallet;
 
-    TodayReportAdapter todayReportAdapter;
+    TodayReportAdapter  todayReportAdapter;
     RecyclerView recyclerReportDetails;
     LinearLayoutManager linearLayoutManager;
     ArrayList<TodayReport_ModelClass> todayReport = new ArrayList<>();
@@ -305,7 +305,7 @@ public class HomeFragment extends Fragment {
                             recyclerReportDetails.setLayoutManager(linearLayoutManager);
                             recyclerReportDetails.setHasFixedSize(true);
                             recyclerReportDetails.setAdapter(todayReportAdapter);
-//                            todayReportAdapter.notifyDataSetChanged();
+                            todayReportAdapter.notifyDataSetChanged();
                         }
 
                     } else if (status.equals("false")) {
@@ -470,7 +470,9 @@ public class HomeFragment extends Fragment {
 
                 progressDialog.dismiss();
                 error.printStackTrace();
-                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_LONG).show();
+
+                Log.d("hgujbuyfgjb",error.toString());
 
             }
         });
