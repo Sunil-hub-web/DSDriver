@@ -219,17 +219,20 @@ public class BookingDetails extends Fragment {
         minute = calendar.get(Calendar.MINUTE);
 
         date = new SimpleDateFormat("dd/mm/yyyy", Locale.getDefault()).format(new Date());
-        time = new SimpleDateFormat("hh:mm aa",Locale.getDefault()).format(new Date());
+        time = new SimpleDateFormat("HH:mm",Locale.getDefault()).format(new Date());
 
-        String pattern = "hh:mm aa";
-        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+
+        //String pattern = "hh:mm aa";
+       // SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 
         //text_StopRider.setVisibility(View.VISIBLE);
 
         try {
 
-            Date date1 = sdf.parse(time);
-            Date date2 = sdf.parse(endtime);
+            SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
+           // Date date = displayFormat.parse("10:30 PM");
+            Date date1 = displayFormat.parse(time);
+            Date date2 = displayFormat.parse(endtime);
 
             if(date1.after(date2)){
 
