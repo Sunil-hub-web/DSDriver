@@ -3,7 +3,7 @@ package com.in.dsdriver.extra;
 public class AppUrl {
     
     public static final String baseUrl="https://driversuvidha.COM/CRM/api" ;
-  //  public static final String baseUrl="https://driversuvidha.COM/uat/CRM/api" ;
+   // public static final String baseUrl="https://driversuvidha.COM/uat/CRM/api" ;
     
 
     public static final String userLogin = baseUrl+"/Auth/driver_login";
