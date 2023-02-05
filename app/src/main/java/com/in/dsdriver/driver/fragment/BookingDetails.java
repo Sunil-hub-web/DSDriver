@@ -42,6 +42,7 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -56,7 +57,7 @@ public class BookingDetails extends Fragment {
     String str_BookingType,str_CustomerName,str_Address,str_Time,str_Date,str_Shift,str_Day,
             str_DutyHours, str_DropLoc,str_CarDetails,str_Remarks,str_Charges,str_OTHours,str_City,
             str_OTAmount,str_TotalAmount, str_StopRider,str_CallCustomer,str_endtime,str_enddate,date,time,
-            str_Locality,str_Landmark,endtime,return_date,customer_mobile,booking_id,driverID,CarType;
+            str_Locality,str_Landmark,endtime,return_date,customer_mobile,booking_id,driverID,CarType,date1,time1;
 
     Button btn_Close,btn_Submit;
 
@@ -218,7 +219,7 @@ public class BookingDetails extends Fragment {
         hour = calendar.get(Calendar.HOUR_OF_DAY);
         minute = calendar.get(Calendar.MINUTE);
 
-        date = new SimpleDateFormat("dd/mm/yyyy", Locale.getDefault()).format(new Date());
+        date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         time = new SimpleDateFormat("HH:mm",Locale.getDefault()).format(new Date());
 
 
@@ -227,21 +228,26 @@ public class BookingDetails extends Fragment {
 
         //text_StopRider.setVisibility(View.VISIBLE);
 
-        try {
+        getDate();
 
+        /*try {
+            getDate();
             SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
            // Date date = displayFormat.parse("10:30 PM");
             Date date1 = displayFormat.parse(time);
             Date date2 = displayFormat.parse(endtime);
 
-            if(date1.after(date2)){
+            if(return_date.equals(date)){
 
-                text_StopRider.setVisibility(View.VISIBLE);
+                if(date1.after(date2)){
+
+                    text_StopRider.setVisibility(View.VISIBLE);
+                }
             }
 
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
 
         text_CallCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -466,5 +472,54 @@ public class BookingDetails extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.getCache().clear();
         requestQueue.add(jsonObjectRequest);
+    }
+    public void getDate() {
+
+        try{
+
+            String datePatten = str_Date+" "+str_Time;
+            System.out.println("your date is="+datePatten);
+            Date date =new SimpleDateFormat("dd-MM-yyyy HH:mm aa").parse(datePatten);
+            System.out.println("your date is time="+datePatten);
+            Long dateVal=date.getTime();
+            System.out.println("your date is time long="+dateVal);
+            long hourDate=3600000;
+            long comingDateHour=Long.valueOf(str_DutyHours);
+            long conversionDate=comingDateHour*hourDate;
+            long totalAddedDate=dateVal+conversionDate;
+            Date conversionDatetime=new Date(totalAddedDate);
+            System.out.println("After hour add="+conversionDatetime);
+
+            date1 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(conversionDatetime);
+            time1 = new SimpleDateFormat("HH:mm",Locale.getDefault()).format(conversionDatetime);
+
+            System.out.println("After hour add="+time1);
+
+            SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm");
+
+            Date newDate = new Date();
+
+            String newdate1 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(newDate);
+            String newtime1 = new SimpleDateFormat("HH:mm",Locale.getDefault()).format(newDate);
+
+
+            Date datetime1 = displayFormat.parse(newtime1);
+            Date datetime2 = displayFormat.parse(endtime);
+
+            if(newdate1.equals(date1)){
+
+                if(datetime2.before(datetime1)){
+
+                    text_StopRider.setVisibility(View.VISIBLE);
+
+                }
+            }
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+        }
+
+
     }
 }

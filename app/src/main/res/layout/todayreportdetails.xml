@@ -113,7 +113,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -135,7 +136,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -169,7 +171,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -191,7 +194,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -225,7 +229,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -247,7 +252,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -281,7 +287,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -303,7 +310,8 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -339,7 +347,8 @@
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:text="Locality Name, City Mumba"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -374,7 +383,8 @@
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:text="Honda Amaze-Automatic, Medium"
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
                         >
 
@@ -417,7 +427,7 @@
                 </LinearLayout>-->
 
                 <LinearLayout
-                    android:id="@+id/liner7"
+                    android:id="@+id/liner71"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="4"
@@ -442,7 +452,8 @@
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:text="Rs."
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -450,7 +461,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/liner7"
+                    android:id="@+id/liner72"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="4"
@@ -458,7 +469,7 @@
                     android:layout_marginTop="@dimen/ten"
                     >
                     <TextView
-                        android:id="@+id/DeliveryType"
+                        android:id="@+id/DeliveryType1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
@@ -475,7 +486,8 @@
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:text="Rs."
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>
@@ -508,7 +520,8 @@
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:textSize="@dimen/twelve"
+                        android:textSize="@dimen/fifteen"
+                        android:textStyle="bold"
                         android:textColor="@color/white">
 
                     </TextView>

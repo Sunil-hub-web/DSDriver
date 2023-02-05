@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@+id/image"
+            android:id="@+id/image1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/seven">
@@ -51,7 +51,7 @@
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_below="@+id/image"
+            android:layout_below="@+id/image1"
             android:background="#AEA8A8"
             android:elevation="@dimen/five" />
 
@@ -92,7 +92,8 @@
                     android:layout_weight="1"
                     android:text="6 Hours"
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
 
             </LinearLayout>
@@ -123,7 +124,8 @@
                     android:layout_weight="1"
                     android:text="Devon Conway"
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
 
             </LinearLayout>
@@ -160,7 +162,8 @@
                     android:layout_toRightOf="@id/image"
                     android:text="Indradhanu Market Road, Block N5, IRC Village, Nayapalli, Bhubaneswar, Odisha, 751015"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize"/>
 
 
                 <!--    <TextView
@@ -223,7 +226,8 @@
                     android:layout_weight="1.2"
                     android:text="Devon Conway"
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
 
             </LinearLayout>
@@ -253,13 +257,14 @@
                     android:layout_weight="1.2"
                     android:text="Devon Conway"
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/liner"
+                android:id="@+id/liner1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/location"
@@ -284,7 +289,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.3"
                     android:textColor="#555557"
-                    android:textSize="@dimen/textsize">
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
             </LinearLayout>
@@ -315,7 +321,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1.3"
                     android:textColor="#555557"
-                    android:textSize="@dimen/textsize">
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
 
@@ -378,7 +385,8 @@
                     android:layout_weight="1.3"
                     android:text="08:40PM "
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
 
             </LinearLayout>
@@ -407,7 +415,8 @@
                     android:layout_weight="1.3"
                     android:text="08:40PM "
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
 
             </LinearLayout>
@@ -435,7 +444,8 @@
                     android:layout_weight="1.3"
                     android:text="08:40PM "
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
             </LinearLayout>
 
@@ -467,14 +477,15 @@
                     android:layout_weight="1.3"
                     android:text="Locality Name, City Mumba"
                     android:textColor="#555557"
-                    android:textSize="@dimen/textsize">
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin3"
+                android:id="@+id/lin31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/ten"
@@ -499,7 +510,8 @@
                     android:layout_weight="1.3"
                     android:text="08:40PM"
                     android:textColor="#585859"
-                    android:textSize="@dimen/textsize" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize" />
 
             </LinearLayout>
 
@@ -530,14 +542,15 @@
                     android:layout_weight="1.3"
                     android:text="Send good driver"
                     android:textColor="#555557"
-                    android:textSize="@dimen/textsize">
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin4"
+                android:id="@+id/lin41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lin2"
@@ -563,7 +576,8 @@
                     android:layout_weight="1.3"
                     android:text="Rs. 1800"
                     android:textColor="#555557"
-                    android:textSize="@dimen/textsize">
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
 
@@ -688,7 +702,8 @@
                     android:layout_weight="1.3"
                     android:text="Rs. 1800"
                     android:textColor="#555557"
-                    android:textSize="@dimen/textsize">
+                    android:textStyle="bold"
+                    android:textSize="@dimen/edittextsize">
 
                 </TextView>
 
