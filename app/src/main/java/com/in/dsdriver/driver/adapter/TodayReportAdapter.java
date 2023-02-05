@@ -169,7 +169,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
             holder.text_Date.setText(today_Report.getDate());
             holder.text_Remark.setText(today_Report.getRemark());
 
-            holder.liner7.setVisibility(View.GONE);
+           // holder.liner7.setVisibility(View.GONE);
             holder.liner3.setVisibility(View.GONE);
 
         }
@@ -195,7 +195,7 @@ public class TodayReportAdapter extends RecyclerView.Adapter<TodayReportAdapter.
 
             holder.liner2.setVisibility(View.GONE);
             holder.liner4.setVisibility(View.GONE);
-            holder.liner7.setVisibility(View.GONE);
+            //holder.liner7.setVisibility(View.GONE);
 
         }
         else if(today_Report.getDuty_type().equals("Drop")){
