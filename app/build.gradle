@@ -10,10 +10,10 @@ android {
 
     defaultConfig {
         applicationId "com.in.dsdriver"
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 31
-        versionCode 22
-        versionName "3.2"
+        versionCode 23
+        versionName "3.3"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

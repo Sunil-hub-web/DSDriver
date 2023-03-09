@@ -24,7 +24,6 @@ public class SessionManager {
     private static final String IS_OTP="isotp";
     private static final String FCM_TOKEN="fcmtoken";
 
-
     public SessionManager(Context context){
 
         this.context =  context;
